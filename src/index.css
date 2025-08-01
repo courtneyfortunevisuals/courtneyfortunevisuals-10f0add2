@@ -1,0 +1,95 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 39 17% 93%;
+    --foreground: 110 13% 21%;
+
+    --card: 39 17% 93%;
+    --card-foreground: 110 13% 21%;
+
+    --popover: 39 17% 93%;
+    --popover-foreground: 110 13% 21%;
+
+    --primary: 110 13% 21%;
+    --primary-foreground: 39 17% 93%;
+
+    --secondary: 39 11% 90%;
+    --secondary-foreground: 110 13% 21%;
+
+    --muted: 39 11% 90%;
+    --muted-foreground: 110 10% 40%;
+
+    --accent: 39 11% 90%;
+    --accent-foreground: 110 13% 21%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 39 17% 93%;
+
+    --border: 110 15% 80%;
+    --input: 110 15% 80%;
+    --ring: 110 13% 21%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 39 17% 93%;
+    --sidebar-foreground: 110 13% 21%;
+    --sidebar-primary: 110 13% 21%;
+    --sidebar-primary-foreground: 39 17% 93%;
+    --sidebar-accent: 39 11% 90%;
+    --sidebar-accent-foreground: 110 13% 21%;
+    --sidebar-border: 110 15% 80%;
+    --sidebar-ring: 110 13% 21%;
+  }
+
+  .dark {
+    --background: 110 30% 8%;
+    --foreground: 110 20% 85%;
+
+    --card: 110 30% 8%;
+    --card-foreground: 110 20% 85%;
+
+    --popover: 110 30% 8%;
+    --popover-foreground: 110 20% 85%;
+
+    --primary: 110 20% 85%;
+    --primary-foreground: 110 30% 12%;
+
+    --secondary: 110 25% 15%;
+    --secondary-foreground: 110 20% 85%;
+
+    --muted: 110 25% 15%;
+    --muted-foreground: 110 15% 65%;
+
+    --accent: 110 25% 15%;
+    --accent-foreground: 110 20% 85%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 110 20% 85%;
+
+    --border: 110 25% 15%;
+    --input: 110 25% 15%;
+    --ring: 110 20% 85%;
+    --sidebar-background: 110 30% 8%;
+    --sidebar-foreground: 110 20% 85%;
+    --sidebar-primary: 110 50% 40%;
+    --sidebar-primary-foreground: 110 30% 8%;
+    --sidebar-accent: 110 25% 15%;
+    --sidebar-accent-foreground: 110 20% 85%;
+    --sidebar-border: 110 25% 15%;
+    --sidebar-ring: 110 50% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
