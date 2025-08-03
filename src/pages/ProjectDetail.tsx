@@ -205,24 +205,17 @@ const ProjectDetail = () => {
                 </div>
                 
                 <TabsContent value="images" className="animate-fade-in">
-                  <Carousel className="w-full max-w-6xl mx-auto">
-                    <CarouselContent>
-                      {project.gallery.images.map((image, idx) => (
-                        <CarouselItem key={idx} className="basis-full sm:basis-1/2 lg:basis-1/3">
-                          <div className="aspect-[4/3] bg-cream border border-black/10 p-1 transition-transform hover:scale-[1.01]">
-                            <ZoomableImage 
-                              src={image.src} 
-                              alt={image.alt}
-                              className="h-full w-full object-cover"
-                            />
-                          </div>
-                        </CarouselItem>
-                      ))}
-                    </CarouselContent>
-                  </Carousel>
-                  <p className="text-center text-xs md:text-sm text-muted-foreground mt-4">
-                    Drag left and right to view more images
-                  </p>
+                  <div className="grid grid-cols-3 gap-4 max-w-6xl mx-auto">
+                    {project.gallery.images.map((image, idx) => (
+                      <div key={idx} className="aspect-square bg-cream border border-black/10 p-1 transition-transform hover:scale-[1.01]">
+                        <ZoomableImage 
+                          src={image.src} 
+                          alt={image.alt}
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </TabsContent>
                 
                 <TabsContent value="videos" className="animate-fade-in">
@@ -245,24 +238,17 @@ const ProjectDetail = () => {
               </Tabs>
             ) : (
               <div className="animate-fade-in">
-                <Carousel className="w-full max-w-6xl mx-auto">
-                  <CarouselContent>
-                    {project.gallery.images.map((image, idx) => (
-                      <CarouselItem key={idx} className="basis-full sm:basis-1/2 lg:basis-1/3">
-                        <div className="aspect-[4/3] bg-cream border border-black/10 p-1 transition-transform hover:scale-[1.01]">
-                          <ZoomableImage 
-                            src={image.src} 
-                            alt={image.alt}
-                            className="h-full w-full object-cover"
-                          />
-                        </div>
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                </Carousel>
-                <p className="text-center text-xs md:text-sm text-muted-foreground mt-4">
-                  Drag left and right to view more images
-                </p>
+                <div className="grid grid-cols-3 gap-4 max-w-6xl mx-auto">
+                  {project.gallery.images.map((image, idx) => (
+                    <div key={idx} className="aspect-square bg-cream border border-black/10 p-1 transition-transform hover:scale-[1.01]">
+                      <ZoomableImage 
+                        src={image.src} 
+                        alt={image.alt}
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
           </div>
