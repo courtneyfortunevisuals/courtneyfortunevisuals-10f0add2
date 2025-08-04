@@ -185,11 +185,9 @@ export const projects: Project[] = [
     password: "portfolio",
     gallery: {
       images: [
-        { src: "https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&w=800&q=80", alt: "AR App Interface" },
-        { src: "https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=800&q=80", alt: "Product Visualization" },
-        { src: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80", alt: "3D Models" },
-        { src: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&w=800&q=80", alt: "User Testing" },
-        { src: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?auto=format&fit=crop&w=800&q=80", alt: "Development Process" },
+        { src: "/lovable-uploads/471b42a8-db39-4bc8-a023-df081145cd84.png", alt: "Social media ad mockup with 1:1 square format" },
+        { src: "/lovable-uploads/adb9ffca-ecf0-4602-aa42-bca8bbed97e5.png", alt: "Facebook ad template design layout" },
+        { src: "/lovable-uploads/e644d7d5-2ef6-4c83-afa4-ba293cc17e8f.png", alt: "Widescreen social media ad format 16:9" },
       ],
       videos: [
         { title: "AR Demo", embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
