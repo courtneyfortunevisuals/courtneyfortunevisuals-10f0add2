@@ -65,7 +65,7 @@ const Index = () => {
             <div className="hidden lg:block order-1 lg:order-2">
               <div className="relative">
                 <iframe
-                  src="https://app.spline.design/file/bb1a8a8d-5c84-49e2-87ad-a8cec7898a6c"
+                  src="https://my.spline.design/untitled-vvlLL4ZFfpxVo2TriCUPKZH7/"
                   frameBorder="0"
                   width="100%" 
                   height="500px"
