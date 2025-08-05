@@ -37,49 +37,70 @@ const Gallery = () => {
   );
 };
 
-// Sample poster data
+// Inspirational poster data
 const posters = [
   {
     id: 1,
-    title: "Purple Eye",
-    artist: "Photoshop edit",
+    title: "Dance Like Nobody's Watching",
+    artist: "Inspirational Quote",
     year: "2024",
-    image: "/lovable-uploads/599ad53d-1b74-4133-8be3-ea26d489ae4c.png"
+    image: "/lovable-uploads/b5fdfadb-28ad-4323-b00d-d70f0c3ed23d.png"
   },
   {
     id: 2,
-    title: "Focus Poster",
-    artist: "Photoshop edit",
+    title: "You Did",
+    artist: "Motivational Quote",
     year: "2024",
-    image: "/lovable-uploads/285b305a-c855-4614-b4ca-7d4c5fbc9f38.png"
+    image: "/lovable-uploads/650eada7-5522-4a91-ab20-c5b963f7725e.png"
   },
   {
     id: 3,
-    title: "Golden Hour",
-    artist: "Soleil",
-    year: "2023",
-    image: "/lovable-uploads/a725b2f6-31ff-4b30-868e-ca7c949d526f.png"
+    title: "Journey of a Thousand Miles",
+    artist: "Wisdom Quote",
+    year: "2024",
+    image: "/lovable-uploads/703c68db-fe2d-4017-8d60-225e37cdd185.png"
   },
   {
     id: 4,
-    title: "Urban Dreams",
-    artist: "City Lights",
-    year: "2023",
-    image: "/lovable-uploads/4b5ea809-d085-4f67-985a-40687a83cb42.png"
+    title: "Comfort Zones",
+    artist: "Success Quote",
+    year: "2024",
+    image: "/lovable-uploads/de29257e-1489-4820-a85d-66d05d3a39af.png"
   },
   {
     id: 5,
-    title: "Digital Waves",
-    artist: "Synth Masters",
+    title: "You Are Enough",
+    artist: "Self-Love Quote",
     year: "2024",
-    image: "/lovable-uploads/08963f9e-f83d-44b4-bd3f-9b6b354087d9.png"
+    image: "/lovable-uploads/548cfa89-faa6-4768-80f7-e814ab25b284.png"
   },
   {
     id: 6,
-    title: "Neon Nights",
-    artist: "Electric Dreams",
-    year: "2023",
-    image: "/lovable-uploads/599ad53d-1b74-4133-8be3-ea26d489ae4c.png"
+    title: "Hard Work",
+    artist: "Fighting Spirit",
+    year: "2024",
+    image: "/lovable-uploads/75c228e9-e5ec-42a7-aacd-ee8497f7dddd.png"
+  },
+  {
+    id: 7,
+    title: "Get Started",
+    artist: "Action Quote",
+    year: "2024",
+    image: "/lovable-uploads/93a48ef0-3290-4b66-969d-c16198a83478.png"
+  },
+  {
+    id: 8,
+    title: "Be Original",
+    artist: "Authenticity Quote",
+    year: "2024",
+    image: "/lovable-uploads/0a23da5c-7dff-4d20-9eb3-3452ee0a58b7.png"
+  },
+  {
+    id: 9,
+    title: "Persistence",
+    artist: "Success Quote",
+    year: "2024",
+    image: "/lovable-uploads/5cf60ed0-d747-41ad-bc19-985490c78d86.png"
   }
 ];
 
