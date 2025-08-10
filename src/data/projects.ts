@@ -178,7 +178,7 @@ export const projects: Project[] = [
     ],
     coverImage: "/lovable-uploads/984cb165-5189-4c02-992e-5d2a3472c68d.png",
     year: 2022,
-    client: "ModernHome Furniture",
+    client: "various campaigns",
     duration: "6 months",
     role: "Digital Designer",
     tags: ["Augmented Reality", "3D Modeling", "E-Commerce", "Mobile Experience"],
