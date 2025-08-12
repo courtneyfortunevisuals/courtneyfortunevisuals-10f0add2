@@ -199,7 +199,7 @@ export const projects: Project[] = [
   },
   {
     id: 7,
-    title: "E-Commerce Platform Redesign",
+    title: "Case Study",
     summary: "Complete redesign of an online marketplace platform to improve user experience and conversion rates.",
     description: [
       "This project involved a comprehensive redesign of an established e-commerce platform that was struggling with low conversion rates and poor user experience.",
