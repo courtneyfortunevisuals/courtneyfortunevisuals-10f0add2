@@ -28,7 +28,7 @@ export const projects: Project[] = [
       "I conducted an audit of the existing design components, identified inconsistencies, and created a new system that balanced aesthetic quality with technical implementation requirements.",
       "The result was a cohesive design system with well-documented components, reducing design inconsistencies and development time for new features."
     ],
-    coverImage: "/lovable-uploads/4bd4ade2-1c9c-4269-96d1-583ccc637b66.png",
+    coverImage: "/lovable-uploads/f5823f61-a999-47ce-86bc-e32effc51b60.png",
     year: 2023,
     client: "Sprout Performance Partners",
     duration: "3 months",
@@ -57,7 +57,7 @@ export const projects: Project[] = [
       "I designed a range of promotional materials, including digital ads, social media content, and public transport branding, to create a cohesive and exciting visual identity for the campaign.",
       "The campaign resulted in a 40% increase in event attendance and significantly higher online engagement, successfully connecting the city's residents with local cultural events."
     ],
-    coverImage: "/lovable-uploads/31c7c344-772e-43fc-abe6-5d7d8525c064.png",
+    coverImage: "/lovable-uploads/f5823f61-a999-47ce-86bc-e32effc51b60.png",
     client: "MyCiti",
     duration: "3 months",
     role: "Digital Designer",
@@ -89,7 +89,7 @@ export const projects: Project[] = [
       "I developed a distinctive visual language including logo, color palette, typography, iconography, and brand guidelines that positioned the company as innovative and trustworthy.",
       "The brand identity was applied across digital and physical touchpoints, creating a cohesive and memorable brand experience that helped the company secure additional funding."
     ],
-    coverImage: "/lovable-uploads/a9604d13-cc30-4d54-8ac0-ca3b37244cc8.png",
+    coverImage: "/lovable-uploads/f5823f61-a999-47ce-86bc-e32effc51b60.png",
     year: 2022,
     client: "Travelstart",
     duration: "2 months",
@@ -117,7 +117,7 @@ export const projects: Project[] = [
       "The process included extensive user research, persona development, user flow mapping, wireframing, and high-fidelity prototyping, all validated through multiple rounds of user testing.",
       "The app launched to positive reviews, with users specifically praising its intuitive interface and helpful features that made habit tracking enjoyable rather than tedious."
     ],
-    coverImage: "/lovable-uploads/2442aa0d-84f6-4b84-b870-f5b586171746.png",
+    coverImage: "/lovable-uploads/f5823f61-a999-47ce-86bc-e32effc51b60.png",
     year: 2023,
     client: "Tiger Wheel & Tyre",
     duration: "5 months",
@@ -145,7 +145,7 @@ export const projects: Project[] = [
       "I developed various banner formats and sizes to accommodate different digital platforms and touchpoints, ensuring consistent messaging across all channels.",
       "The campaign successfully communicated the value proposition of the FNB-Clicks partnership, resulting in increased customer engagement and sign-ups for the rewards program."
     ],
-    coverImage: "/lovable-uploads/ba13530b-aa2c-4b3c-8f6f-3000043cebd3.png",
+    coverImage: "/lovable-uploads/f5823f61-a999-47ce-86bc-e32effc51b60.png",
     year: 2023,
     client: "FNB (First National Bank)",
     duration: "2 months",
@@ -176,7 +176,7 @@ export const projects: Project[] = [
       "The project involved 3D modeling, texture creation, and implementing AR functionality that detected floor surfaces and placed virtual furniture with accurate scaling and lighting.",
       "This solution increased customer confidence in online purchases, resulting in a 28% reduction in product returns and a 15% increase in average order value."
     ],
-    coverImage: "/lovable-uploads/984cb165-5189-4c02-992e-5d2a3472c68d.png",
+    coverImage: "/lovable-uploads/f5823f61-a999-47ce-86bc-e32effc51b60.png",
     year: 2022,
     client: "various campaigns",
     duration: "6 months",
