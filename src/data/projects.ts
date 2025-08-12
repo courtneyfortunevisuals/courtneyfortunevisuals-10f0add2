@@ -256,7 +256,7 @@ export const projects: Project[] = [
   },
   {
     id: 9,
-    title: "Mobile Banking App UI",
+    title: "AR Filter",
     summary: "User interface design for a modern mobile banking application focused on millennials.",
     description: [
       "This project involved designing a user-friendly mobile banking application specifically tailored for millennial users who prioritize convenience and modern design.",
