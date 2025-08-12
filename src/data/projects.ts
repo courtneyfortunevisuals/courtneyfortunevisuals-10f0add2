@@ -227,7 +227,7 @@ export const projects: Project[] = [
   },
   {
     id: 8,
-    title: "Corporate Identity System",
+    title: "Character Design",
     summary: "Development of a complete brand identity and visual system for a consulting firm.",
     description: [
       "This project involved creating a sophisticated brand identity for a management consulting firm looking to establish credibility in a competitive market.",
