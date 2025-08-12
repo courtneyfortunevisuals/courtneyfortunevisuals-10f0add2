@@ -196,5 +196,91 @@ export const projects: Project[] = [
         { title: "User Experience", embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
       ]
     }
+  },
+  {
+    id: 7,
+    title: "E-Commerce Platform Redesign",
+    summary: "Complete redesign of an online marketplace platform to improve user experience and conversion rates.",
+    description: [
+      "This project involved a comprehensive redesign of an established e-commerce platform that was struggling with low conversion rates and poor user experience.",
+      "I conducted extensive user research, analyzed conversion funnels, and redesigned the entire shopping experience from product discovery to checkout completion.",
+      "The new design resulted in a 45% increase in conversion rates and a 30% reduction in cart abandonment, significantly improving the platform's performance."
+    ],
+    coverImage: "/lovable-uploads/f5823f61-a999-47ce-86bc-e32effc51b60.png",
+    year: 2023,
+    client: "ShopSmart Online",
+    duration: "4 months",
+    role: "UX/UI Designer",
+    tags: ["E-Commerce", "Conversion Optimization", "User Research", "UI/UX"],
+    technologies: ["Figma", "Photoshop", "Illustrator", "Principle"],
+    isPasswordProtected: false,
+    gallery: {
+      images: [
+        { src: "/lovable-uploads/984cb165-5189-4c02-992e-5d2a3472c68d.png", alt: "E-commerce platform homepage redesign" },
+        { src: "/lovable-uploads/a725b2f6-31ff-4b30-868e-ca7c949d526f.png", alt: "Product listing page wireframes" },
+        { src: "/lovable-uploads/b0d40e41-39be-4613-ba38-7b7da045cd8a.png", alt: "Shopping cart and checkout flow" },
+      ],
+      videos: [
+        { title: "Platform Demo", embedUrl: "https://player.vimeo.com/video/1097596963?h=c10a61cbd4&autoplay=1&muted=1" },
+      ]
+    }
+  },
+  {
+    id: 8,
+    title: "Corporate Identity System",
+    summary: "Development of a complete brand identity and visual system for a consulting firm.",
+    description: [
+      "This project involved creating a sophisticated brand identity for a management consulting firm looking to establish credibility in a competitive market.",
+      "I developed a comprehensive visual identity system including logo design, typography, color schemes, business collateral, and digital brand guidelines.",
+      "The new brand identity helped the firm secure three major corporate clients within the first quarter after launch, establishing their market presence effectively."
+    ],
+    coverImage: "/lovable-uploads/f5823f61-a999-47ce-86bc-e32effc51b60.png",
+    year: 2022,
+    client: "Strategic Insights Group",
+    duration: "3 months",
+    role: "Brand Designer",
+    tags: ["Brand Identity", "Logo Design", "Corporate Design", "Visual Systems"],
+    technologies: ["Illustrator", "InDesign", "Photoshop", "After Effects"],
+    isPasswordProtected: true,
+    password: "portfolio",
+    gallery: {
+      images: [
+        { src: "/lovable-uploads/c2140a6b-f655-4357-868a-fd0476cb80ec.png", alt: "Corporate logo and brand guidelines" },
+        { src: "/lovable-uploads/ced288ce-0393-44b4-ba76-2c8202b5f35c.png", alt: "Business card and stationery design" },
+        { src: "/lovable-uploads/3825c04d-42a2-4867-96d0-fb081a1fc459.png", alt: "Brand application mockups" },
+      ],
+      videos: [
+        { title: "Brand Reveal", embedUrl: "https://player.vimeo.com/video/1097345492?h=abda5417c4&autoplay=1&muted=1" },
+      ]
+    }
+  },
+  {
+    id: 9,
+    title: "Mobile Banking App UI",
+    summary: "User interface design for a modern mobile banking application focused on millennials.",
+    description: [
+      "This project involved designing a user-friendly mobile banking application specifically tailored for millennial users who prioritize convenience and modern design.",
+      "I created an intuitive interface that simplified complex banking operations while maintaining security standards and regulatory compliance requirements.",
+      "The app achieved a 4.8-star rating in app stores and increased user engagement by 60%, with particular success among the target demographic of young professionals."
+    ],
+    coverImage: "/lovable-uploads/f5823f61-a999-47ce-86bc-e32effc51b60.png",
+    year: 2023,
+    client: "NextGen Bank",
+    duration: "6 months",
+    role: "Mobile UI Designer",
+    tags: ["Mobile App", "Banking", "UI Design", "Fintech"],
+    technologies: ["Sketch", "Principle", "Zeplin", "Photoshop"],
+    isPasswordProtected: true,
+    password: "portfolio",
+    gallery: {
+      images: [
+        { src: "/lovable-uploads/28028989-16e5-4f74-bd64-1bc718812927.png", alt: "Mobile banking app interface screens" },
+        { src: "/lovable-uploads/2947db43-c761-4459-ac95-49bbbbfff68c.png", alt: "App onboarding flow design" },
+        { src: "/lovable-uploads/30fc1048-00b3-456f-83df-8d9ef1ab39ee.png", alt: "Banking dashboard and transaction views" },
+      ],
+      videos: [
+        { title: "App Walkthrough", embedUrl: "https://player.vimeo.com/video/1097621059?h=dd0884ae32&autoplay=1&muted=1" },
+      ]
+    }
   }
 ];
