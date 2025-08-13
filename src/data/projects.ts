@@ -18,7 +18,7 @@ export interface Project {
   };
 }
 
-export const projects: Project[] = [
+const allProjects: Project[] = [
   {
     id: 1,
     title: "Internal Rebranding",
@@ -284,3 +284,6 @@ export const projects: Project[] = [
     }
   }
 ];
+
+// Export only the first 6 projects, hiding the last 3
+export const projects: Project[] = allProjects.slice(0, 6);
