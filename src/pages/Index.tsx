@@ -27,8 +27,8 @@ const Index = () => {
         </div>
         
         <div className="container relative z-10 px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div className="max-w-2xl space-y-4 md:space-y-6 animate-fade-in order-2 lg:order-1">
+          <div className="flex justify-center items-center">
+            <div className="max-w-2xl space-y-4 md:space-y-6 animate-fade-in text-center">
               <div className="w-full overflow-hidden rounded-lg">
                 <div className="relative pb-[56.25%] h-0">
                   <iframe 
@@ -48,7 +48,7 @@ const Index = () => {
                 the lens of album artwork and musical inspiration.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2 md:pt-4">
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2 md:pt-4 justify-center">
                 <Button asChild size="lg" className="group w-full sm:w-auto">
                   <Link to="/projects">
                     Browse Collection
