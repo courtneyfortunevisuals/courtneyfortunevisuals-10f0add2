@@ -62,18 +62,6 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="hidden lg:block order-1 lg:order-2">
-              <div className="relative">
-                <iframe
-                  src="https://my.spline.design/untitled-vvlLL4ZFfpxVo2TriCUPKZH7/"
-                  frameBorder="0"
-                  width="100%" 
-                  height="500px"
-                  className="rounded-lg animate-fade-in"
-                  title="3D DJ Illustration"
-                ></iframe>
-              </div>
-            </div>
           </div>
         </div>
       </section>
