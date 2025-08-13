@@ -287,3 +287,6 @@ const allProjects: Project[] = [
 
 // Export only the first 6 projects, hiding the last 3
 export const projects: Project[] = allProjects.slice(0, 6);
+
+// Export all projects for use when showing older projects
+export { allProjects };

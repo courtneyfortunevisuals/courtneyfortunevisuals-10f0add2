@@ -1,10 +1,15 @@
 
 import Layout from "@/components/Layout";
 import { Link } from "react-router-dom";
-import { projects } from "@/data/projects";
+import { projects, allProjects } from "@/data/projects";
 import { Album } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 const Projects = () => {
+  const [showAll, setShowAll] = useState(false);
+  const displayedProjects = showAll ? allProjects : projects;
+
   return (
     <Layout>
       <section className="py-8 md:py-12 lg:py-20 dark:bg-green-900/20">
@@ -17,7 +22,7 @@ const Projects = () => {
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-x-6 lg:gap-y-12">
-            {projects.map((project, index) => (
+            {displayedProjects.map((project, index) => (
               <div 
                 key={project.id}
                 className="group animate-fade-in"
@@ -61,6 +66,19 @@ const Projects = () => {
               </div>
             ))}
           </div>
+          
+          {!showAll && (
+            <div className="text-center mt-8 md:mt-12">
+              <Button 
+                onClick={() => setShowAll(true)}
+                variant="outline"
+                size="lg"
+                className="min-w-[200px]"
+              >
+                Show Older Projects
+              </Button>
+            </div>
+          )}
         </div>
       </section>
     </Layout>
