@@ -21,6 +21,35 @@ export interface Project {
 const allProjects: Project[] = [
   {
     id: 1,
+    title: "Character Design",
+    summary: "Development of a complete brand identity and visual system for a consulting firm.",
+    description: [
+      "This project involved creating a sophisticated brand identity for a management consulting firm looking to establish credibility in a competitive market.",
+      "I developed a comprehensive visual identity system including logo design, typography, color schemes, business collateral, and digital brand guidelines.",
+      "The new brand identity helped the firm secure three major corporate clients within the first quarter after launch, establishing their market presence effectively."
+    ],
+    coverImage: "/lovable-uploads/f5823f61-a999-47ce-86bc-e32effc51b60.png",
+    year: 2022,
+    client: "Strategic Insights Group",
+    duration: "3 months",
+    role: "Brand Designer",
+    tags: ["Brand Identity", "Logo Design", "Corporate Design", "Visual Systems"],
+    technologies: ["Illustrator", "InDesign", "Photoshop", "After Effects"],
+    isPasswordProtected: true,
+    password: "portfolio",
+    gallery: {
+      images: [
+        { src: "/lovable-uploads/c2140a6b-f655-4357-868a-fd0476cb80ec.png", alt: "Corporate logo and brand guidelines" },
+        { src: "/lovable-uploads/ced288ce-0393-44b4-ba76-2c8202b5f35c.png", alt: "Business card and stationery design" },
+        { src: "/lovable-uploads/3825c04d-42a2-4867-96d0-fb081a1fc459.png", alt: "Brand application mockups" },
+      ],
+      videos: [
+        { title: "Brand Reveal", embedUrl: "https://player.vimeo.com/video/1097345492?h=abda5417c4&autoplay=1&muted=1" },
+      ]
+    }
+  },
+  {
+    id: 2,
     title: "Internal Rebranding",
     summary: "A comprehensive redesign of a company's design system, improving consistency and efficiency.",
     description: [
@@ -49,7 +78,7 @@ const allProjects: Project[] = [
     }
   },
   {
-    id: 2,
+    id: 3,
     title: "CPT Events Campaign",
     summary: "A city-wide campaign to promote local events, improving community engagement and attendance.",
     description: [
@@ -81,7 +110,7 @@ const allProjects: Project[] = [
     }
   },
   {
-    id: 3,
+    id: 4,
     title: "Travelstart Generic Creative",
     summary: "Development of a comprehensive brand identity system for a tech startup.",
     description: [
@@ -109,7 +138,7 @@ const allProjects: Project[] = [
     }
   },
   {
-    id: 4,
+    id: 5,
     title: "Best in the wet Campaign",
     summary: "User experience design for a health and wellness mobile application.",
     description: [
@@ -137,7 +166,7 @@ const allProjects: Project[] = [
     }
   },
   {
-    id: 5,
+    id: 6,
     title: "FNB Display Banners",
     summary: "Digital banner campaign for FNB's Clicks Baby Club partnership, promoting cashback rewards.",
     description: [
@@ -168,7 +197,7 @@ const allProjects: Project[] = [
     }
   },
   {
-    id: 6,
+    id: 7,
     title: "Social Media Ads",
     summary: "Augmented reality experience for visualizing furniture products in real-world spaces.",
     description: [
@@ -198,7 +227,7 @@ const allProjects: Project[] = [
     }
   },
   {
-    id: 7,
+    id: 8,
     title: "Case Study",
     summary: "Complete redesign of an online marketplace platform to improve user experience and conversion rates.",
     description: [
@@ -222,35 +251,6 @@ const allProjects: Project[] = [
       ],
       videos: [
         { title: "Platform Demo", embedUrl: "https://player.vimeo.com/video/1097596963?h=c10a61cbd4&autoplay=1&muted=1" },
-      ]
-    }
-  },
-  {
-    id: 8,
-    title: "Character Design",
-    summary: "Development of a complete brand identity and visual system for a consulting firm.",
-    description: [
-      "This project involved creating a sophisticated brand identity for a management consulting firm looking to establish credibility in a competitive market.",
-      "I developed a comprehensive visual identity system including logo design, typography, color schemes, business collateral, and digital brand guidelines.",
-      "The new brand identity helped the firm secure three major corporate clients within the first quarter after launch, establishing their market presence effectively."
-    ],
-    coverImage: "/lovable-uploads/f5823f61-a999-47ce-86bc-e32effc51b60.png",
-    year: 2022,
-    client: "Strategic Insights Group",
-    duration: "3 months",
-    role: "Brand Designer",
-    tags: ["Brand Identity", "Logo Design", "Corporate Design", "Visual Systems"],
-    technologies: ["Illustrator", "InDesign", "Photoshop", "After Effects"],
-    isPasswordProtected: true,
-    password: "portfolio",
-    gallery: {
-      images: [
-        { src: "/lovable-uploads/c2140a6b-f655-4357-868a-fd0476cb80ec.png", alt: "Corporate logo and brand guidelines" },
-        { src: "/lovable-uploads/ced288ce-0393-44b4-ba76-2c8202b5f35c.png", alt: "Business card and stationery design" },
-        { src: "/lovable-uploads/3825c04d-42a2-4867-96d0-fb081a1fc459.png", alt: "Brand application mockups" },
-      ],
-      videos: [
-        { title: "Brand Reveal", embedUrl: "https://player.vimeo.com/video/1097345492?h=abda5417c4&autoplay=1&muted=1" },
       ]
     }
   },
