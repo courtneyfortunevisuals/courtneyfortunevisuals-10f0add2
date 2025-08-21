@@ -23,13 +23,21 @@ const Index = () => {
     <Layout>
       <section className="relative min-h-[70vh] md:h-[80vh] flex items-center py-8 md:py-0" style={{ backgroundColor: isDarkMode ? '#101A0E' : '#f2efea' }}>
         <div className="absolute inset-0 z-0">
-          <div className="h-full w-full" style={{ backgroundColor: isDarkMode ? '#101A0E' : '#f2efea' }} />
+          <iframe 
+            src="https://my.spline.design/untitled-vvlLL4ZFfpxVo2TriCUPKZH7/"
+            frameBorder="0"
+            width="100%"
+            height="100%"
+            className="border-0"
+            allowFullScreen
+            title="Spline 3D Design Background"
+          ></iframe>
         </div>
         
         <div className="container relative z-10 px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="max-w-2xl">
             <div className="space-y-4 md:space-y-6 animate-fade-in text-left">
-              <div className="w-full overflow-hidden rounded-lg">
+              <div className="w-full max-w-lg overflow-hidden rounded-lg">
                 <div className="relative pb-[56.25%] h-0">
                   <iframe 
                     key={videoUrl}
@@ -60,18 +68,6 @@ const Index = () => {
                   <Link to="/about">About The Artist</Link>
                 </Button>
               </div>
-            </div>
-            
-            <div className="w-full h-[400px] lg:h-[500px] overflow-hidden rounded-lg animate-fade-in">
-              <iframe 
-                src="https://my.spline.design/untitled-vvlLL4ZFfpxVo2TriCUPKZH7/"
-                frameBorder="0"
-                width="100%"
-                height="100%"
-                className="border-0"
-                allowFullScreen
-                title="Spline 3D Design"
-              ></iframe>
             </div>
           </div>
         </div>
