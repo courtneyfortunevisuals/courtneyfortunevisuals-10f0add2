@@ -27,8 +27,8 @@ const Index = () => {
         </div>
         
         <div className="container relative z-10 px-4">
-          <div className="flex justify-center items-center">
-            <div className="max-w-2xl space-y-4 md:space-y-6 animate-fade-in text-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="space-y-4 md:space-y-6 animate-fade-in text-left">
               <div className="w-full overflow-hidden rounded-lg">
                 <div className="relative pb-[56.25%] h-0">
                   <iframe 
@@ -48,7 +48,7 @@ const Index = () => {
                 the lens of album artwork and musical inspiration.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2 md:pt-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2 md:pt-4">
                 <Button asChild size="lg" className="group w-full sm:w-auto">
                   <Link to="/projects">
                     Browse Collection
@@ -62,6 +62,17 @@ const Index = () => {
               </div>
             </div>
             
+            <div className="w-full h-[400px] lg:h-[500px] overflow-hidden rounded-lg animate-fade-in">
+              <iframe 
+                src="https://my.spline.design/untitled-vvlLL4ZFfpxVo2TriCUPKZH7/"
+                frameBorder="0"
+                width="100%"
+                height="100%"
+                className="border-0"
+                allowFullScreen
+                title="Spline 3D Design"
+              ></iframe>
+            </div>
           </div>
         </div>
       </section>
