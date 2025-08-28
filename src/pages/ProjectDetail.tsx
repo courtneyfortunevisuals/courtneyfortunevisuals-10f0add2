@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Layout from "@/components/Layout";
-import { projects } from "@/data/projects";
+import { allProjects } from "@/data/projects";
 import PasswordProtection from "@/components/PasswordProtection";
 import ZoomableImage from "@/components/ZoomableImage";
 import { ArrowLeft, Disc, Music, Headphones } from "lucide-react";
@@ -14,7 +14,7 @@ const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const projectId = parseInt(id || "0");
-  const project = projects.find(p => p.id === projectId);
+  const project = allProjects.find(p => p.id === projectId);
   
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
