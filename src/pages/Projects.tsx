@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
 const Projects = () => {
-  const [showAll, setShowAll] = useState(false);
+  const [showAll, setShowAll] = useState(true);
   const displayedProjects = showAll ? allProjects : projects;
 
   return (
