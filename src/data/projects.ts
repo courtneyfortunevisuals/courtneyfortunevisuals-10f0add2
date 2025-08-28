@@ -35,8 +35,7 @@ const allProjects: Project[] = [
     role: "Brand Designer",
     tags: ["Brand Identity", "Logo Design", "Corporate Design", "Visual Systems"],
     technologies: ["Illustrator", "InDesign", "Photoshop", "After Effects"],
-    isPasswordProtected: true,
-    password: "portfolio",
+    isPasswordProtected: false,
     gallery: {
       images: [
         { src: "/lovable-uploads/c2140a6b-f655-4357-868a-fd0476cb80ec.png", alt: "Corporate logo and brand guidelines" },
