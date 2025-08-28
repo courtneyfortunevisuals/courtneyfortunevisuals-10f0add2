@@ -27,7 +27,7 @@ const Index = () => {
         </div>
         
         <div className="container relative z-10 px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="space-y-4 md:space-y-6 animate-fade-in text-left">
               <div className="w-full overflow-hidden rounded-lg">
                 <div className="relative pb-[56.25%] h-0">
@@ -60,6 +60,18 @@ const Index = () => {
                   <Link to="/about">About The Artist</Link>
                 </Button>
               </div>
+            </div>
+            
+            <div className="w-full h-[400px] lg:h-[500px] overflow-hidden rounded-lg animate-fade-in">
+              <iframe 
+                src="https://my.spline.design/untitled-vvlLL4ZFfpxVo2TriCUPKZH7/"
+                frameBorder="0"
+                width="100%"
+                height="100%"
+                className="border-0"
+                allowFullScreen
+                title="Spline 3D Design"
+              ></iframe>
             </div>
           </div>
         </div>
