@@ -236,7 +236,7 @@ const allProjects: Project[] = [
     ],
     coverImage: "/lovable-uploads/f5823f61-a999-47ce-86bc-e32effc51b60.png",
     year: 2023,
-    client: "ShopSmart Online",
+    client: "Do Better Skincare Collection",
     duration: "4 months",
     role: "UX/UI Designer",
     tags: ["E-Commerce", "Conversion Optimization", "User Research", "UI/UX"],
