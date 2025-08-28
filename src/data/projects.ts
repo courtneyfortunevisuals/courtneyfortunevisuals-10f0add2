@@ -30,7 +30,7 @@ const allProjects: Project[] = [
     ],
     coverImage: "/lovable-uploads/f5823f61-a999-47ce-86bc-e32effc51b60.png",
     year: 2022,
-    client: "Strategic Insights Group",
+    client: "courtneyfortune visuals",
     duration: "3 months",
     role: "Brand Designer",
     tags: ["Brand Identity", "Logo Design", "Corporate Design", "Visual Systems"],
