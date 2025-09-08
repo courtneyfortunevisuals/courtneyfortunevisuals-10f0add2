@@ -269,8 +269,7 @@ const allProjects: Project[] = [
     role: "Mobile UI Designer",
     tags: ["Mobile App", "Banking", "UI Design", "Fintech"],
     technologies: ["Sketch", "Principle", "Zeplin", "Photoshop"],
-    isPasswordProtected: true,
-    password: "portfolio",
+    isPasswordProtected: false,
     gallery: {
       images: [
         { src: "/lovable-uploads/28028989-16e5-4f74-bd64-1bc718812927.png", alt: "Mobile banking app interface screens" },
