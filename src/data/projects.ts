@@ -264,7 +264,7 @@ const allProjects: Project[] = [
     ],
     coverImage: "/lovable-uploads/f5823f61-a999-47ce-86bc-e32effc51b60.png",
     year: 2023,
-    client: "NextGen Bank",
+    client: "courtneyfortune visuals",
     duration: "6 months",
     role: "Mobile UI Designer",
     tags: ["Mobile App", "Banking", "UI Design", "Fintech"],
