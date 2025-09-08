@@ -255,7 +255,7 @@ const allProjects: Project[] = [
   },
   {
     id: 9,
-    title: "AR Filter",
+    title: "Pineapple in Pool Filter",
     summary: "User interface design for a modern mobile banking application focused on millennials.",
     description: [
       "This project involved designing a user-friendly mobile banking application specifically tailored for millennial users who prioritize convenience and modern design.",
