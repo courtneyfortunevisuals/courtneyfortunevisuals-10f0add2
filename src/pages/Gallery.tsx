@@ -6,27 +6,27 @@ import ZoomableImage from "@/components/ZoomableImage";
 const Gallery = () => {
   return (
     <Layout>
-      <section className="py-8 md:py-12 lg:py-16">
-        <div className="container px-4">
-          <div className="text-center max-w-2xl mx-auto space-y-3 md:space-y-4 mb-8 md:mb-12 lg:mb-16">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">Poster Gallery</h1>
-            <p className="text-muted-foreground text-base md:text-lg">
+      <section className="py-6 md:py-8 lg:py-12 xl:py-16">
+        <div className="container px-4 md:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto space-y-2 md:space-y-3 lg:space-y-4 mb-6 md:mb-8 lg:mb-12 xl:mb-16">
+            <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold">Poster Gallery</h1>
+            <p className="text-muted-foreground text-sm md:text-base lg:text-lg">
               A curated collection of album artwork and poster designs
             </p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-4 lg:gap-6 xl:gap-8">
             {posters.map((poster) => (
-              <Card key={poster.id} className="overflow-hidden group">
+              <Card key={poster.id} className="overflow-hidden group hover:shadow-lg transition-all duration-300">
                 <ZoomableImage 
                   src={poster.image}
                   alt={poster.title}
-                  className="aspect-square"
+                  className="aspect-square group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="p-6">
-                  <h3 className="font-semibold text-lg mb-2">{poster.title}</h3>
-                  <p className="text-muted-foreground mb-2">{poster.artist}</p>
-                  <p className="text-sm text-muted-foreground">{poster.year}</p>
+                <div className="p-3 md:p-4 lg:p-6">
+                  <h3 className="font-semibold text-sm md:text-base lg:text-lg mb-1 md:mb-2 line-clamp-2">{poster.title}</h3>
+                  <p className="text-muted-foreground text-xs md:text-sm mb-1 md:mb-2 truncate">{poster.artist}</p>
+                  <p className="text-xs text-muted-foreground">{poster.year}</p>
                 </div>
               </Card>
             ))}

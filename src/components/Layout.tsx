@@ -19,7 +19,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-grow pt-16 md:pt-20 lg:pt-24">
+      <main className="flex-grow pt-14 md:pt-16 lg:pt-20 xl:pt-24">
         {children}
       </main>
       <Footer />
