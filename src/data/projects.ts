@@ -272,9 +272,9 @@ const allProjects: Project[] = [
     isPasswordProtected: false,
     gallery: {
       images: [
-        { src: "/lovable-uploads/28028989-16e5-4f74-bd64-1bc718812927.png", alt: "Mobile banking app interface screens" },
-        { src: "/lovable-uploads/2947db43-c761-4459-ac95-49bbbbfff68c.png", alt: "App onboarding flow design" },
-        { src: "/lovable-uploads/30fc1048-00b3-456f-83df-8d9ef1ab39ee.png", alt: "Banking dashboard and transaction views" },
+        { src: "/lovable-uploads/38cb9a77-a753-4600-9eee-5d737d925b7d.png", alt: "Pineapple with white sunglasses floating in blue pool water" },
+        { src: "/lovable-uploads/6fd088eb-23b4-443c-93c6-fe7246f7c746.png", alt: "Pineapple with stylish sunglasses in swimming pool setting" },
+        { src: "/lovable-uploads/4b820151-e83a-4abc-a1ba-38d4bd12e1bb.png", alt: "Cool pineapple with sunglasses filter effect in pool" },
       ],
       videos: [
         { title: "App Walkthrough", embedUrl: "https://player.vimeo.com/video/1097621059?h=dd0884ae32&autoplay=1&muted=1" },
