@@ -27,32 +27,32 @@ const Index = () => {
         </div>
         
         <div className="container relative z-10 px-4 md:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
-            <div className="space-y-4 md:space-y-6 animate-fade-in text-left order-2 lg:order-1">
-              <div className="w-full overflow-hidden rounded-lg lg:hidden">
-                <div className="relative pb-[56.25%] h-0">
-                  <iframe 
-                    key={videoUrl}
-                    src={videoUrl}
-                    className="absolute top-0 left-0 w-full h-full"
-                    frameBorder="0"
-                    allow="autoplay; fullscreen; picture-in-picture"
-                    allowFullScreen
-                    title="CFV Video"
-                  ></iframe>
-                </div>
+          <div className="flex flex-col items-center justify-center text-center space-y-6 md:space-y-8">
+            <div className="w-full max-w-2xl overflow-hidden rounded-lg">
+              <div className="relative pb-[56.25%] h-0">
+                <iframe 
+                  key={videoUrl}
+                  src={videoUrl}
+                  className="absolute top-0 left-0 w-full h-full"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  title="CFV Video"
+                ></iframe>
               </div>
-              
+            </div>
+            
+            <div className="space-y-4 md:space-y-6 animate-fade-in">
               <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight">
                 Visual Narratives
               </h1>
               
-              <p className="text-sm md:text-base lg:text-lg xl:text-xl text-muted-foreground leading-relaxed">
+              <p className="text-sm md:text-base lg:text-lg xl:text-xl text-muted-foreground leading-relaxed max-w-2xl">
                 Welcome to my collection — exploring visual narratives through 
                 the lens of album artwork and musical inspiration.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2 md:pt-4">
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2 md:pt-4 justify-center">
                 <Button asChild size="lg" className="group w-full sm:w-auto text-sm md:text-base">
                   <Link to="/projects">
                     Browse Collection
@@ -63,34 +63,6 @@ const Index = () => {
                 <Button asChild variant="outline" size="lg" className="w-full sm:w-auto text-sm md:text-base">
                   <Link to="/about">About The Artist</Link>
                 </Button>
-              </div>
-            </div>
-            
-            <div className="w-full order-1 lg:order-2">
-              <div className="hidden lg:block w-full overflow-hidden rounded-lg mb-6">
-                <div className="relative pb-[56.25%] h-0">
-                  <iframe 
-                    key={videoUrl}
-                    src={videoUrl}
-                    className="absolute top-0 left-0 w-full h-full"
-                    frameBorder="0"
-                    allow="autoplay; fullscreen; picture-in-picture"
-                    allowFullScreen
-                    title="CFV Video"
-                  ></iframe>
-                </div>
-              </div>
-              
-              <div className="w-full h-[300px] md:h-[400px] lg:h-[450px] xl:h-[500px] overflow-hidden rounded-lg animate-fade-in">
-                <iframe 
-                  src="https://my.spline.design/untitled-vvlLL4ZFfpxVo2TriCUPKZH7/"
-                  frameBorder="0"
-                  width="100%"
-                  height="100%"
-                  className="border-0"
-                  allowFullScreen
-                  title="Spline 3D Design"
-                ></iframe>
               </div>
             </div>
           </div>
