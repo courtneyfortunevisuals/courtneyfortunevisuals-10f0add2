@@ -42,7 +42,7 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="space-y-4 md:space-y-6 animate-fade-in">
+            <div className="space-y-4 md:space-y-6 animate-fade-in mb-5">
               <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight">
                 Visual Narratives
               </h1>
