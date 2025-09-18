@@ -72,7 +72,7 @@ const Index = () => {
       <section className="py-8 md:py-12 lg:py-16 xl:py-24 bg-muted/50">
         <div className="container px-4 md:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto space-y-3 mb-8 md:mb-12 lg:mb-16">
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold">Featured Albums</h2>
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold">My Collection</h2>
             <p className="text-muted-foreground text-sm md:text-base lg:text-lg">
               Explore the latest additions to the collection
             </p>
