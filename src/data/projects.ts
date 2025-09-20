@@ -21,6 +21,34 @@ export interface Project {
 const allProjects: Project[] = [
   {
     id: 1,
+    title: "Made with AI",
+    summary: "AI-generated visual artwork exploring the intersection of technology and creativity.",
+    description: [
+      "This project showcases the potential of artificial intelligence in creating compelling visual narratives and artistic compositions.",
+      "Using advanced AI tools and machine learning algorithms, I explored new possibilities in digital art creation, pushing the boundaries of what's possible with technology-assisted creativity.",
+      "The resulting collection demonstrates how AI can be used as a creative tool to generate unique visual stories that blend technical innovation with artistic vision."
+    ],
+    coverImage: "/lovable-uploads/f5823f61-a999-47ce-86bc-e32effc51b60.png",
+    year: 2024,
+    client: "Personal Project",
+    duration: "1 month",
+    role: "AI Artist",
+    tags: ["AI Art", "Digital Art", "Machine Learning", "Creative Technology"],
+    technologies: ["Midjourney", "DALL-E", "Stable Diffusion", "Photoshop"],
+    isPasswordProtected: false,
+    gallery: {
+      images: [
+        { src: "/lovable-uploads/c2140a6b-f655-4357-868a-fd0476cb80ec.png", alt: "AI-generated abstract composition" },
+        { src: "/lovable-uploads/ced288ce-0393-44b4-ba76-2c8202b5f35c.png", alt: "Technology-inspired digital artwork" },
+        { src: "/lovable-uploads/3825c04d-42a2-4867-96d0-fb081a1fc459.png", alt: "Creative AI visual narrative" },
+      ],
+      videos: [
+        { title: "AI Art Process", embedUrl: "https://player.vimeo.com/video/1097345492?h=abda5417c4&autoplay=1&muted=1" },
+      ]
+    }
+  },
+  {
+    id: 2,
     title: "Character Design",
     summary: "Development of a complete brand identity and visual system for a consulting firm.",
     description: [
