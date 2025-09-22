@@ -2,7 +2,7 @@
 import Layout from "@/components/Layout";
 import { Link } from "react-router-dom";
 import { projects, allProjects } from "@/data/projects";
-import { Album } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
@@ -55,14 +55,6 @@ const Projects = () => {
                     </div>
                   </div>
                   
-                  <div className="p-2 md:p-3 lg:p-4 bg-card border-x border-b border-muted group-hover:border-primary/20 transition-colors">
-                    <div className="flex justify-between items-center">
-                      <div className="flex items-center gap-2">
-                        <Album size={14} className="md:w-4 md:h-4" />
-                        <span className="text-xs md:text-sm text-muted-foreground">{project.year}</span>
-                      </div>
-                    </div>
-                  </div>
                 </Link>
               </div>
             ))}
