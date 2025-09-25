@@ -312,8 +312,9 @@ const allProjects: Project[] = [
   }
 ];
 
-// Export only the first 6 projects, hiding the last 4
-export const projects: Project[] = allProjects.slice(0, 6);
+// Filter out specific projects and export only the first 6 of remaining projects
+const filteredProjects = allProjects.filter(project => project.id !== 8 && project.id !== 9);
+export const projects: Project[] = filteredProjects.slice(0, 6);
 
 // Export all projects for use when showing older projects
 export { allProjects };
