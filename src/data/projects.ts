@@ -160,7 +160,7 @@ const allProjects: Project[] = [
         { src: "/lovable-uploads/8c522066-cc10-428a-b251-dace7763b375.png", alt: "Tiger Wheel & Tyre Best in the Wet campaign materials and web layouts" },
       ],
       videos: [
-        { title: "Campaign Demo", embedUrl: "https://player.vimeo.com/video/1097621059?h=dd0884ae32&autoplay=1&muted=1" },
+        { title: "Campaign Demo", embedUrl: "https://player.vimeo.com/video/1121966686?autoplay=1&muted=1" },
       ]
     }
   },
