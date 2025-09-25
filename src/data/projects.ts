@@ -94,14 +94,9 @@ const allProjects: Project[] = [
     isPasswordProtected: false,
     gallery: {
       images: [
-        { src: "/lovable-uploads/7c7ddda3-cd83-4dcf-af6f-22d6a7b36b25.png", alt: "MyCiTi campaign promotional banners on laptop showing plan, package and online options" },
-        { src: "/lovable-uploads/41df6239-81e5-4b67-8cf5-995a66ed58b1.png", alt: "MyCiTi campaign materials featuring events, planning and transport messaging" },
-        { src: "/lovable-uploads/5eefbc7d-2b97-4ac8-ab8a-302519108566.png", alt: "MyCiTi website layout with campaign banners in browser view" },
-        { src: "/lovable-uploads/6f1e7d95-c695-4496-8eb4-e63eef9fbabe.png", alt: "MyCiTi event promotion digital assets with consistent branding" },
-        { src: "/lovable-uploads/4784948b-4111-4638-bdce-7c53c6e48fea.png", alt: "MyCiTi event capital campaign materials with South African flag imagery" },
-        { src: "/lovable-uploads/581372e2-a0b1-4ec9-882b-370dfc42130a.png", alt: "MyCiTi event capital website mockup in browser" },
-        { src: "/lovable-uploads/21ad7830-0942-4540-b974-71aab8be6042.png", alt: "MyCiTi big events campaign promotional materials with people imagery" },
-        { src: "/lovable-uploads/0adb63e7-82fc-426d-9435-e247ec0d41ae.png", alt: "MyCiTi big events website integration in browser view" },
+        { src: "/lovable-uploads/Project_2_800x800-01.jpg", alt: "MyCiTi CPT Events campaign website design on laptop" },
+        { src: "/lovable-uploads/Project_2_800x800-02.jpg", alt: "MyCiTi CPT Events campaign banner designs and materials" },
+        { src: "/lovable-uploads/Project_2_800x800-03.jpg", alt: "MyCiTi CPT Events campaign website layout in browser view" },
       ],
       videos: [
         { title: "Campaign Overview", embedUrl: "https://player.vimeo.com/video/1121966796?autoplay=1&muted=1" },
