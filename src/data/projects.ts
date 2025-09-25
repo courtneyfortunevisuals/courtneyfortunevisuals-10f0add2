@@ -191,7 +191,8 @@ const allProjects: Project[] = [
         { src: "/lovable-uploads/1986da5f-6241-41ed-a090-6623cbaabdd9.png", alt: "FNB FIFA World Cup campaign digital layout and banner variations" },
       ],
       videos: [
-        { title: "Campaign Overview", embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
+        { title: "FNB Display Banner Animation", embedUrl: "https://player.vimeo.com/video/1121937982?autoplay=1&muted=1" },
+        { title: "FNB Campaign Showcase", embedUrl: "https://player.vimeo.com/video/1121943590?autoplay=1&muted=1" },
       ]
     }
   },
