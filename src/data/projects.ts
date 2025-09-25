@@ -104,7 +104,7 @@ const allProjects: Project[] = [
         { src: "/lovable-uploads/0adb63e7-82fc-426d-9435-e247ec0d41ae.png", alt: "MyCiTi big events website integration in browser view" },
       ],
       videos: [
-        { title: "Campaign Overview", embedUrl: "https://player.vimeo.com/video/1097596963?h=c10a61cbd4&autoplay=1&muted=1" },
+        { title: "Campaign Overview", embedUrl: "https://player.vimeo.com/video/1121966796?autoplay=1&muted=1" },
       ]
     }
   },
