@@ -248,11 +248,39 @@ const allProjects: Project[] = [
         { title: "App Walkthrough", embedUrl: "https://player.vimeo.com/video/1117821971?autoplay=1&muted=1" },
       ]
     }
+  },
+  {
+    id: 11,
+    title: "3d Swirl Project",
+    summary: "Dynamic 3D visualization and motion graphics project featuring organic swirl animations.",
+    description: [
+      "This project focused on creating dynamic 3D swirl animations and organic motion graphics for various digital applications.",
+      "I developed fluid particle systems and complex swirl patterns using advanced 3D modeling and animation techniques to create visually striking content.",
+      "The project resulted in a library of reusable 3D assets and animation sequences that enhanced visual storytelling across multiple campaigns."
+    ],
+    coverImage: "/lovable-uploads/f5823f61-a999-47ce-86bc-e32effc51b60.png",
+    year: 2023,
+    client: "courtneyfortune visuals",
+    duration: "4 months",
+    role: "3D Artist & Motion Designer",
+    tags: ["3D Animation", "Motion Graphics", "Particle Systems", "Visual Effects"],
+    technologies: ["Cinema 4D", "After Effects", "Blender", "Octane Render"],
+    isPasswordProtected: false,
+    gallery: {
+      images: [
+        { src: "/lovable-uploads/f5823f61-a999-47ce-86bc-e32effc51b60.png", alt: "3D swirl animation sequences and motion graphics" },
+        { src: "/lovable-uploads/f5823f61-a999-47ce-86bc-e32effc51b60.png", alt: "Organic particle system designs" },
+        { src: "/lovable-uploads/f5823f61-a999-47ce-86bc-e32effc51b60.png", alt: "Dynamic 3D swirl patterns and animations" },
+      ],
+      videos: [
+        { title: "3D Swirl Animation Demo", embedUrl: "https://player.vimeo.com/video/1097345492?h=abda5417c4&autoplay=1&muted=1" },
+      ]
+    }
   }
 ];
 
-// Export only the first 6 projects
-export const projects: Project[] = allProjects.slice(0, 6);
+// Export only the first 7 projects (updated to include the new project)
+export const projects: Project[] = allProjects.slice(0, 7);
 
 // Export all projects for use when showing older projects
 export { allProjects };
