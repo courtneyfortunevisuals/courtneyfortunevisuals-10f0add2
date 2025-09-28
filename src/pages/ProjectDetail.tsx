@@ -84,7 +84,7 @@ const ProjectDetail = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
               {/* Album Cover */}
-              <div className="relative aspect-square max-w-sm md:max-w-md lg:max-w-lg mx-auto overflow-hidden">
+              <div className="relative aspect-square max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto lg:mx-0 overflow-hidden">
                 <img 
                   src={project.coverImage} 
                   alt={project.title}
@@ -146,10 +146,10 @@ const ProjectDetail = () => {
         {/* Project Overview */}
         <section className="py-8 md:py-12 lg:py-16 bg-muted/30 dark:bg-green-900/10">
           <div className="container px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
-              <div className="lg:col-span-2 space-y-6">
-                <div className="flex items-center gap-3 mb-2">
-                  <h2 className="text-2xl font-bold">Album Notes</h2>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
+              <div className="lg:col-span-2 space-y-4 md:space-y-6">
+                 <div className="flex items-center gap-3 mb-2">
+                  <h2 className="text-xl md:text-2xl font-bold">Album Notes</h2>
                   <div className="flex-1 border-b border-black/10"></div>
                 </div>
 
@@ -196,16 +196,16 @@ const ProjectDetail = () => {
             </div>
             
             {hasVideos ? (
-              <Tabs defaultValue="images" className="w-full">
-                <div className="flex justify-center mb-8">
+                <Tabs defaultValue="images" className="w-full">
+                <div className="flex justify-center mb-6 md:mb-8">
                   <TabsList className="bg-black/5">
-                    <TabsTrigger value="images">Images</TabsTrigger>
-                    <TabsTrigger value="videos">Videos</TabsTrigger>
+                    <TabsTrigger value="images" className="text-sm px-4 py-2">Images</TabsTrigger>
+                    <TabsTrigger value="videos" className="text-sm px-4 py-2">Videos</TabsTrigger>
                   </TabsList>
                 </div>
                 
                 <TabsContent value="images" className="animate-fade-in">
-                  <div className="grid grid-cols-3 gap-4 max-w-6xl mx-auto">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 max-w-6xl mx-auto">
                     {project.gallery.images.map((image, idx) => (
                       <div key={idx} className="aspect-square bg-cream border border-black/10 p-1 transition-transform hover:scale-[1.01]">
                         <ZoomableImage 
@@ -219,7 +219,7 @@ const ProjectDetail = () => {
                 </TabsContent>
                 
                 <TabsContent value="videos" className="animate-fade-in">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
                     {project.gallery.videos.map((video, idx) => (
                       <div key={idx} className="aspect-video bg-cream border border-black/10 p-1 overflow-hidden">
                         <iframe
@@ -238,7 +238,7 @@ const ProjectDetail = () => {
               </Tabs>
             ) : (
               <div className="animate-fade-in">
-                <div className="grid grid-cols-3 gap-4 max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 max-w-6xl mx-auto">
                   {project.gallery.images.map((image, idx) => (
                     <div key={idx} className="aspect-square bg-cream border border-black/10 p-1 transition-transform hover:scale-[1.01]">
                       <ZoomableImage 
