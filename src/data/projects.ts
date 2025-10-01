@@ -66,12 +66,15 @@ const allProjects: Project[] = [
     isPasswordProtected: false,
     gallery: {
       images: [
-        { src: "/lovable-uploads/a657b10b-3bc7-4660-86de-6a3a8d9dbddb.png", alt: "SPROUT Performance Partners website design on laptop" },
-        { src: "/lovable-uploads/8c265297-506f-4a40-95b4-90c526aba72e.png", alt: "SPROUT business card design layout" },
-        { src: "/lovable-uploads/d8ba7230-a48a-4c82-a580-e49b04fa8ceb.png", alt: "SPROUT branding and illustration guidelines" },
-        { src: "/lovable-uploads/d79731f4-a6b5-4257-85a7-87b2c3e769a5.png", alt: "SPROUT email signature design template" },
-        { src: "/lovable-uploads/1c5791a3-7ecc-4793-8da3-472479acc525.png", alt: "SPROUT coronavirus prevention poster design" },
-        { src: "/lovable-uploads/e9478d69-7934-41cc-8c58-14e830ad6c7c.png", alt: "SPROUT social media thank you post design" },
+        { src: "/lovable-uploads/800x800_-_01-01.jpg", alt: "SPROUT Performance Partners brand logo designs" },
+        { src: "/lovable-uploads/800x800_-_01-02.jpg", alt: "SPROUT branding guidelines book cover" },
+        { src: "/lovable-uploads/800x800_-_01-03.jpg", alt: "SPROUT brand color palette and guidelines" },
+        { src: "/lovable-uploads/800x800_-_01-04.jpg", alt: "SPROUT website design on laptop mockup" },
+        { src: "/lovable-uploads/800x800_-_01-05.jpg", alt: "SPROUT coronavirus prevention and wellness poster" },
+        { src: "/lovable-uploads/800x800_-_01-06.jpg", alt: "SPROUT illustration guidelines and data strategy icons" },
+        { src: "/lovable-uploads/800x800_-_01-07.jpg", alt: "SPROUT email signature template design" },
+        { src: "/lovable-uploads/800x800_-_01-08.jpg", alt: "SPROUT stationery and business card designs" },
+        { src: "/lovable-uploads/800x800_-_01-09.jpg", alt: "SPROUT social media thank you post design" },
       ],
       videos: []
     }
