@@ -261,7 +261,7 @@ const allProjects: Project[] = [
       "I developed fluid particle systems and complex swirl patterns using advanced 3D modeling and animation techniques to create visually striking content.",
       "The project resulted in a library of reusable 3D assets and animation sequences that enhanced visual storytelling across multiple campaigns."
     ],
-    coverImage: "/lovable-uploads/f5823f61-a999-47ce-86bc-e32effc51b60.png",
+    coverImage: "/lovable-uploads/3D_swirl_ad-01.jpeg",
     year: 2023,
     client: "courtneyfortune visuals",
     duration: "4 months",
@@ -271,12 +271,12 @@ const allProjects: Project[] = [
     isPasswordProtected: false,
     gallery: {
       images: [
-        { src: "/lovable-uploads/f5823f61-a999-47ce-86bc-e32effc51b60.png", alt: "3D swirl animation sequences and motion graphics" },
-        { src: "/lovable-uploads/f5823f61-a999-47ce-86bc-e32effc51b60.png", alt: "Organic particle system designs" },
-        { src: "/lovable-uploads/f5823f61-a999-47ce-86bc-e32effc51b60.png", alt: "Dynamic 3D swirl patterns and animations" },
+        { src: "/lovable-uploads/3D_swirl_ad-01.jpeg", alt: "3D water bottle with color customization interface" },
+        { src: "/lovable-uploads/3D_swirl_ad-02.jpeg", alt: "Interactive 3D product visualization with color picker" },
+        { src: "/lovable-uploads/3D_swirl_ad-03.jpeg", alt: "3D product render showcasing durability features" },
       ],
       videos: [
-        { title: "3D Swirl Animation Demo", embedUrl: "https://player.vimeo.com/video/1097345492?h=abda5417c4&autoplay=1&muted=1" },
+        { title: "3D Swirl Animation Demo", embedUrl: "https://player.vimeo.com/video/1123694957?autoplay=1&muted=1" },
       ]
     }
   }
