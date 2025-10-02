@@ -224,6 +224,8 @@ const allProjects: Project[] = [
         { src: "/lovable-uploads/Project_8_800x800-08.jpg", alt: "FNB Virtual Card digital payment solution ad" },
         { src: "/lovable-uploads/Project_8_800x800-09.jpg", alt: "FNB Speedee App contactless payment solution" },
         { src: "/lovable-uploads/Project_8_800x800-10.jpg", alt: "FNB Connect deal smart TV promotion" },
+        { src: "/lovable-uploads/Project_8_800x800-11.jpg", alt: "FNB Virtual Card purchase protection promotion" },
+        { src: "/lovable-uploads/Project_8_800x800-12.jpg", alt: "FNB retirement annuity savings campaign" },
       ],
       videos: []
     }
