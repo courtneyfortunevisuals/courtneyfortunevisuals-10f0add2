@@ -214,12 +214,16 @@ const allProjects: Project[] = [
     password: "portfolio",
     gallery: {
       images: [
-        { src: "/lovable-uploads/fabiani-01.png", alt: "Fabiani sophisticated menswear ad - Dress with Distinction" },
-        { src: "/lovable-uploads/fabiani-02.png", alt: "Fabiani elegant style social media advertisement" },
-        { src: "/lovable-uploads/fabiani-03.png", alt: "Fabiani sophisticated menswear fashion campaign" },
-        { src: "/lovable-uploads/sportscene-01.png", alt: "Sportscene The Drop sneaker campaign" },
-        { src: "/lovable-uploads/sportscene-02.png", alt: "Sportscene Nike men's range advertisement" },
-        { src: "/lovable-uploads/sportscene-03.png", alt: "Sportscene Kings of Sneakerwear campaign" },
+        { src: "/lovable-uploads/Project_8_800x800-01.jpg", alt: "Fabiani sophisticated menswear ad - Dress with Distinction" },
+        { src: "/lovable-uploads/Project_8_800x800-02.jpg", alt: "Fabiani elegant style social media advertisement carousel" },
+        { src: "/lovable-uploads/Project_8_800x800-03.jpg", alt: "Fabiani sophisticated menswear fashion campaign" },
+        { src: "/lovable-uploads/Project_8_800x800-04.jpg", alt: "Sportscene The Drop sneaker campaign" },
+        { src: "/lovable-uploads/Project_8_800x800-05.jpg", alt: "Sportscene Nike men's range advertisement" },
+        { src: "/lovable-uploads/Project_8_800x800-06.jpg", alt: "Sportscene Kings of Sneakerwear campaign" },
+        { src: "/lovable-uploads/Project_8_800x800-07.jpg", alt: "FNB Private Banking travel benefits campaign" },
+        { src: "/lovable-uploads/Project_8_800x800-08.jpg", alt: "FNB Virtual Card digital payment solution ad" },
+        { src: "/lovable-uploads/Project_8_800x800-09.jpg", alt: "FNB Speedee App contactless payment solution" },
+        { src: "/lovable-uploads/Project_8_800x800-10.jpg", alt: "FNB Connect deal smart TV promotion" },
       ],
       videos: []
     }
