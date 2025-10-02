@@ -197,31 +197,31 @@ const allProjects: Project[] = [
   {
     id: 7,
     title: "Social Media Ads",
-    summary: "Augmented reality experience for visualizing furniture products in real-world spaces.",
+    summary: "Dynamic social media advertising campaigns for Fabiani menswear and Sportscene sneaker collections.",
     description: [
-      "I developed an augmented reality experience that allows customers to visualize furniture products in their own homes before making a purchase.",
-      "The project involved 3D modeling, texture creation, and implementing AR functionality that detected floor surfaces and placed virtual furniture with accurate scaling and lighting.",
-      "This solution increased customer confidence in online purchases, resulting in a 28% reduction in product returns and a 15% increase in average order value."
+      "This project involved creating engaging social media advertisements for premium menswear brand Fabiani and Sportscene's sneaker collections.",
+      "I developed sophisticated ad campaigns showcasing Fabiani's refined menswear with the tagline 'Sophisticated style for the modern gentleman', featuring lifestyle photography and elegant product displays.",
+      "For Sportscene, I created high-impact sneaker campaigns including 'The Drop' and 'Kings of Sneakerwear' series, emphasizing Nike's men's range with bold, product-focused visuals that elevated every move."
     ],
-    coverImage: "/lovable-uploads/f5823f61-a999-47ce-86bc-e32effc51b60.png",
+    coverImage: "/lovable-uploads/fabiani-01.png",
     year: 2022,
-    client: "Various Campaigns",
+    client: "Fabiani & Sportscene",
     duration: "6 months",
     role: "Digital Designer",
-    tags: ["Augmented Reality", "3D Modeling", "E-Commerce", "Mobile Experience"],
+    tags: ["Social Media", "Digital Advertising", "Fashion", "Product Photography"],
     technologies: ["Illustrator", "Photoshop", "InDesign", "Google Web Designer"],
     isPasswordProtected: true,
     password: "portfolio",
     gallery: {
       images: [
-        { src: "/lovable-uploads/471b42a8-db39-4bc8-a023-df081145cd84.png", alt: "Social media ad mockup with 1:1 square format" },
-        { src: "/lovable-uploads/adb9ffca-ecf0-4602-aa42-bca8bbed97e5.png", alt: "Facebook ad template design layout" },
-        { src: "/lovable-uploads/e644d7d5-2ef6-4c83-afa4-ba293cc17e8f.png", alt: "Widescreen social media ad format 16:9" },
+        { src: "/lovable-uploads/fabiani-01.png", alt: "Fabiani sophisticated menswear ad - Dress with Distinction" },
+        { src: "/lovable-uploads/fabiani-02.png", alt: "Fabiani elegant style social media advertisement" },
+        { src: "/lovable-uploads/fabiani-03.png", alt: "Fabiani sophisticated menswear fashion campaign" },
+        { src: "/lovable-uploads/sportscene-01.png", alt: "Sportscene The Drop sneaker campaign" },
+        { src: "/lovable-uploads/sportscene-02.png", alt: "Sportscene Nike men's range advertisement" },
+        { src: "/lovable-uploads/sportscene-03.png", alt: "Sportscene Kings of Sneakerwear campaign" },
       ],
-      videos: [
-        { title: "AR Demo", embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
-        { title: "User Experience", embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
-      ]
+      videos: []
     }
   },
   {
