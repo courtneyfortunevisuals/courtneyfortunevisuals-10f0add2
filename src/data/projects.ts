@@ -203,7 +203,7 @@ const allProjects: Project[] = [
       "I developed sophisticated ad campaigns showcasing Fabiani's refined menswear with the tagline 'Sophisticated style for the modern gentleman', featuring lifestyle photography and elegant product displays.",
       "For Sportscene, I created high-impact sneaker campaigns including 'The Drop' and 'Kings of Sneakerwear' series, emphasizing Nike's men's range with bold, product-focused visuals that elevated every move."
     ],
-    coverImage: "/lovable-uploads/fabiani-01.png",
+    coverImage: "/lovable-uploads/1-01.png",
     year: 2022,
     client: "Fabiani & Sportscene",
     duration: "6 months",
@@ -261,7 +261,7 @@ const allProjects: Project[] = [
       "I developed fluid particle systems and complex swirl patterns using advanced 3D modeling and animation techniques to create visually striking content.",
       "The project resulted in a library of reusable 3D assets and animation sequences that enhanced visual storytelling across multiple campaigns."
     ],
-    coverImage: "/lovable-uploads/bottle_800x800-01.jpg",
+    coverImage: "/lovable-uploads/1-01.png",
     year: 2023,
     client: "courtneyfortune visuals",
     duration: "4 months",
