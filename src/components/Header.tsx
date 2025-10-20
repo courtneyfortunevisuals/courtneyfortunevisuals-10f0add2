@@ -1,8 +1,8 @@
-
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ModeToggle } from "@/components/mode-toggle";
+import { CartDrawer } from "@/components/CartDrawer";
 
 const Header = () => {
   const location = useLocation();
@@ -55,6 +55,7 @@ const Header = () => {
               <img src="/lovable-uploads/7a8cc4df-daaf-479b-b4df-e9eb9904228e.png" alt="Behance logo" className="h-5 w-5 hidden dark:block" />
             </Button>
           </a>
+          <CartDrawer />
           <ModeToggle />
           <div className="md:hidden">
             <MobileMenu location={location} />
