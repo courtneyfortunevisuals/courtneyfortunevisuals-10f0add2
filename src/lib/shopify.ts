@@ -1,5 +1,5 @@
 const SHOPIFY_API_VERSION = '2025-07';
-const SHOPIFY_STORE_PERMANENT_DOMAIN = '3jn63s-8p.myshopify.com';
+const SHOPIFY_STORE_PERMANENT_DOMAIN = 'courtneyfortunevisuals-of0dl.myshopify.com';
 const SHOPIFY_STOREFRONT_URL = `https://${SHOPIFY_STORE_PERMANENT_DOMAIN}/api/${SHOPIFY_API_VERSION}/graphql.json`;
 const SHOPIFY_STOREFRONT_TOKEN = '1f02a2862c795eb9f2e99f6e1493bcd4';
 
