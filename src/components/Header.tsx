@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ModeToggle } from "@/components/mode-toggle";
+import { CartDrawer } from "@/components/CartDrawer";
 
 const Header = () => {
   const location = useLocation();
@@ -32,6 +33,7 @@ const Header = () => {
         </nav>
         
         <div className="flex items-center space-x-1 md:space-x-2 flex-shrink-0">
+          <CartDrawer />
           <a 
             href="https://linkedin.com" 
             target="_blank" 
