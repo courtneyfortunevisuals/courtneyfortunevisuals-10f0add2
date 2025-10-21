@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ModeToggle } from "@/components/mode-toggle";
-import { CartDrawer } from "@/components/CartDrawer";
 
 const Header = () => {
   const location = useLocation();
@@ -29,7 +28,6 @@ const Header = () => {
           <NavLink to="/" active={location.pathname === "/"}>Home</NavLink>
           <NavLink to="/about" active={location.pathname === "/about"}>About</NavLink>
           <NavLink to="/projects" active={location.pathname.includes("/projects")}>Projects</NavLink>
-          <NavLink to="/gallery" active={location.pathname === "/gallery"}>Gallery</NavLink>
         </nav>
         
         <div className="flex items-center space-x-1 md:space-x-2 flex-shrink-0">
@@ -55,7 +53,6 @@ const Header = () => {
               <img src="/lovable-uploads/7a8cc4df-daaf-479b-b4df-e9eb9904228e.png" alt="Behance logo" className="h-5 w-5 hidden dark:block" />
             </Button>
           </a>
-          <CartDrawer />
           <ModeToggle />
           <div className="md:hidden">
             <MobileMenu location={location} />
@@ -113,9 +110,6 @@ const MobileMenu = ({ location }: { location: { pathname: string } }) => {
             </MobileNavLink>
             <MobileNavLink to="/projects" active={location.pathname.includes("/projects")} onClick={() => setIsOpen(false)}>
               Projects
-            </MobileNavLink>
-            <MobileNavLink to="/gallery" active={location.pathname === "/gallery"} onClick={() => setIsOpen(false)}>
-              Gallery
             </MobileNavLink>
           </div>
         </div>
