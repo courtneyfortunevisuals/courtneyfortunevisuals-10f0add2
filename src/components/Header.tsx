@@ -28,6 +28,7 @@ const Header = () => {
           <NavLink to="/" active={location.pathname === "/"}>Home</NavLink>
           <NavLink to="/about" active={location.pathname === "/about"}>About</NavLink>
           <NavLink to="/projects" active={location.pathname.includes("/projects")}>Projects</NavLink>
+          <NavLink to="/gallery" active={location.pathname === "/gallery"}>Gallery</NavLink>
         </nav>
         
         <div className="flex items-center space-x-1 md:space-x-2 flex-shrink-0">
@@ -110,6 +111,9 @@ const MobileMenu = ({ location }: { location: { pathname: string } }) => {
             </MobileNavLink>
             <MobileNavLink to="/projects" active={location.pathname.includes("/projects")} onClick={() => setIsOpen(false)}>
               Projects
+            </MobileNavLink>
+            <MobileNavLink to="/gallery" active={location.pathname === "/gallery"} onClick={() => setIsOpen(false)}>
+              Gallery
             </MobileNavLink>
           </div>
         </div>
