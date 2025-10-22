@@ -1,28 +1,11 @@
-import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { ArrowRight, Music } from "lucide-react";
 import { projects } from "@/data/projects";
 import { useTheme } from "@/components/theme-provider";
-import PasswordProtection from "@/components/PasswordProtection";
 
 const Index = () => {
-  const [isUnlocked, setIsUnlocked] = useState(false);
-  
-  // Check if already unlocked in this session
-  useEffect(() => {
-    const unlocked = sessionStorage.getItem('home-unlocked');
-    if (unlocked === 'true') {
-      setIsUnlocked(true);
-    }
-  }, []);
-  
-  const handleUnlock = () => {
-    sessionStorage.setItem('home-unlocked', 'true');
-    setIsUnlocked(true);
-  };
-  
   // Get first three projects for featured section
   const featuredProjects = projects.slice(0, 3);
   const { theme } = useTheme();
@@ -35,18 +18,6 @@ const Index = () => {
   const videoUrl = isDarkMode 
     ? "https://player.vimeo.com/video/1097342946?h=00ac02f95e&autoplay=1&loop=1&background=1&muted=1"
     : "https://player.vimeo.com/video/1097339449?h=5f755356a1&autoplay=1&loop=1&background=1&muted=1";
-
-  if (!isUnlocked) {
-    return (
-      <Layout>
-        <PasswordProtection 
-          password="cfv2025"
-          projectId={0}
-          onUnlock={handleUnlock}
-        />
-      </Layout>
-    );
-  }
 
   return (
     <Layout>
