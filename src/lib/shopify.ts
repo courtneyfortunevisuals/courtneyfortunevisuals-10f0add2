@@ -3,7 +3,8 @@ import { toast } from "sonner";
 const SHOPIFY_API_VERSION = '2025-07';
 const SHOPIFY_STORE_PERMANENT_DOMAIN = 'courtneyfortunevisuals-of0dl.myshopify.com';
 const SHOPIFY_STOREFRONT_URL = `https://${SHOPIFY_STORE_PERMANENT_DOMAIN}/api/${SHOPIFY_API_VERSION}/graphql.json`;
-const SHOPIFY_STOREFRONT_TOKEN = import.meta.env.VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN || '1f02a2862c795eb9f2e99f6e1493bcd4';
+// Replace this with your actual Shopify Storefront Access Token (it's a publishable key, safe for client-side use)
+const SHOPIFY_STOREFRONT_TOKEN = 'YOUR_STOREFRONT_ACCESS_TOKEN_HERE';
 
 export interface ShopifyProduct {
   node: {
@@ -144,6 +145,13 @@ const CART_CREATE_MUTATION = `
 `;
 
 async function storefrontApiRequest(query: string, variables: any = {}) {
+  if (!SHOPIFY_STOREFRONT_TOKEN || SHOPIFY_STOREFRONT_TOKEN === 'YOUR_STOREFRONT_ACCESS_TOKEN_HERE') {
+    toast.error("Shopify Configuration Error", {
+      description: "Shopify Storefront Access Token is not configured. Please update the token in src/lib/shopify.ts",
+    });
+    throw new Error('Shopify Storefront Access Token not configured');
+  }
+
   const response = await fetch(SHOPIFY_STOREFRONT_URL, {
     method: 'POST',
     headers: {
@@ -163,13 +171,26 @@ async function storefrontApiRequest(query: string, variables: any = {}) {
     throw new Error('Payment required');
   }
 
+  if (response.status === 401) {
+    toast.error("Shopify Authentication Error", {
+      description: "Invalid Storefront Access Token. Please check your token in src/lib/shopify.ts",
+    });
+    throw new Error('Invalid Shopify Storefront Access Token');
+  }
+
   if (!response.ok) {
+    toast.error("Shopify API Error", {
+      description: `Failed to connect to Shopify: ${response.status} ${response.statusText}`,
+    });
     throw new Error(`HTTP error! status: ${response.status}`);
   }
 
   const data = await response.json();
   
   if (data.errors) {
+    toast.error("Shopify GraphQL Error", {
+      description: data.errors.map((e: any) => e.message).join(', '),
+    });
     throw new Error(`Error calling Shopify: ${data.errors.map((e: any) => e.message).join(', ')}`);
   }
 
