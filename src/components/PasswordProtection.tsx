@@ -1,53 +1,60 @@
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { useToast } from "@/components/ui/use-toast";
+import { toast } from "sonner";
 
 interface PasswordProtectionProps {
-  password: string;
-  projectId: number;
-  onUnlock: () => void;
+  children: React.ReactNode;
 }
 
-const PasswordProtection = ({ password, projectId, onUnlock }: PasswordProtectionProps) => {
+const PasswordProtection = ({ children }: PasswordProtectionProps) => {
+  const [isUnlocked, setIsUnlocked] = useState(false);
   const [inputPassword, setInputPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const { toast } = useToast();
+  
+  // Password for the site (change this to your desired password)
+  const SITE_PASSWORD = "password123";
+
+  useEffect(() => {
+    // Check if already unlocked in session
+    const unlocked = sessionStorage.getItem("site-unlocked");
+    if (unlocked === "true") {
+      setIsUnlocked(true);
+    }
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
 
-    // Simulate API call delay
     setTimeout(() => {
-      if (inputPassword === password) {
-        // Store in session storage that this project is unlocked
-        sessionStorage.setItem(`project-${projectId}-unlocked`, "true");
-        onUnlock();
-        toast({
-          title: "Access granted",
-          description: "You now have access to this protected project.",
+      if (inputPassword === SITE_PASSWORD) {
+        sessionStorage.setItem("site-unlocked", "true");
+        setIsUnlocked(true);
+        toast.success("Access granted", {
+          description: "Welcome to the site!",
         });
       } else {
-        toast({
-          title: "Incorrect password",
-          description: "Please try again with the correct password.",
-          variant: "destructive",
+        toast.error("Incorrect password", {
+          description: "Please try again.",
         });
       }
       setIsLoading(false);
-    }, 800);
+    }, 500);
   };
 
+  if (isUnlocked) {
+    return <>{children}</>;
+  }
+
   return (
-    <div className="flex justify-center items-center min-h-[50vh] p-6">
-      <Card className="w-full max-w-md shadow-lg animate-fade-in">
+    <div className="flex justify-center items-center min-h-screen p-6 bg-background">
+      <Card className="w-full max-w-md shadow-lg">
         <CardHeader>
-          <CardTitle>Protected Project</CardTitle>
+          <CardTitle>Protected Website</CardTitle>
           <CardDescription>
-            This project requires a password to view. Please enter the password below.
+            This website is password protected. Please enter the password to continue.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -61,7 +68,7 @@ const PasswordProtection = ({ password, projectId, onUnlock }: PasswordProtectio
               required
             />
             <Button type="submit" className="w-full" disabled={isLoading}>
-              {isLoading ? "Checking..." : "Unlock Project"}
+              {isLoading ? "Verifying..." : "Enter Website"}
             </Button>
           </form>
         </CardContent>
