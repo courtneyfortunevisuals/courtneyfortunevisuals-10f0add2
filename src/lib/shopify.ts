@@ -3,8 +3,8 @@ import { toast } from "sonner";
 const SHOPIFY_API_VERSION = '2025-07';
 const SHOPIFY_STORE_PERMANENT_DOMAIN = 'courtneyfortunevisuals-of0dl.myshopify.com';
 const SHOPIFY_STOREFRONT_URL = `https://${SHOPIFY_STORE_PERMANENT_DOMAIN}/api/${SHOPIFY_API_VERSION}/graphql.json`;
-// Replace this with your actual Shopify Storefront Access Token (it's a publishable key, safe for client-side use)
-const SHOPIFY_STOREFRONT_TOKEN = 'YOUR_STOREFRONT_ACCESS_TOKEN_HERE';
+// Shopify Storefront Access Token (publishable key, safe for client-side use)
+const SHOPIFY_STOREFRONT_TOKEN = 'b46b598362c740b2975622b621571d49';
 
 export interface ShopifyProduct {
   node: {
@@ -145,7 +145,7 @@ const CART_CREATE_MUTATION = `
 `;
 
 async function storefrontApiRequest(query: string, variables: any = {}) {
-  if (!SHOPIFY_STOREFRONT_TOKEN || SHOPIFY_STOREFRONT_TOKEN === 'YOUR_STOREFRONT_ACCESS_TOKEN_HERE') {
+  if (!SHOPIFY_STOREFRONT_TOKEN) {
     toast.error("Shopify Configuration Error", {
       description: "Shopify Storefront Access Token is not configured. Please update the token in src/lib/shopify.ts",
     });
