@@ -4,24 +4,58 @@ import { Link } from "react-router-dom";
 import { projects, allProjects } from "@/data/projects";
 
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useLocomotiveScroll } from "@/hooks/useLocomotiveScroll";
 
 const Projects = () => {
   const [showAll, setShowAll] = useState(true);
+  const [activeIndex, setActiveIndex] = useState(0);
   const displayedProjects = showAll ? allProjects : projects;
   const { scrollRef, locomotiveScroll } = useLocomotiveScroll(true);
+
+  useEffect(() => {
+    if (!locomotiveScroll) return;
+
+    const handleScroll = () => {
+      const scrollX = (locomotiveScroll as any).scroll?.x || 0;
+      const cardWidth = 320;
+      const overlap = 220;
+      const effectiveCardWidth = cardWidth - overlap;
+      const index = Math.round(scrollX / effectiveCardWidth);
+      setActiveIndex(Math.max(0, Math.min(index, displayedProjects.length - 1)));
+    };
+
+    (locomotiveScroll as any).on?.('scroll', handleScroll);
+
+    return () => {
+      (locomotiveScroll as any).off?.('scroll', handleScroll);
+    };
+  }, [locomotiveScroll, displayedProjects.length]);
 
   const scroll = (direction: 'left' | 'right') => {
     if (!locomotiveScroll) return;
     
-    const cardWidth = 320; // w-80 = 320px
-    const overlap = 220; // marginLeft overlap
-    const scrollAmount = cardWidth - overlap; // Net movement per card
+    const cardWidth = 320;
+    const overlap = 220;
+    const scrollAmount = cardWidth - overlap;
     
     const currentScroll = (locomotiveScroll as any).scroll?.x || 0;
     const targetScroll = currentScroll + (direction === 'right' ? scrollAmount : -scrollAmount);
+    
+    locomotiveScroll.scrollTo(targetScroll, {
+      duration: 1.2,
+      easing: (t: number) => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t,
+    });
+  };
+
+  const scrollToProject = (index: number) => {
+    if (!locomotiveScroll) return;
+    
+    const cardWidth = 320;
+    const overlap = 220;
+    const effectiveCardWidth = cardWidth - overlap;
+    const targetScroll = index * effectiveCardWidth;
     
     locomotiveScroll.scrollTo(targetScroll, {
       duration: 1.2,
@@ -113,6 +147,22 @@ const Projects = () => {
               );
             })}
               </div>
+            </div>
+
+            {/* Scroll Progress Indicator */}
+            <div className="flex justify-center items-center gap-2 mt-8">
+              {displayedProjects.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => scrollToProject(index)}
+                  className={`transition-all duration-300 rounded-full ${
+                    index === activeIndex
+                      ? 'w-3 h-3 bg-primary'
+                      : 'w-2 h-2 bg-muted-foreground/30 hover:bg-muted-foreground/50'
+                  }`}
+                  aria-label={`Go to project ${index + 1}`}
+                />
+              ))}
             </div>
           </div>
           
