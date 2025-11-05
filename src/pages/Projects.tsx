@@ -40,7 +40,7 @@ const Projects = () => {
                   >
                     <Link 
                       to={`/projects/${project.id}`}
-                      className="block overflow-hidden transition-all duration-500 relative shadow-lg hover:shadow-2xl group-hover:scale-105 group-hover:-translate-y-8"
+                      className="block overflow-hidden transition-all duration-500 relative z-10 shadow-lg hover:shadow-2xl group-hover:scale-105 group-hover:-translate-y-8 group-hover:z-[100]"
                       style={{
                         transform: `rotate(0deg)`,
                         transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
