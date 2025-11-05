@@ -21,30 +21,31 @@ const Projects = () => {
             </p>
           </div>
           
-          <div className="flex flex-col items-center max-w-4xl mx-auto relative">
-            {displayedProjects.map((project, index) => {
-              const rotation = (index % 3 - 1) * 1.5; // Alternating -1.5, 0, 1.5 degrees
-              const totalProjects = displayedProjects.length;
-              
-              return (
-                <div 
-                  key={project.id}
-                  className="group animate-fade-in w-full max-w-2xl relative transition-all duration-500 ease-out hover:z-50"
-                  style={{ 
-                    animationDelay: `${Math.min(index * 0.1, 1)}s`,
-                    marginTop: index === 0 ? '0' : '-280px',
-                    zIndex: totalProjects - index,
-                    transform: `rotate(${rotation}deg)`,
-                  }}
-                >
-                  <Link 
-                    to={`/projects/${project.id}`}
-                    className="block overflow-hidden transition-all duration-500 relative shadow-lg hover:shadow-2xl group-hover:scale-105 group-hover:-translate-y-8"
-                    style={{
-                      transform: `rotate(0deg)`,
-                      transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+          <div className="overflow-x-auto pb-8">
+            <div className="flex flex-row items-center min-w-max px-4 md:px-8">
+              {displayedProjects.map((project, index) => {
+                const rotation = (index % 3 - 1) * 1.5; // Alternating -1.5, 0, 1.5 degrees
+                const totalProjects = displayedProjects.length;
+                
+                return (
+                  <div 
+                    key={project.id}
+                    className="group animate-fade-in w-80 md:w-96 flex-shrink-0 relative transition-all duration-500 ease-out hover:z-50"
+                    style={{ 
+                      animationDelay: `${Math.min(index * 0.1, 1)}s`,
+                      marginLeft: index === 0 ? '0' : '-220px',
+                      zIndex: totalProjects - index,
+                      transform: `rotate(${rotation}deg)`,
                     }}
                   >
+                    <Link 
+                      to={`/projects/${project.id}`}
+                      className="block overflow-hidden transition-all duration-500 relative shadow-lg hover:shadow-2xl group-hover:scale-105 group-hover:-translate-y-8"
+                      style={{
+                        transform: `rotate(0deg)`,
+                        transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+                      }}
+                    >
                     <div className="relative aspect-square overflow-hidden bg-cream border-2 border-muted group-hover:border-primary/30">
                       <img 
                         src="/lovable-uploads/7df9a9f3-1582-4cc4-bdb4-5382d73d0650.png" 
@@ -69,6 +70,7 @@ const Projects = () => {
                 </div>
               );
             })}
+            </div>
           </div>
           
           {!showAll && (
