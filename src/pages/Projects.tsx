@@ -93,8 +93,8 @@ const Projects = () => {
               <ChevronRight className="h-6 w-6" />
             </Button>
             
-            <div ref={scrollRef} data-scroll-container className="pb-8 h-[600px] overflow-hidden">
-              <div data-scroll-section className="flex flex-row items-center min-w-max px-4 md:px-8 h-full">
+            <div ref={scrollRef} className="pb-8 h-[600px] overflow-x-auto overflow-y-hidden">
+              <div className="flex flex-row items-center min-w-max px-4 md:px-8 h-full">
               {displayedProjects.map((project, index) => {
                 const rotation = (index % 3 - 1) * 1.5;
                 const totalProjects = displayedProjects.length;
@@ -103,12 +103,7 @@ const Projects = () => {
                 return (
                   <div 
                     key={project.id}
-                    data-scroll
-                    data-scroll-direction="horizontal"
-                    data-scroll-speed={scrollSpeed}
-                    data-scroll-class="project-card-visible"
-                    data-scroll-repeat="true"
-                    className="group project-card-enter w-80 md:w-96 flex-shrink-0 relative transition-all duration-500 ease-out hover:z-50"
+                    className="group animate-fade-in w-80 md:w-96 flex-shrink-0 relative transition-all duration-500 ease-out hover:z-50"
                     style={{ 
                       animationDelay: `${Math.min(index * 0.1, 1)}s`,
                       marginLeft: index === 0 ? '0' : '-220px',

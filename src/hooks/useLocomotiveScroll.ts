@@ -10,11 +10,15 @@ export const useLocomotiveScroll = (start: boolean) => {
 
     locomotiveScrollRef.current = new LocomotiveScroll({
       lenisOptions: {
+        wrapper: scrollRef.current,
+        content: scrollRef.current.firstElementChild as HTMLElement,
         duration: 1.2,
         smoothWheel: true,
         orientation: 'horizontal',
+        wheelMultiplier: 1.0,
+        touchMultiplier: 2.0,
       },
-    });
+    } as any);
 
     const handleResize = () => {
       if (locomotiveScrollRef.current) {
