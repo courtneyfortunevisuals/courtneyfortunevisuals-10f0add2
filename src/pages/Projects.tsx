@@ -59,7 +59,7 @@ const Projects = () => {
                     >
                       <Link 
                         to={`/projects/${project.id}`}
-                        className="block group"
+                        className="block group max-w-[75%] mx-auto"
                       >
                         <div 
                           className={`
