@@ -4,11 +4,24 @@ import { Link } from "react-router-dom";
 import { projects, allProjects } from "@/data/projects";
 
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const Projects = () => {
   const [showAll, setShowAll] = useState(true);
   const displayedProjects = showAll ? allProjects : projects;
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = 400;
+      const newScrollLeft = scrollContainerRef.current.scrollLeft + (direction === 'right' ? scrollAmount : -scrollAmount);
+      scrollContainerRef.current.scrollTo({
+        left: newScrollLeft,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   return (
     <Layout>
@@ -21,8 +34,27 @@ const Projects = () => {
             </p>
           </div>
           
-          <div className="overflow-x-auto pb-8 scroll-smooth snap-x snap-mandatory">
-            <div className="flex flex-row items-center min-w-max px-4 md:px-8">
+          <div className="relative">
+            <Button
+              onClick={() => scroll('left')}
+              variant="outline"
+              size="icon"
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-50 bg-background/80 backdrop-blur-sm hover:bg-background/90 shadow-lg"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </Button>
+            
+            <Button
+              onClick={() => scroll('right')}
+              variant="outline"
+              size="icon"
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-50 bg-background/80 backdrop-blur-sm hover:bg-background/90 shadow-lg"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </Button>
+            
+            <div ref={scrollContainerRef} className="overflow-x-auto pb-8 scroll-smooth snap-x snap-mandatory">
+              <div className="flex flex-row items-center min-w-max px-4 md:px-8">
               {displayedProjects.map((project, index) => {
                 const rotation = (index % 3 - 1) * 1.5; // Alternating -1.5, 0, 1.5 degrees
                 const totalProjects = displayedProjects.length;
@@ -70,6 +102,7 @@ const Projects = () => {
                 </div>
               );
             })}
+              </div>
             </div>
           </div>
           
