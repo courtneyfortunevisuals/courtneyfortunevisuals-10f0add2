@@ -4,23 +4,29 @@ import { Link } from "react-router-dom";
 import { projects, allProjects } from "@/data/projects";
 
 import { Button } from "@/components/ui/button";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useLocomotiveScroll } from "@/hooks/useLocomotiveScroll";
 
 const Projects = () => {
   const [showAll, setShowAll] = useState(true);
   const displayedProjects = showAll ? allProjects : projects;
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const { scrollRef, locomotiveScroll } = useLocomotiveScroll(true);
 
   const scroll = (direction: 'left' | 'right') => {
-    if (scrollContainerRef.current) {
-      const scrollAmount = 400;
-      const newScrollLeft = scrollContainerRef.current.scrollLeft + (direction === 'right' ? scrollAmount : -scrollAmount);
-      scrollContainerRef.current.scrollTo({
-        left: newScrollLeft,
-        behavior: 'smooth'
-      });
-    }
+    if (!locomotiveScroll) return;
+    
+    const cardWidth = 320; // w-80 = 320px
+    const overlap = 220; // marginLeft overlap
+    const scrollAmount = cardWidth - overlap; // Net movement per card
+    
+    const currentScroll = (locomotiveScroll as any).scroll?.x || 0;
+    const targetScroll = currentScroll + (direction === 'right' ? scrollAmount : -scrollAmount);
+    
+    locomotiveScroll.scrollTo(targetScroll, {
+      duration: 1.2,
+      easing: (t: number) => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t,
+    });
   };
 
   return (
@@ -53,16 +59,20 @@ const Projects = () => {
               <ChevronRight className="h-6 w-6" />
             </Button>
             
-            <div ref={scrollContainerRef} className="overflow-x-auto pb-8 scroll-smooth snap-x snap-mandatory">
-              <div className="flex flex-row items-center min-w-max px-4 md:px-8">
+            <div ref={scrollRef} data-scroll-container className="pb-8 h-[600px] overflow-hidden">
+              <div data-scroll-section className="flex flex-row items-center min-w-max px-4 md:px-8 h-full">
               {displayedProjects.map((project, index) => {
                 const rotation = (index % 3 - 1) * 1.5; // Alternating -1.5, 0, 1.5 degrees
                 const totalProjects = displayedProjects.length;
+                const scrollSpeed = index % 3 === 0 ? "0.8" : index % 3 === 1 ? "1.0" : "1.2";
                 
                 return (
                   <div 
                     key={project.id}
-                    className="group animate-fade-in w-80 md:w-96 flex-shrink-0 relative transition-all duration-500 ease-out hover:z-50 snap-center"
+                    data-scroll
+                    data-scroll-direction="horizontal"
+                    data-scroll-speed={scrollSpeed}
+                    className="group animate-fade-in w-80 md:w-96 flex-shrink-0 relative transition-all duration-500 ease-out hover:z-50"
                     style={{ 
                       animationDelay: `${Math.min(index * 0.1, 1)}s`,
                       marginLeft: index === 0 ? '0' : '-220px',
