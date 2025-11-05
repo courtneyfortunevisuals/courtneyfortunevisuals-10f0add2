@@ -48,11 +48,11 @@ const Projects = () => {
                     >
                     <div className="relative aspect-square overflow-hidden bg-cream border-2 border-muted group-hover:border-primary/30">
                       <img 
-                        src="/lovable-uploads/7df9a9f3-1582-4cc4-bdb4-5382d73d0650.png" 
+                        src={project.coverImage} 
                         alt={project.title}
-                        className="w-full h-full object-cover transition-transform duration-500"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />
-                      <div className="absolute inset-0 flex flex-col justify-center items-center p-4 md:p-6 lg:p-8 text-center bg-black/40 group-hover:bg-black/60 transition-colors duration-500">
+                      <div className="absolute inset-0 flex flex-col justify-center items-center p-4 md:p-6 lg:p-8 text-center bg-black/60 group-hover:bg-black/20 transition-colors duration-500">
                         <h2 className="text-base md:text-lg lg:text-xl xl:text-2xl font-bold uppercase tracking-wider mb-2 md:mb-3 text-white line-clamp-2">
                           {project.title}
                         </h2>
