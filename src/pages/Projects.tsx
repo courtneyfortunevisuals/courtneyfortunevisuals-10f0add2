@@ -96,7 +96,7 @@ const Projects = () => {
             <div ref={scrollRef} data-scroll-container className="pb-8 h-[600px] overflow-hidden">
               <div data-scroll-section className="flex flex-row items-center min-w-max px-4 md:px-8 h-full">
               {displayedProjects.map((project, index) => {
-                const rotation = (index % 3 - 1) * 1.5; // Alternating -1.5, 0, 1.5 degrees
+                const rotation = (index % 3 - 1) * 1.5;
                 const totalProjects = displayedProjects.length;
                 const scrollSpeed = index % 3 === 0 ? "0.8" : index % 3 === 1 ? "1.0" : "1.2";
                 
@@ -106,12 +106,15 @@ const Projects = () => {
                     data-scroll
                     data-scroll-direction="horizontal"
                     data-scroll-speed={scrollSpeed}
-                    className="group animate-fade-in w-80 md:w-96 flex-shrink-0 relative transition-all duration-500 ease-out hover:z-50"
+                    data-scroll-class="project-card-visible"
+                    data-scroll-repeat="true"
+                    className="group project-card-enter w-80 md:w-96 flex-shrink-0 relative transition-all duration-500 ease-out hover:z-50"
                     style={{ 
                       animationDelay: `${Math.min(index * 0.1, 1)}s`,
                       marginLeft: index === 0 ? '0' : '-220px',
                       zIndex: totalProjects - index,
                       transform: `rotate(${rotation}deg)`,
+                      transitionDelay: `${index * 0.05}s`,
                     }}
                   >
                     <Link 
