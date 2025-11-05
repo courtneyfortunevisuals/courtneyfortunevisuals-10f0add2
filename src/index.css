@@ -95,18 +95,17 @@
     @apply bg-background text-foreground;
   }
   
-  /* 3D Carousel Styles */
-  .carousel-container {
-    perspective: 2000px;
-    perspective-origin: 50% 50%;
+  /* Project Slider Styles */
+  .embla {
+    overflow: hidden;
   }
-  
-  .carousel-3d {
-    transform-style: preserve-3d;
+
+  .embla__container {
+    display: flex;
   }
-  
-  .carousel-card {
-    transform-style: preserve-3d;
-    backface-visibility: visible;
+
+  .embla__slide {
+    flex: 0 0 auto;
+    min-width: 0;
   }
 }
