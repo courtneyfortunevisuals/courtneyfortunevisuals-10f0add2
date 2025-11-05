@@ -2,32 +2,63 @@
 import Layout from "@/components/Layout";
 import { Link } from "react-router-dom";
 import { projects, allProjects } from "@/data/projects";
-
 import { Button } from "@/components/ui/button";
-import { useState, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useLocomotiveScroll } from "@/hooks/useLocomotiveScroll";
 
 const Projects = () => {
   const [showAll, setShowAll] = useState(true);
+  const [rotation, setRotation] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
   const displayedProjects = showAll ? allProjects : projects;
-  const { scrollRef, locomotiveScroll } = useLocomotiveScroll(true);
+  
+  const totalCards = displayedProjects.length;
+  const anglePerCard = 360 / totalCards;
+  const radius = 900;
 
+  useEffect(() => {
+    const handleWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      setRotation(prev => prev + e.deltaY * 0.1);
+    };
 
-  const scroll = (direction: 'left' | 'right') => {
-    if (!locomotiveScroll) return;
-    
-    const cardWidth = 320;
-    const overlap = 220;
-    const scrollAmount = cardWidth - overlap;
-    
-    const currentScroll = (locomotiveScroll as any).scroll?.x || 0;
-    const targetScroll = currentScroll + (direction === 'right' ? scrollAmount : -scrollAmount);
-    
-    (locomotiveScroll as any).scrollTo(targetScroll, {
-      duration: 1.2,
-      easing: (t: number) => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t,
-    });
+    const carousel = carouselRef.current;
+    if (carousel) {
+      carousel.addEventListener('wheel', handleWheel, { passive: false });
+    }
+
+    return () => {
+      if (carousel) {
+        carousel.removeEventListener('wheel', handleWheel);
+      }
+    };
+  }, []);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    setStartX(e.clientX);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging) return;
+    const deltaX = e.clientX - startX;
+    setRotation(prev => prev - deltaX * 0.5);
+    setStartX(e.clientX);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const rotateCarousel = (direction: 'left' | 'right') => {
+    setRotation(prev => prev + (direction === 'right' ? -anglePerCard : anglePerCard));
+  };
+
+  const getCenterIndex = () => {
+    const normalizedRotation = ((rotation % 360) + 360) % 360;
+    return Math.round(normalizedRotation / anglePerCard) % totalCards;
   };
 
   return (
@@ -43,7 +74,7 @@ const Projects = () => {
           
           <div className="relative">
             <Button
-              onClick={() => scroll('left')}
+              onClick={() => rotateCarousel('left')}
               variant="outline"
               size="icon"
               className="absolute left-4 top-1/2 -translate-y-1/2 z-50 bg-background/80 backdrop-blur-sm hover:bg-background/90 shadow-lg"
@@ -52,7 +83,7 @@ const Projects = () => {
             </Button>
             
             <Button
-              onClick={() => scroll('right')}
+              onClick={() => rotateCarousel('right')}
               variant="outline"
               size="icon"
               className="absolute right-4 top-1/2 -translate-y-1/2 z-50 bg-background/80 backdrop-blur-sm hover:bg-background/90 shadow-lg"
@@ -60,57 +91,73 @@ const Projects = () => {
               <ChevronRight className="h-6 w-6" />
             </Button>
             
-            <div ref={scrollRef} className="pb-8 h-[600px] overflow-x-auto overflow-y-hidden">
-              <div className="flex flex-row items-center min-w-max px-4 md:px-8 h-full">
-              {displayedProjects.map((project, index) => {
-                const rotation = (index % 3 - 1) * 1.5;
-                const totalProjects = displayedProjects.length;
-                const scrollSpeed = index % 3 === 0 ? "0.8" : index % 3 === 1 ? "1.0" : "1.2";
-                
-                return (
-                  <div 
-                    key={project.id}
-                    className="group animate-fade-in w-80 md:w-96 flex-shrink-0 relative transition-all duration-500 ease-out hover:z-50"
-                    style={{ 
-                      animationDelay: `${Math.min(index * 0.1, 1)}s`,
-                      marginLeft: index === 0 ? '0' : '-220px',
-                      zIndex: totalProjects - index,
-                      transform: `rotate(${rotation}deg)`,
-                      transitionDelay: `${index * 0.05}s`,
-                    }}
-                  >
-                    <Link 
-                      to={`/projects/${project.id}`}
-                      className="block overflow-hidden transition-all duration-500 relative z-10 shadow-lg hover:shadow-2xl group-hover:scale-105 group-hover:-translate-y-8 group-hover:z-[100]"
-                      style={{
-                        transform: `rotate(0deg)`,
-                        transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+            <div 
+              ref={carouselRef}
+              className="carousel-container h-[600px] overflow-hidden cursor-grab active:cursor-grabbing"
+              onMouseDown={handleMouseDown}
+              onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUp}
+              onMouseLeave={handleMouseUp}
+            >
+              <div 
+                className="carousel-3d h-full relative"
+                style={{
+                  transform: `rotateY(${rotation}deg)`,
+                  transformStyle: 'preserve-3d',
+                  transition: isDragging ? 'none' : 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+                }}
+              >
+                {displayedProjects.map((project, index) => {
+                  const angle = index * anglePerCard;
+                  const centerIndex = getCenterIndex();
+                  const distanceFromCenter = Math.min(
+                    Math.abs(index - centerIndex),
+                    totalCards - Math.abs(index - centerIndex)
+                  );
+                  const isCenter = distanceFromCenter === 0;
+                  const scale = isCenter ? 1.2 : 1 - (distanceFromCenter * 0.1);
+                  const opacity = isCenter ? 1 : 0.6 - (distanceFromCenter * 0.1);
+                  
+                  return (
+                    <div 
+                      key={project.id}
+                      className="carousel-card absolute left-1/2 top-1/2 w-80 md:w-96 pointer-events-auto"
+                      style={{ 
+                        transform: `translate(-50%, -50%) rotateY(${-angle}deg) translateZ(${radius}px) rotateY(${angle}deg) scale(${scale})`,
+                        transformStyle: 'preserve-3d',
+                        opacity,
+                        transition: isDragging ? 'opacity 0.3s' : 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+                        zIndex: isCenter ? 100 : 50 - distanceFromCenter,
                       }}
                     >
-                    <div className="relative aspect-square overflow-hidden bg-cream border-2 border-muted group-hover:border-primary/30">
-                      <img 
-                        src={project.coverImage} 
-                        alt={project.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 flex flex-col justify-center items-center p-4 md:p-6 lg:p-8 text-center bg-black/60 group-hover:bg-black/20 transition-colors duration-500">
-                        <h2 className="text-base md:text-lg lg:text-xl xl:text-2xl font-bold uppercase tracking-wider mb-2 md:mb-3 text-white line-clamp-2">
-                          {project.title}
-                        </h2>
-                        
-                        <p className="text-sm md:text-base italic mb-3 md:mb-4 max-w-[90%] text-white/90 line-clamp-2">
-                          {project.summary.split(' ').slice(0, 4).join(' ')}...
-                        </p>
-                        
-                        <div className="mt-auto italic text-xs md:text-sm text-white/80 truncate w-full">
-                          {project.client || "Self-released"}
+                      <Link 
+                        to={`/projects/${project.id}`}
+                        className="block overflow-hidden shadow-2xl hover:shadow-[0_20px_80px_rgba(0,0,0,0.3)] transition-shadow duration-500"
+                      >
+                        <div className="relative aspect-square overflow-hidden bg-card border-2 border-border group hover:border-primary/50">
+                          <img 
+                            src={project.coverImage} 
+                            alt={project.title}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          />
+                          <div className="absolute inset-0 flex flex-col justify-center items-center p-4 md:p-6 lg:p-8 text-center bg-black/60 group-hover:bg-black/30 transition-colors duration-500">
+                            <h2 className="text-base md:text-lg lg:text-xl xl:text-2xl font-bold uppercase tracking-wider mb-2 md:mb-3 text-white line-clamp-2">
+                              {project.title}
+                            </h2>
+                            
+                            <p className="text-sm md:text-base italic mb-3 md:mb-4 max-w-[90%] text-white/90 line-clamp-2">
+                              {project.summary.split(' ').slice(0, 4).join(' ')}...
+                            </p>
+                            
+                            <div className="mt-auto italic text-xs md:text-sm text-white/80 truncate w-full">
+                              {project.client || "Self-released"}
+                            </div>
+                          </div>
                         </div>
-                      </div>
+                      </Link>
                     </div>
-                  </Link>
-                </div>
-              );
-            })}
+                  );
+                })}
               </div>
             </div>
           </div>
