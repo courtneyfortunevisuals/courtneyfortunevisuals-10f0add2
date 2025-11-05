@@ -21,7 +21,7 @@ const Projects = () => {
             </p>
           </div>
           
-          <div className="overflow-x-auto pb-8">
+          <div className="overflow-x-auto pb-8 scroll-smooth snap-x snap-mandatory">
             <div className="flex flex-row items-center min-w-max px-4 md:px-8">
               {displayedProjects.map((project, index) => {
                 const rotation = (index % 3 - 1) * 1.5; // Alternating -1.5, 0, 1.5 degrees
@@ -30,7 +30,7 @@ const Projects = () => {
                 return (
                   <div 
                     key={project.id}
-                    className="group animate-fade-in w-80 md:w-96 flex-shrink-0 relative transition-all duration-500 ease-out hover:z-50"
+                    className="group animate-fade-in w-80 md:w-96 flex-shrink-0 relative transition-all duration-500 ease-out hover:z-50 snap-center"
                     style={{ 
                       animationDelay: `${Math.min(index * 0.1, 1)}s`,
                       marginLeft: index === 0 ? '0' : '-220px',
