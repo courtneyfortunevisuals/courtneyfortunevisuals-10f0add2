@@ -171,7 +171,7 @@ const allProjects: Project[] = [
       "I developed various banner formats and sizes to accommodate different digital platforms and touchpoints, ensuring consistent messaging across all channels.",
       "The campaign successfully communicated the value proposition of the FNB-Clicks partnership, resulting in increased customer engagement and sign-ups for the rewards program."
     ],
-    coverImage: "/lovable-uploads/f5823f61-a999-47ce-86bc-e32effc51b60.png",
+    coverImage: "/lovable-uploads/fnb-01.png",
     year: 2023,
     client: "FNB (First National Bank)",
     duration: "2 months",
@@ -182,11 +182,11 @@ const allProjects: Project[] = [
     password: "portfolio",
     gallery: {
       images: [
-        { src: "/lovable-uploads/ba13530b-aa2c-4b3c-8f6f-3000043cebd3.png", alt: "FNB Display Banners presentation cover" },
-        { src: "/lovable-uploads/03406a68-9019-4e70-af39-e2adc325540f.png", alt: "FNB Clicks Baby Club campaign banners showcase" },
-        { src: "/lovable-uploads/0db34602-1dd2-4400-80b8-df6fcb895ae8.png", alt: "FNB campaign banners in browser mockup" },
-        { src: "/lovable-uploads/110d3c4d-408d-4c8e-99ed-58dd85166707.png", alt: "FNB FIFA World Cup campaign materials with FEEL IT NOW BE THERE messaging" },
-        { src: "/lovable-uploads/1986da5f-6241-41ed-a090-6623cbaabdd9.png", alt: "FNB FIFA World Cup campaign digital layout and banner variations" },
+        { src: "/lovable-uploads/fnb-01.png", alt: "FNB and VISA Display Banners presentation cover on laptop" },
+        { src: "/lovable-uploads/fnb-02.png", alt: "FNB Clicks Baby Club cashback campaign banner variations in browser" },
+        { src: "/lovable-uploads/fnb-03.png", alt: "FNB Clicks campaign banners showing multiple creative formats" },
+        { src: "/lovable-uploads/fnb-04.png", alt: "FNB VISA FIFA World Cup Qatar 2022 campaign creative with FEEL IT NOW BE THERE tagline" },
+        { src: "/lovable-uploads/fnb-05.png", alt: "FNB DISKI FLAVA LIVES HERE campaign banners in browser layout" },
       ],
       videos: [
         { title: "FNB Display Banner Animation", embedUrl: "https://player.vimeo.com/video/1121937982?autoplay=1&muted=1" },
