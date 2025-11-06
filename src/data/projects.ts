@@ -88,7 +88,7 @@ const allProjects: Project[] = [
       "I designed a range of promotional materials, including digital ads, social media content, and public transport branding, to create a cohesive and exciting visual identity for the campaign.",
       "The campaign resulted in a 40% increase in event attendance and significantly higher online engagement, successfully connecting the city's residents with local cultural events."
     ],
-    coverImage: "/lovable-uploads/f5823f61-a999-47ce-86bc-e32effc51b60.png",
+    coverImage: "/lovable-uploads/myciti-01.png",
     client: "MyCiti",
     duration: "3 months",
     role: "Digital Designer",
@@ -97,9 +97,9 @@ const allProjects: Project[] = [
     isPasswordProtected: false,
     gallery: {
       images: [
-        { src: "/lovable-uploads/Project_2_800x800-01.jpg", alt: "MyCiTi CPT Events campaign website design on laptop" },
-        { src: "/lovable-uploads/Project_2_800x800-02.jpg", alt: "MyCiTi CPT Events campaign banner designs and materials" },
-        { src: "/lovable-uploads/Project_2_800x800-03.jpg", alt: "MyCiTi CPT Events campaign website layout in browser view" },
+        { src: "/lovable-uploads/myciti-01.png", alt: "MyCiTi CPT Events campaign website design on laptop" },
+        { src: "/lovable-uploads/myciti-02.png", alt: "MyCiTi CPT Events campaign banner designs and materials" },
+        { src: "/lovable-uploads/myciti-03.png", alt: "MyCiTi CPT Events campaign website layout in browser view" },
       ],
       videos: [
         { title: "Campaign Overview", embedUrl: "https://player.vimeo.com/video/1121966796?autoplay=1&muted=1" },
