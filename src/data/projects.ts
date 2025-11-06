@@ -115,7 +115,7 @@ const allProjects: Project[] = [
       "I developed a distinctive visual language including logo, color palette, typography, iconography, and brand guidelines that positioned the company as innovative and trustworthy.",
       "The brand identity was applied across digital and physical touchpoints, creating a cohesive and memorable brand experience that helped the company secure additional funding."
     ],
-    coverImage: "/lovable-uploads/f5823f61-a999-47ce-86bc-e32effc51b60.png",
+    coverImage: "/lovable-uploads/travelstart-01.png",
     year: 2022,
     client: "Travelstart",
     duration: "2 months",
@@ -125,9 +125,9 @@ const allProjects: Project[] = [
     isPasswordProtected: false,
     gallery: {
       images: [
-        { src: "/lovable-uploads/2123648b-9082-45f7-a187-94c1e71f8645.png", alt: "TravelStart website homepage design" },
-        { src: "/lovable-uploads/da93db3e-ded6-4882-bdae-dd295ed2fd19.png", alt: "TravelStart brand identity system and marketing materials" },
-        { src: "/lovable-uploads/035c5674-5531-4a79-9b27-cff8c6131bfa.png", alt: "TravelStart website layout and banner designs" },
+        { src: "/lovable-uploads/travelstart-01.png", alt: "TravelStart Creative Concepts presentation on laptop mockup" },
+        { src: "/lovable-uploads/travelstart-02.png", alt: "TravelStart campaign frames showing flight specials and creative concepts" },
+        { src: "/lovable-uploads/travelstart-03.png", alt: "TravelStart digital banner designs and website layout" },
       ],
       videos: [
         { title: "Brand Animation", embedUrl: "https://player.vimeo.com/video/1097345492?h=abda5417c4&autoplay=1&muted=1" },
