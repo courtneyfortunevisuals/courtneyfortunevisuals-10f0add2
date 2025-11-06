@@ -56,7 +56,7 @@ const allProjects: Project[] = [
       "I conducted an audit of the existing design components, identified inconsistencies, and created a new system that balanced aesthetic quality with technical implementation requirements.",
       "The result was a cohesive design system with well-documented components, reducing design inconsistencies and development time for new features."
     ],
-    coverImage: "/lovable-uploads/f5823f61-a999-47ce-86bc-e32effc51b60.png",
+    coverImage: "/lovable-uploads/sprout-01.jpg",
     year: 2023,
     client: "Sprout Performance Partners",
     duration: "3 months",
@@ -66,15 +66,15 @@ const allProjects: Project[] = [
     isPasswordProtected: false,
     gallery: {
       images: [
-        { src: "/lovable-uploads/800x800_-_01-01.jpg", alt: "SPROUT Performance Partners brand logo designs" },
-        { src: "/lovable-uploads/800x800_-_01-02.jpg", alt: "SPROUT branding guidelines book cover" },
-        { src: "/lovable-uploads/800x800_-_01-03.jpg", alt: "SPROUT brand color palette and guidelines" },
-        { src: "/lovable-uploads/800x800_-_01-04.jpg", alt: "SPROUT website design on laptop mockup" },
-        { src: "/lovable-uploads/800x800_-_01-05.jpg", alt: "SPROUT coronavirus prevention and wellness poster" },
-        { src: "/lovable-uploads/800x800_-_01-06.jpg", alt: "SPROUT illustration guidelines and data strategy icons" },
-        { src: "/lovable-uploads/800x800_-_01-07.jpg", alt: "SPROUT email signature template design" },
-        { src: "/lovable-uploads/800x800_-_01-08.jpg", alt: "SPROUT stationery and business card designs" },
-        { src: "/lovable-uploads/800x800_-_01-09.jpg", alt: "SPROUT social media thank you post design" },
+        { src: "/lovable-uploads/sprout-01.jpg", alt: "SPROUT Performance Partners brand logo designs" },
+        { src: "/lovable-uploads/sprout-02.jpg", alt: "SPROUT branding guidelines book cover" },
+        { src: "/lovable-uploads/sprout-03.jpg", alt: "SPROUT brand color palette and guidelines" },
+        { src: "/lovable-uploads/sprout-04.jpg", alt: "SPROUT website design on laptop mockup" },
+        { src: "/lovable-uploads/sprout-05.jpg", alt: "SPROUT coronavirus prevention and wellness poster" },
+        { src: "/lovable-uploads/sprout-06.jpg", alt: "SPROUT illustration guidelines and data strategy icons" },
+        { src: "/lovable-uploads/sprout-07.jpg", alt: "SPROUT email signature template design" },
+        { src: "/lovable-uploads/sprout-08.jpg", alt: "SPROUT stationery and business card designs" },
+        { src: "/lovable-uploads/sprout-09.jpg", alt: "SPROUT social media thank you post design" },
       ],
       videos: []
     }
