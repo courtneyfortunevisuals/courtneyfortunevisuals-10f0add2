@@ -260,7 +260,7 @@ const allProjects: Project[] = [
   },
   {
     id: 11,
-    title: "3d Swirl Project",
+    title: "3D Swirl Demo",
     summary: "Dynamic 3D visualization and motion graphics project featuring organic swirl animations.",
     description: [
       "This project focused on creating dynamic 3D swirl animations and organic motion graphics for various digital applications.",
