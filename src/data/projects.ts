@@ -136,22 +136,19 @@ const allProjects: Project[] = [
   },
   {
     id: 5,
-    title: "Best in the wet Campaign",
-    summary: "User experience design for a health and wellness mobile application.",
+    title: "Tiger Wheel & Tyre",
+    summary: "Comprehensive branding and marketing materials for South Africa's leading tyre retailer.",
     description: [
-      "I designed the user experience for a health and wellness mobile application aimed at helping users build healthy habits and track their progress.",
-      "The process included extensive user research, persona development, user flow mapping, wireframing, and high-fidelity prototyping, all validated through multiple rounds of user testing.",
-      "The app launched to positive reviews, with users specifically praising its intuitive interface and helpful features that made habit tracking enjoyable rather than tedious."
+      "Tiger Wheel & Tyre is one of South Africa's most recognized automotive brands. This project encompassed the development of comprehensive branding and marketing materials.",
+      "The work included creating print advertisements, digital campaigns, in-store promotional materials, and supporting collateral that reinforced the brand's market position.",
+      "Special attention was given to maintaining brand consistency across all touchpoints while adapting creative concepts for different media formats and target audiences."
     ],
-    coverImage: "/lovable-uploads/f5823f61-a999-47ce-86bc-e32effc51b60.png",
-    year: 2023,
+    coverImage: "/lovable-uploads/0adb63e7-82fc-426d-9435-e247ec0d41ae.png",
     client: "Tiger Wheel & Tyre",
-    duration: "5 months",
-    role: "Digital Designer",
-    tags: ["Mobile App", "UX Design", "Health & Wellness", "User Testing"],
-    technologies: ["Illustrator", "Photoshop", "InDesign", "Google Web Designer"],
-    isPasswordProtected: true,
-    password: "portfolio",
+    role: "Graphic Designer",
+    tags: ["Branding", "Print Design", "Marketing"],
+    technologies: ["Adobe Creative Suite"],
+    isPasswordProtected: false,
     gallery: {
       images: [
         { src: "/lovable-uploads/5f313151-6d8b-41ae-be13-1c3de0ff70ed.png", alt: "Tiger Wheel & Tyre dynamic creative presentation" },
@@ -165,21 +162,18 @@ const allProjects: Project[] = [
   {
     id: 6,
     title: "FNB Display Banners",
-    summary: "Digital banner campaign for FNB's Clicks Baby Club partnership, promoting cashback rewards.",
+    summary: "Digital advertising campaign for First National Bank promoting financial services.",
     description: [
-      "This project involved creating a comprehensive digital banner campaign for FNB's partnership with Clicks Baby Club, aimed at promoting cashback rewards for customers.",
-      "I developed various banner formats and sizes to accommodate different digital platforms and touchpoints, ensuring consistent messaging across all channels.",
-      "The campaign successfully communicated the value proposition of the FNB-Clicks partnership, resulting in increased customer engagement and sign-ups for the rewards program."
+      "This project involved creating a series of digital display banners for First National Bank (FNB), one of South Africa's leading financial institutions.",
+      "The campaign focused on promoting various banking products and services through engaging visual storytelling that resonated with diverse target audiences.",
+      "Each banner was optimized for different digital platforms and screen sizes while maintaining consistent brand messaging and visual identity."
     ],
     coverImage: "/lovable-uploads/fnb-01.png",
-    year: 2023,
-    client: "FNB (First National Bank)",
-    duration: "2 months",
+    client: "First National Bank",
     role: "Digital Designer",
-    tags: ["Digital Banners", "Campaign Design", "Financial Services", "Partnership Marketing"],
-    technologies: ["Illustrator", "Photoshop", "InDesign", "Google Web Designer"],
-    isPasswordProtected: true,
-    password: "portfolio",
+    tags: ["Digital Advertising", "Banking", "Marketing"],
+    technologies: ["Adobe Photoshop", "Adobe Illustrator"],
+    isPasswordProtected: false,
     gallery: {
       images: [
         { src: "/lovable-uploads/fnb-01.png", alt: "FNB and VISA Display Banners presentation cover on laptop" },
@@ -197,21 +191,20 @@ const allProjects: Project[] = [
   {
     id: 7,
     title: "Social Media Ads",
-    summary: "Dynamic social media advertising campaigns for Fabiani menswear and Sportscene sneaker collections.",
+    summary: "Creative advertising content for various social media platforms and brands.",
     description: [
-      "This project involved creating engaging social media advertisements for premium menswear brand Fabiani and Sportscene's sneaker collections.",
-      "I developed sophisticated ad campaigns showcasing Fabiani's refined menswear with the tagline 'Sophisticated style for the modern gentleman', featuring lifestyle photography and elegant product displays.",
-      "For Sportscene, I created high-impact sneaker campaigns including 'The Drop' and 'Kings of Sneakerwear' series, emphasizing Nike's men's range with bold, product-focused visuals that elevated every move."
+      "This collection showcases a diverse range of social media advertising campaigns created for multiple brands across different industries.",
+      "Each campaign was tailored to the unique characteristics of specific social media platforms, optimizing visual design and messaging for maximum engagement.",
+      "The work demonstrates versatility in adapting brand voices and creative concepts for the fast-paced digital social media environment.",
+      "Special focus was placed on creating scroll-stopping visuals that drive user interaction while maintaining brand consistency and marketing objectives."
     ],
-    coverImage: "/lovable-uploads/1-01.png",
-    year: 2022,
-    client: "Fabiani & Sportscene",
-    duration: "6 months",
-    role: "Digital Designer",
-    tags: ["Social Media", "Digital Advertising", "Fashion", "Product Photography"],
-    technologies: ["Illustrator", "Photoshop", "InDesign", "Google Web Designer"],
-    isPasswordProtected: true,
-    password: "portfolio",
+    coverImage: "/lovable-uploads/800x800_-_01-01.jpg",
+    client: "Various Clients",
+    role: "Social Media Designer",
+    tags: ["Social Media", "Digital Marketing", "Advertising"],
+    technologies: ["Adobe Photoshop", "Canva", "Figma"],
+    year: 2023,
+    isPasswordProtected: false,
     gallery: {
       images: [
         { src: "/lovable-uploads/Project_8_800x800-01.jpg", alt: "Fabiani sophisticated menswear ad - Dress with Distinction" },
