@@ -28,7 +28,7 @@ const allProjects: Project[] = [
       "I developed a comprehensive visual identity system including logo design, typography, color schemes, business collateral, and digital brand guidelines.",
       "The new brand identity helped the firm secure three major corporate clients within the first quarter after launch, establishing their market presence effectively."
     ],
-    coverImage: "/lovable-uploads/f5823f61-a999-47ce-86bc-e32effc51b60.png",
+    coverImage: "/lovable-uploads/project-01-cover.png",
     year: 2022,
     client: "courtneyfortune visuals",
     duration: "3 months",
@@ -56,7 +56,7 @@ const allProjects: Project[] = [
       "I conducted an audit of the existing design components, identified inconsistencies, and created a new system that balanced aesthetic quality with technical implementation requirements.",
       "The result was a cohesive design system with well-documented components, reducing design inconsistencies and development time for new features."
     ],
-    coverImage: "/lovable-uploads/sprout-01.jpg",
+    coverImage: "/lovable-uploads/project-02-cover.png",
     year: 2023,
     client: "Sprout Performance Partners",
     duration: "3 months",
@@ -88,7 +88,7 @@ const allProjects: Project[] = [
       "I designed a range of promotional materials, including digital ads, social media content, and public transport branding, to create a cohesive and exciting visual identity for the campaign.",
       "The campaign resulted in a 40% increase in event attendance and significantly higher online engagement, successfully connecting the city's residents with local cultural events."
     ],
-    coverImage: "/lovable-uploads/myciti-01.png",
+    coverImage: "/lovable-uploads/project-03-cover.png",
     client: "MyCiti",
     duration: "3 months",
     role: "Digital Designer",
@@ -115,7 +115,7 @@ const allProjects: Project[] = [
       "I developed a distinctive visual language including logo, color palette, typography, iconography, and brand guidelines that positioned the company as innovative and trustworthy.",
       "The brand identity was applied across digital and physical touchpoints, creating a cohesive and memorable brand experience that helped the company secure additional funding."
     ],
-    coverImage: "/lovable-uploads/travelstart-01.png",
+    coverImage: "/lovable-uploads/project-04-cover.png",
     year: 2022,
     client: "Travelstart",
     duration: "2 months",
@@ -143,7 +143,7 @@ const allProjects: Project[] = [
       "The work included creating print advertisements, digital campaigns, in-store promotional materials, and supporting collateral that reinforced the brand's market position.",
       "Special attention was given to maintaining brand consistency across all touchpoints while adapting creative concepts for different media formats and target audiences."
     ],
-    coverImage: "/lovable-uploads/0adb63e7-82fc-426d-9435-e247ec0d41ae.png",
+    coverImage: "/lovable-uploads/project-05-cover.png",
     client: "Tiger Wheel & Tyre",
     role: "Graphic Designer",
     tags: ["Branding", "Print Design", "Marketing"],
@@ -172,7 +172,7 @@ const allProjects: Project[] = [
       "The campaign focused on promoting various banking products and services through engaging visual storytelling that resonated with diverse target audiences.",
       "Each banner was optimized for different digital platforms and screen sizes while maintaining consistent brand messaging and visual identity."
     ],
-    coverImage: "/lovable-uploads/fnb-01.png",
+    coverImage: "/lovable-uploads/project-06-cover.png",
     client: "First National Bank",
     role: "Digital Designer",
     tags: ["Digital Advertising", "Banking", "Marketing"],
@@ -202,7 +202,7 @@ const allProjects: Project[] = [
       "The work demonstrates versatility in adapting brand voices and creative concepts for the fast-paced digital social media environment.",
       "Special focus was placed on creating scroll-stopping visuals that drive user interaction while maintaining brand consistency and marketing objectives."
     ],
-    coverImage: "/lovable-uploads/800x800_-_01-01.jpg",
+    coverImage: "/lovable-uploads/project-07-cover.png",
     client: "Various Clients",
     role: "Social Media Designer",
     tags: ["Social Media", "Digital Marketing", "Advertising"],
