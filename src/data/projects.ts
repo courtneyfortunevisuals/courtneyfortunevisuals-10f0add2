@@ -151,8 +151,12 @@ const allProjects: Project[] = [
     isPasswordProtected: false,
     gallery: {
       images: [
-        { src: "/lovable-uploads/5f313151-6d8b-41ae-be13-1c3de0ff70ed.png", alt: "Tiger Wheel & Tyre dynamic creative presentation" },
-        { src: "/lovable-uploads/8c522066-cc10-428a-b251-dace7763b375.png", alt: "Tiger Wheel & Tyre Best in the Wet campaign materials and web layouts" },
+        { src: "/lovable-uploads/tiger-wheel-01.png", alt: "Tiger Wheel & Tyre dynamic creative storyboard on laptop mockup" },
+        { src: "/lovable-uploads/tiger-wheel-02.png", alt: "Tiger Wheel & Tyre Google Web Designer ad for Best in Wet campaign" },
+        { src: "/lovable-uploads/tiger-wheel-03.png", alt: "Tiger Wheel & Tyre web banner layouts and placements" },
+        { src: "/lovable-uploads/tiger-wheel-04.png", alt: "Tiger Wheel & Tyre vertical banner ad variations" },
+        { src: "/lovable-uploads/tiger-wheel-05.png", alt: "Tiger Wheel & Tyre multi-format banner ads" },
+        { src: "/lovable-uploads/tiger-wheel-06.png", alt: "Tiger Wheel & Tyre web page with integrated display ads" },
       ],
       videos: [
         { title: "Campaign Demo", embedUrl: "https://player.vimeo.com/video/1121966686?autoplay=1&muted=1" },
