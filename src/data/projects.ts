@@ -82,7 +82,7 @@ const allProjects: Project[] = [
   {
     id: 3,
     title: "CPT EVENTS CAMPAIGN",
-    summary: "Overview\n\nA city-wide promotional campaign designed to increase awareness, attendance, and community engagement for Cape Town's local events.\n\nPositioned as the lead digital designer, I developed a cohesive visual identity and a suite of marketing assets that brought energy, clarity, and consistency to the campaign across multiple touchpoints.",
+    summary: "A city-wide promotional campaign designed to increase awareness, attendance, and community engagement for Cape Town's local events.\n\nPositioned as the lead digital designer, I developed a cohesive visual identity and a suite of marketing assets that brought energy, clarity, and consistency to the campaign across multiple touchpoints.",
     description: [
       "Project Notes",
       "This project focused on creating a vibrant, accessible, and engaging creative direction for Cape Town's event series. The goal was to boost public participation by delivering clear messaging, memorable visuals, and a unified brand experience across digital and physical platforms.",
