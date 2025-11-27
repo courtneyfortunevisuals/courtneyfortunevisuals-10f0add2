@@ -121,9 +121,7 @@ const allProjects: Project[] = [
       "• Animating assets for display and programmatic media",
       "• Optimizing file sizes and ensuring platform compatibility",
       "• Preparing export packages for marketing and media teams",
-      "The final animated banners strengthened the startup's digital advertising presence, enhanced brand recall, and supported improved campaign performance through motion-driven engagement.",
-      "Technical Tools",
-      "Illustrator • Photoshop • InDesign • Google Web Designer (Animation)"
+      "The final animated banners strengthened the startup's digital advertising presence, enhanced brand recall, and supported improved campaign performance through motion-driven engagement."
     ],
     coverImage: "/lovable-uploads/project-cover.png",
     year: 2022,
