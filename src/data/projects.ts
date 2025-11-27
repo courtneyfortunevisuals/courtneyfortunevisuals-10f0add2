@@ -94,7 +94,7 @@ const allProjects: Project[] = [
     role: "Digital Designer",
     tags: [],
     technologies: ["Illustrator", "Photoshop", "InDesign", "Google Web Designer"],
-    isPasswordProtected: false,
+    isPasswordProtected: true,
     gallery: {
       images: [
         { src: "/lovable-uploads/myciti-01.png", alt: "MyCiTi CPT Events campaign website design on laptop" },
@@ -122,7 +122,7 @@ const allProjects: Project[] = [
     role: "Digital Designer",
     tags: [],
     technologies: ["Illustrator", "Photoshop", "InDesign", "Google Web Designer"],
-    isPasswordProtected: false,
+    isPasswordProtected: true,
     gallery: {
       images: [
         { src: "/lovable-uploads/travelstart-01.png", alt: "TravelStart Creative Concepts presentation on laptop mockup" },
@@ -148,7 +148,7 @@ const allProjects: Project[] = [
     role: "Graphic Designer",
     tags: [],
     technologies: ["Adobe Creative Suite"],
-    isPasswordProtected: false,
+    isPasswordProtected: true,
     gallery: {
       images: [
         { src: "/lovable-uploads/tiger-wheel-01.png", alt: "Tiger Wheel & Tyre dynamic creative storyboard on laptop mockup" },
@@ -177,7 +177,7 @@ const allProjects: Project[] = [
     role: "Digital Designer",
     tags: [],
     technologies: ["Adobe Photoshop", "Adobe Illustrator"],
-    isPasswordProtected: false,
+    isPasswordProtected: true,
     gallery: {
       images: [
         { src: "/lovable-uploads/fnb-01.png", alt: "FNB and VISA Display Banners presentation cover on laptop" },
@@ -208,7 +208,7 @@ const allProjects: Project[] = [
     tags: [],
     technologies: ["Adobe Photoshop", "Canva", "Figma"],
     year: 2023,
-    isPasswordProtected: false,
+    isPasswordProtected: true,
     gallery: {
       images: [
         { src: "/lovable-uploads/Project_8_800x800-01.jpg", alt: "Fabiani sophisticated menswear ad - Dress with Distinction" },

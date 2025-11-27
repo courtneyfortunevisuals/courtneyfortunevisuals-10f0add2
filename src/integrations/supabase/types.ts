@@ -14,13 +14,39 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      project_passwords: {
+        Row: {
+          created_at: string | null
+          id: string
+          password_hash: string
+          project_id: number
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          password_hash: string
+          project_id: number
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          password_hash?: string
+          project_id?: number
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      verify_project_password: {
+        Args: { p_password: string; p_project_id: number }
+        Returns: boolean
+      }
     }
     Enums: {
       [_ in never]: never
