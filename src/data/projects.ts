@@ -111,7 +111,7 @@ const allProjects: Project[] = [
   {
     id: 4,
     title: "TRAVELSTART ANIMATED DIGITAL BANNERS",
-    summary: "Overview\n\nCreation of a complete set of animated digital marketing banners for a tech startup, designed to boost online visibility, improve click-through performance, and deliver a more dynamic brand presence across paid media channels.",
+    summary: "A collection of animated digital marketing banners created for a tech startup, designed to strengthen online visibility and drive higher engagement across web and social advertising platforms.",
     description: [
       "Project Notes",
       "As the digital designer, I developed and animated a series of high-impact marketing banners used across web, display networks, and social platforms. The goal was to translate the brand's visual identity into motion—capturing attention through clean transitions, clear messaging, and engaging storytelling.",
