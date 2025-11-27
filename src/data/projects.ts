@@ -33,7 +33,7 @@ const allProjects: Project[] = [
     client: "courtneyfortune visuals",
     duration: "3 months",
     role: "Brand Designer",
-    tags: ["Brand Identity", "Logo Design", "Corporate Design", "Visual Systems"],
+    tags: [],
     technologies: ["Illustrator", "InDesign", "Photoshop", "After Effects"],
     isPasswordProtected: false,
     gallery: {
@@ -175,7 +175,7 @@ const allProjects: Project[] = [
     coverImage: "/lovable-uploads/project-cover.png",
     client: "First National Bank",
     role: "Digital Designer",
-    tags: ["Digital Advertising", "Banking", "Marketing"],
+    tags: [],
     technologies: ["Adobe Photoshop", "Adobe Illustrator"],
     isPasswordProtected: false,
     gallery: {
@@ -205,7 +205,7 @@ const allProjects: Project[] = [
     coverImage: "/lovable-uploads/project-cover.png",
     client: "Various Clients",
     role: "Social Media Designer",
-    tags: ["Social Media", "Digital Marketing", "Advertising"],
+    tags: [],
     technologies: ["Adobe Photoshop", "Canva", "Figma"],
     year: 2023,
     isPasswordProtected: false,
@@ -241,7 +241,7 @@ const allProjects: Project[] = [
     client: "courtneyfortune visuals",
     duration: "6 months",
     role: "Mobile UI Designer",
-    tags: ["Mobile App", "Banking", "UI Design", "Fintech"],
+    tags: [],
     technologies: ["Sketch", "Principle", "Zeplin", "Photoshop"],
     isPasswordProtected: false,
     gallery: {
@@ -269,8 +269,8 @@ const allProjects: Project[] = [
     client: "courtneyfortune visuals",
     duration: "4 months",
     role: "3D Artist & Motion Designer",
-    tags: ["3D Animation", "Motion Graphics", "Particle Systems", "Visual Effects"],
-    technologies: ["Cinema 4D", "After Effects", "Blender", "Octane Render"],
+    tags: [],
+    technologies: ["Illustrator", "Photoshop", "Google Web Designer"],
     isPasswordProtected: false,
     gallery: {
       images: [
