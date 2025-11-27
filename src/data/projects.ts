@@ -92,7 +92,7 @@ const allProjects: Project[] = [
     client: "MyCiti",
     duration: "3 months",
     role: "Digital Designer",
-    tags: ["Campaign Design", "UI/UX", "Event Promotion", "Branding"],
+    tags: [],
     technologies: ["Illustrator", "Photoshop", "InDesign", "Google Web Designer"],
     isPasswordProtected: false,
     gallery: {
@@ -120,7 +120,7 @@ const allProjects: Project[] = [
     client: "Travelstart",
     duration: "2 months",
     role: "Digital Designer",
-    tags: ["Branding", "Logo Design", "Visual Identity", "Guidelines"],
+    tags: [],
     technologies: ["Illustrator", "Photoshop", "InDesign", "Google Web Designer"],
     isPasswordProtected: false,
     gallery: {
@@ -146,7 +146,7 @@ const allProjects: Project[] = [
     coverImage: "/lovable-uploads/project-cover.png",
     client: "Tiger Wheel & Tyre",
     role: "Graphic Designer",
-    tags: ["Branding", "Print Design", "Marketing"],
+    tags: [],
     technologies: ["Adobe Creative Suite"],
     isPasswordProtected: false,
     gallery: {
