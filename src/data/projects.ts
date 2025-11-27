@@ -87,8 +87,6 @@ const allProjects: Project[] = [
       "This project focused on creating a vibrant, accessible, and engaging creative direction for Cape Town's event series. The goal was to boost public participation by delivering clear messaging, memorable visuals, and a unified brand experience across digital and physical platforms.",
       "I produced a full range of promotional materials, including:",
       "• Digital ads and social media graphics",
-      "• Campaign branding and iconography",
-      "• Public transport promotional layouts",
       "• Web banners and responsive digital assets",
       "Through thoughtful design decisions and user-centered execution, the campaign strengthened visibility, expanded reach, and supported the city's initiative to connect residents with local cultural activities."
     ],
