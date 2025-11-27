@@ -44,16 +44,16 @@ const Footer = () => {
           
           <div>
             <h3 className="text-lg font-semibold mb-4">Connect</h3>
-            <div className="flex items-center space-x-1">
+            <div className="flex items-center space-x-1 md:space-x-2">
               <a 
                 href="https://linkedin.com" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 aria-label="LinkedIn Profile"
               >
-                <Button variant="outline" size="icon" className="rounded-full">
-                  <img src="/lovable-uploads/3b5cde57-906e-43c2-9572-7ac776283a9d.png" alt="LinkedIn logo" className="h-4 w-4 block dark:hidden" />
-                  <img src="/lovable-uploads/800d30c6-a672-4cf5-8f37-842d8142c707.png" alt="LinkedIn logo" className="h-4 w-4 hidden dark:block" />
+                <Button variant="ghost" size="icon" className="rounded-full">
+                  <img src="/lovable-uploads/3b5cde57-906e-43c2-9572-7ac776283a9d.png" alt="LinkedIn logo" className="h-5 w-5 block dark:hidden" />
+                  <img src="/lovable-uploads/800d30c6-a672-4cf5-8f37-842d8142c707.png" alt="LinkedIn logo" className="h-5 w-5 hidden dark:block" />
                 </Button>
               </a>
               <a 
@@ -62,9 +62,9 @@ const Footer = () => {
                 rel="noopener noreferrer" 
                 aria-label="Behance Profile"
               >
-                <Button variant="outline" size="icon" className="rounded-full">
-                  <img src="/lovable-uploads/2947db43-c761-4459-ac95-49bbbbfff68c.png" alt="Behance logo" className="h-4 w-4 block dark:hidden" />
-                  <img src="/lovable-uploads/7a8cc4df-daaf-479b-b4df-e9eb9904228e.png" alt="Behance logo" className="h-4 w-4 hidden dark:block" />
+                <Button variant="ghost" size="icon" className="rounded-full">
+                  <img src="/lovable-uploads/2947db43-c761-4459-ac95-49bbbbfff68c.png" alt="Behance logo" className="h-5 w-5 block dark:hidden" />
+                  <img src="/lovable-uploads/7a8cc4df-daaf-479b-b4df-e9eb9904228e.png" alt="Behance logo" className="h-5 w-5 hidden dark:block" />
                 </Button>
               </a>
               <a 
