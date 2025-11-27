@@ -61,7 +61,7 @@ const allProjects: Project[] = [
     client: "Sprout Performance Partners",
     duration: "3 months",
     role: "Digital Designer",
-    tags: ["Design System", "UI/UX", "Component Library", "Documentation"],
+    tags: [],
     technologies: ["Illustrator", "Photoshop", "InDesign", "Google Web Designer"],
     isPasswordProtected: false,
     gallery: {
