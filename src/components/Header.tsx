@@ -56,6 +56,16 @@ const Header = () => {
               <img src="/lovable-uploads/7a8cc4df-daaf-479b-b4df-e9eb9904228e.png" alt="Behance logo" className="h-5 w-5 hidden dark:block" />
             </Button>
           </a>
+          <a 
+            href="https://www.linkedin.com/in/courtney-fortune-67094475/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hidden md:inline-flex"
+          >
+            <Button variant="outline" size="sm">
+              Let's chat
+            </Button>
+          </a>
           <ModeToggle />
           <div className="md:hidden">
             <MobileMenu location={location} />
