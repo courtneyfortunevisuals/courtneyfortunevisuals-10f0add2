@@ -13,11 +13,6 @@ const Index = () => {
   // Determine if we're in dark mode
   const isDarkMode = theme === 'dark' || 
     (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
-  
-  // Choose video URL based on theme
-  const videoUrl = isDarkMode 
-    ? "https://player.vimeo.com/video/1097342946?h=00ac02f95e&autoplay=1&loop=1&background=1&muted=1"
-    : "https://player.vimeo.com/video/1097339449?h=5f755356a1&autoplay=1&loop=1&background=1&muted=1";
 
   return (
     <Layout>
@@ -31,13 +26,10 @@ const Index = () => {
             <div className="w-full max-w-2xl overflow-hidden rounded-lg">
               <div className="relative pb-[56.25%] h-0">
                 <iframe 
-                  key={videoUrl}
-                  src={videoUrl}
+                  src="https://my.spline.design/reededliquidglassprismherosectionconcept-2PDlBZlhqd6aszmd7tZfqLPp/"
                   className="absolute top-0 left-0 w-full h-full"
                   frameBorder="0"
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  allowFullScreen
-                  title="CFV Video"
+                  title="Spline 3D Scene"
                 ></iframe>
               </div>
             </div>
