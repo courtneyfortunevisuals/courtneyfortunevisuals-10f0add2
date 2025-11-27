@@ -121,7 +121,15 @@ const allProjects: Project[] = [
       "• Animating assets for display and programmatic media",
       "• Optimizing file sizes and ensuring platform compatibility",
       "• Preparing export packages for marketing and media teams",
-      "The final animated banners strengthened the startup's digital advertising presence, enhanced brand recall, and supported improved campaign performance through motion-driven engagement."
+      "In this project, I developed and animated a full suite of digital banner ads for Travelstart's marketing campaigns. My focus was on transforming key brand elements into motion—delivering creative that was visually consistent, lightweight, and optimized for performance across multiple ad networks.",
+      "I handled the complete production process, including:",
+      "• Designing static and responsive banner layouts",
+      "• Creating motion concepts that highlight campaign messaging",
+      "• Animating banners in multiple dimensions and formats",
+      "• Ensuring smooth transitions and eye-catching movement",
+      "• Compression and technical optimization for HTML5 display standards",
+      "• Preparing deliverables for handoff to the marketing and media teams",
+      "The result was a cohesive set of animated assets that elevated campaign impact, improved click-through rates, and delivered a polished motion presence aligned with the brand's visual identity."
     ],
     coverImage: "/lovable-uploads/project-cover.png",
     year: 2022,
