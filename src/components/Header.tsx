@@ -19,13 +19,13 @@ const Header = () => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/90 backdrop-blur-md py-2 md:py-3 lg:py-4 dark:bg-[#303b2e]/90" : "bg-transparent py-2 md:py-4 lg:py-6"}`}>
-      <div className="container px-3 md:px-4 lg:px-6 flex justify-between items-center">
+      <div className="container px-3 md:px-4 lg:px-6 flex justify-between items-center relative">
         <Link to="/" className="text-xl font-semibold flex-shrink-0">
           <img src="/lovable-uploads/794d48a3-265b-411b-95f4-fe6496d931fc.png" alt="cfv logo" className="h-10 md:h-12 lg:h-16 xl:h-20 block dark:hidden" />
           <img src="/lovable-uploads/aad48bcc-3729-47d0-831e-e54b76641ba7.png" alt="cfv logo" className="h-10 md:h-12 lg:h-16 xl:h-20 hidden dark:block" />
         </Link>
         
-        <nav className="hidden md:flex lg:flex items-center space-x-4 lg:space-x-6 xl:space-x-8">
+        <nav className="hidden md:flex lg:flex items-center space-x-4 lg:space-x-6 xl:space-x-8 absolute left-1/2 transform -translate-x-1/2">
           <NavLink to="/" active={location.pathname === "/"}>Home</NavLink>
           <NavLink to="/about" active={location.pathname === "/about"}>About</NavLink>
           <NavLink to="/projects" active={location.pathname.includes("/projects")}>Projects</NavLink>
