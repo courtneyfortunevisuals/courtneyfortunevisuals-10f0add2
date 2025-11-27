@@ -113,12 +113,20 @@ const allProjects: Project[] = [
   },
   {
     id: 4,
-    title: "Travelstart Generic Creative",
-    summary: "Development of a comprehensive brand identity system for a tech startup.",
+    title: "TRAVELSTART ANIMATED DIGITAL BANNERS",
+    summary: "Overview\n\nCreation of a complete set of animated digital marketing banners for a tech startup, designed to boost online visibility, improve click-through performance, and deliver a more dynamic brand presence across paid media channels.",
     description: [
-      "This project involved creating a comprehensive brand identity system for a tech startup entering a competitive market.",
-      "I developed a distinctive visual language including logo, color palette, typography, iconography, and brand guidelines that positioned the company as innovative and trustworthy.",
-      "The brand identity was applied across digital and physical touchpoints, creating a cohesive and memorable brand experience that helped the company secure additional funding."
+      "Project Notes",
+      "As the digital designer, I developed and animated a series of high-impact marketing banners used across web, display networks, and social platforms. The goal was to translate the brand's visual identity into motion—capturing attention through clean transitions, clear messaging, and engaging storytelling.",
+      "Key responsibilities included:",
+      "• Designing static layouts for multiple banner formats",
+      "• Developing motion concepts aligned with brand tone and campaign goals",
+      "• Animating assets for display and programmatic media",
+      "• Optimizing file sizes and ensuring platform compatibility",
+      "• Preparing export packages for marketing and media teams",
+      "The final animated banners strengthened the startup's digital advertising presence, enhanced brand recall, and supported improved campaign performance through motion-driven engagement.",
+      "Technical Tools",
+      "Illustrator • Photoshop • InDesign • Google Web Designer (Animation)"
     ],
     coverImage: "/lovable-uploads/project-cover.png",
     year: 2022,
