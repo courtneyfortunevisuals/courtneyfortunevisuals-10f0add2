@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { ModeToggle } from "@/components/mode-toggle";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -76,6 +77,7 @@ const Footer = () => {
                   Let's chat
                 </Button>
               </a>
+              <ModeToggle />
             </div>
           </div>
         </div>
