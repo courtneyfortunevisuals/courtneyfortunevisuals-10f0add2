@@ -52,7 +52,7 @@ const allProjects: Project[] = [
     title: "Internal Rebranding",
     summary: "A comprehensive redesign of a company's design system, improving consistency and efficiency.",
     description: [
-      "This project involved a complete overhaul of a company's design system, focusing on creating a more consistent visual language and improving development efficiency.",
+      "Tasked with revitalizing a digital marketing company's internal brand, I transformed a fragmented system into a cohesive visual identity with purpose and clarity. By rebuilding design foundations—color, typography, components, templates, and documentation—I created a brand ecosystem that works seamlessly for the people who use it every day. The result: stronger storytelling, smoother workflows, and a brand that finally reflects the company's momentum.",
       "I conducted an audit of the existing design components, identified inconsistencies, and created a new system that balanced aesthetic quality with technical implementation requirements.",
       "The result was a cohesive design system with well-documented components, reducing design inconsistencies and development time for new features."
     ],
