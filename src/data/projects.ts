@@ -81,12 +81,17 @@ const allProjects: Project[] = [
   },
   {
     id: 3,
-    title: "CPT Events Campaign",
-    summary: "A city-wide campaign to promote local events, improving community engagement and attendance.",
+    title: "CPT EVENTS CAMPAIGN",
+    summary: "Overview\n\nA city-wide promotional campaign designed to increase awareness, attendance, and community engagement for Cape Town's local events.\n\nPositioned as the lead digital designer, I developed a cohesive visual identity and a suite of marketing assets that brought energy, clarity, and consistency to the campaign across multiple touchpoints.",
     description: [
-      "This project involved creating a vibrant and engaging campaign for Cape Town's event series, aimed at boosting ticket sales and public participation.",
-      "I designed a range of promotional materials, including digital ads, social media content, and public transport branding, to create a cohesive and exciting visual identity for the campaign.",
-      "The campaign resulted in a 40% increase in event attendance and significantly higher online engagement, successfully connecting the city's residents with local cultural events."
+      "Project Notes",
+      "This project focused on creating a vibrant, accessible, and engaging creative direction for Cape Town's event series. The goal was to boost public participation by delivering clear messaging, memorable visuals, and a unified brand experience across digital and physical platforms.",
+      "I produced a full range of promotional materials, including:",
+      "• Digital ads and social media graphics",
+      "• Campaign branding and iconography",
+      "• Public transport promotional layouts",
+      "• Web banners and responsive digital assets",
+      "Through thoughtful design decisions and user-centered execution, the campaign strengthened visibility, expanded reach, and supported the city's initiative to connect residents with local cultural activities."
     ],
     coverImage: "/lovable-uploads/project-cover.png",
     client: "MyCiti",
