@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import { PasswordPrompt } from "@/components/PasswordPrompt";
 
 const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -16,16 +17,49 @@ const ProjectDetail = () => {
   const project = allProjects.find(p => p.id === projectId);
   
   const [isPlaying, setIsPlaying] = useState(false);
+  const [hasAccess, setHasAccess] = useState(false);
 
   useEffect(() => {
     if (!project) {
       navigate("/projects");
       return;
     }
-  }, [project, navigate]);
+    
+    // Check if project requires password
+    if (!project.isPasswordProtected) {
+      setHasAccess(true);
+    } else {
+      // Check session storage for existing access
+      const accessKey = `project_access_${projectId}`;
+      const storedAccess = sessionStorage.getItem(accessKey);
+      if (storedAccess === 'granted') {
+        setHasAccess(true);
+      }
+    }
+  }, [project, navigate, projectId]);
 
   if (!project) {
     return null;
+  }
+
+  const handlePasswordSuccess = () => {
+    setHasAccess(true);
+    // Store access in session storage
+    const accessKey = `project_access_${projectId}`;
+    sessionStorage.setItem(accessKey, 'granted');
+  };
+
+  // Show password prompt if project is protected and user doesn't have access
+  if (project.isPasswordProtected && !hasAccess) {
+    return (
+      <Layout>
+        <PasswordPrompt 
+          projectId={projectId}
+          projectTitle={project.title}
+          onSuccess={handlePasswordSuccess}
+        />
+      </Layout>
+    );
   }
 
   const togglePlay = () => {
