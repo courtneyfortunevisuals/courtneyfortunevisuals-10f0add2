@@ -176,9 +176,9 @@ const allProjects: Project[] = [
     title: "FNB Display Banners",
     summary: "Digital advertising campaign for First National Bank promoting financial services.",
     description: [
-      "This project involved creating a series of digital display banners for First National Bank (FNB), one of South Africa's leading financial institutions.",
-      "The campaign focused on promoting various banking products and services through engaging visual storytelling that resonated with diverse target audiences.",
-      "Each banner was optimized for different digital platforms and screen sizes while maintaining consistent brand messaging and visual identity."
+      "This project focused on producing a full set of HTML5 animated banners for First National Bank, one of South Africa's leading financial institutions.",
+      "The animations were crafted to enhance visibility and engagement across various digital platforms by combining motion design, clean layouts, and FNB's signature visual identity. Each banner highlighted different banking offerings while ensuring the content remained dynamic, lightweight, and compliant with performance requirements.",
+      "All deliverables were optimized for multiple screen sizes and placements, maintaining consistency across the entire campaign. Both prospecting and remarketing variations were developed to support different stages of the customer journey—prospecting for awareness and remarketing for stronger conversion intent."
     ],
     coverImage: "/lovable-uploads/project-cover.png",
     client: "First National Bank",
