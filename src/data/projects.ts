@@ -145,7 +145,7 @@ const allProjects: Project[] = [
   {
     id: 5,
     title: "Tiger Wheel & Tyre",
-    summary: "Comprehensive branding and marketing materials for South Africa's leading tyre retailer.",
+    summary: "Comprehensive animated digital banner design, interactive display ads, and supporting marketing materials created for one of South Africa's leading tyre retailers.",
     description: [
       "Tiger Wheel & Tyre is one of South Africa's most recognized automotive brands. This project encompassed the development of comprehensive branding and marketing materials.",
       "The work included creating print advertisements, digital campaigns, in-store promotional materials, and supporting collateral that reinforced the brand's market position.",
