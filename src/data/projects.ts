@@ -174,7 +174,7 @@ const allProjects: Project[] = [
   {
     id: 6,
     title: "FNB Display Banners",
-    summary: "Digital advertising campaign for First National Bank promoting financial services.",
+    summary: "A series of animated digital display banners created for First National Bank (FNB) in partnership with VISA, promoting key financial products, rewards, and campaign offerings through engaging motion and clear visual storytelling.",
     description: [
       "This project involved producing a complete suite of HTML5 animated banners for a joint campaign between First National Bank and VISA.",
       "The animated banners were crafted to elevate brand visibility across digital platforms by combining seamless motion, clean layouts, and unified FNB + VISA branding. Each banner highlighted campaign-specific messaging while remaining dynamic, lightweight, and optimized for high-performance ad placements.",
