@@ -155,7 +155,7 @@ const allProjects: Project[] = [
     client: "Tiger Wheel & Tyre",
     role: "Graphic Designer",
     tags: [],
-    technologies: ["Adobe Creative Suite"],
+    technologies: ["Adobe Photoshop", "Adobe Illustrator", "Google Web Designer"],
     isPasswordProtected: true,
     gallery: {
       images: [
