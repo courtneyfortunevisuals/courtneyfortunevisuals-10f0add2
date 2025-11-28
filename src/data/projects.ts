@@ -147,9 +147,9 @@ const allProjects: Project[] = [
     title: "Tiger Wheel & Tyre",
     summary: "Comprehensive animated digital banner design, interactive display ads, and supporting marketing materials created for one of South Africa's leading tyre retailers.",
     description: [
-      "Tiger Wheel & Tyre is one of South Africa's most recognized automotive brands. This project encompassed the development of comprehensive branding and marketing materials.",
-      "The work included creating print advertisements, digital campaigns, in-store promotional materials, and supporting collateral that reinforced the brand's market position.",
-      "Special attention was given to maintaining brand consistency across all touchpoints while adapting creative concepts for different media formats and target audiences."
+      "Tiger Wheel & Tyre is one of South Africa's most recognized automotive brands. This project involved creating a full suite of animated digital banners developed for both prospecting and remarketing campaigns, ensuring strong reach at every stage of the customer journey.",
+      "The work included designing dynamic HTML5 banner ads, motion-driven promotional materials, and adaptable digital layouts optimized across Google Display Network, social platforms, and in-store digital screens.",
+      "Special attention was placed on maintaining brand consistency while introducing motion, ensuring all animations were performant, lightweight, and tailored to the specific objectives of each campaign—prospecting banners focused on awareness, while remarketing banners were optimized for conversions."
     ],
     coverImage: "/lovable-uploads/project-cover.png",
     client: "Tiger Wheel & Tyre",
