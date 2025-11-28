@@ -184,7 +184,7 @@ const allProjects: Project[] = [
     client: "First National Bank",
     role: "Digital Designer",
     tags: [],
-    technologies: ["Adobe Photoshop", "Adobe Illustrator"],
+    technologies: ["Adobe Photoshop", "Adobe Illustrator", "Google Web Designer"],
     isPasswordProtected: true,
     gallery: {
       images: [
