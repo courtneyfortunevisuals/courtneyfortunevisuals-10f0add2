@@ -108,7 +108,7 @@ const ProjectDetail = () => {
 
               {/* Album Information */}
               <div className="space-y-4 md:space-y-6 animate-slide-up">
-                <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold uppercase tracking-wide border-b-2 border-black/20 pb-2">
+                <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold capitalize tracking-wide border-b-2 border-black/20 pb-2">
                   {project.title}
                 </h1>
                 
