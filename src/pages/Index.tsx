@@ -26,10 +26,11 @@ const Index = () => {
             <div className="w-full max-w-2xl overflow-hidden rounded-lg">
               <div className="relative pb-[56.25%] h-0">
                 <iframe 
-                  src="https://my.spline.design/reededliquidglassprismherosectionconcept-2PDlBZlhqd6aszmd7tZfqLPp/"
+                  src="https://player.vimeo.com/video/1097345492?h=abda5417c4&autoplay=1&muted=1&loop=1&background=1"
                   className="absolute top-0 left-0 w-full h-full"
                   frameBorder="0"
-                  title="Spline 3D Scene"
+                  allow="autoplay; fullscreen"
+                  title="Hero Video"
                 ></iframe>
               </div>
             </div>
