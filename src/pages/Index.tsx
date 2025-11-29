@@ -23,7 +23,7 @@ const Index = () => {
         
         <div className="container relative z-10 px-4 md:px-6 lg:px-8">
           <div className="flex flex-col items-center justify-center text-center space-y-6 md:space-y-8">
-            <div className="w-full max-w-4xl overflow-hidden rounded-lg">
+            <div className="w-full overflow-hidden rounded-lg">
               <div className="relative h-[40vh] md:h-[50vh] lg:h-[55vh]">
                 <iframe 
                   src={isDarkMode 
