@@ -26,7 +26,10 @@ const Index = () => {
             <div className="w-full max-w-2xl overflow-hidden rounded-lg">
               <div className="relative pb-[56.25%] h-0">
                 <iframe 
-                  src="https://player.vimeo.com/video/1097339449?autoplay=1&muted=1&loop=1&background=1"
+                  src={isDarkMode 
+                    ? "https://player.vimeo.com/video/1097349920?h=163a44574d&autoplay=1&muted=1&loop=1&background=1"
+                    : "https://player.vimeo.com/video/1097339449?autoplay=1&muted=1&loop=1&background=1"
+                  }
                   className="absolute top-0 left-0 w-full h-full"
                   frameBorder="0"
                   allow="autoplay; fullscreen"
