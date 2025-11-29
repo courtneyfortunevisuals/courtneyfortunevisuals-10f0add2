@@ -208,12 +208,30 @@ const ProjectDetail = () => {
                 <TabsContent value="images" className="animate-fade-in">
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 max-w-6xl mx-auto">
                     {project.gallery.images.map((image, idx) => (
-                      <div key={idx} className="aspect-square bg-cream border border-black/10 p-1 transition-transform hover:scale-[1.01]">
-                        <ZoomableImage 
-                          src={image.src} 
-                          alt={image.alt}
-                          className="h-full w-full object-cover"
-                        />
+                      <div key={idx} className="space-y-2">
+                        <div className="aspect-square bg-cream border border-black/10 p-1 transition-transform hover:scale-[1.01]">
+                          <ZoomableImage 
+                            src={image.src} 
+                            alt={image.alt}
+                            className="h-full w-full object-cover"
+                          />
+                        </div>
+                        {image.caption && (
+                          <div className="text-center text-sm">
+                            {image.link ? (
+                              <a 
+                                href={image.link} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="text-foreground hover:text-primary transition-colors underline"
+                              >
+                                {image.caption}
+                              </a>
+                            ) : (
+                              <span className="text-muted-foreground">{image.caption}</span>
+                            )}
+                          </div>
+                        )}
                       </div>
                     ))}
                   </div>
@@ -241,12 +259,30 @@ const ProjectDetail = () => {
               <div className="animate-fade-in">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 max-w-6xl mx-auto">
                   {project.gallery.images.map((image, idx) => (
-                    <div key={idx} className="aspect-square bg-cream border border-black/10 p-1 transition-transform hover:scale-[1.01]">
-                      <ZoomableImage 
-                        src={image.src} 
-                        alt={image.alt}
-                        className="h-full w-full object-cover"
-                      />
+                    <div key={idx} className="space-y-2">
+                      <div className="aspect-square bg-cream border border-black/10 p-1 transition-transform hover:scale-[1.01]">
+                        <ZoomableImage 
+                          src={image.src} 
+                          alt={image.alt}
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
+                      {image.caption && (
+                        <div className="text-center text-sm">
+                          {image.link ? (
+                            <a 
+                              href={image.link} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="text-foreground hover:text-primary transition-colors underline"
+                            >
+                              {image.caption}
+                            </a>
+                          ) : (
+                            <span className="text-muted-foreground">{image.caption}</span>
+                          )}
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>

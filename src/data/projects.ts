@@ -13,7 +13,7 @@ export interface Project {
   isPasswordProtected: boolean;
   password?: string;
   gallery: {
-    images: { src: string; alt: string }[];
+    images: { src: string; alt: string; caption?: string; link?: string }[];
     videos: { title: string; embedUrl: string }[];
   };
 }
@@ -67,7 +67,12 @@ const allProjects: Project[] = [
     gallery: {
       images: [
         { src: "/lovable-uploads/sprout-01.jpg", alt: "SPROUT Performance Partners brand logo designs" },
-        { src: "/lovable-uploads/sprout-02.jpg", alt: "SPROUT branding guidelines book cover" },
+        { 
+          src: "/lovable-uploads/sprout-02.jpg", 
+          alt: "SPROUT branding guidelines book cover",
+          caption: "Branding Guidelines",
+          link: "https://acrobat.adobe.com/id/urn:aaid:sc:EU:a7770710-07f4-4a1f-87e3-6b659abd26fb"
+        },
         { src: "/lovable-uploads/sprout-03.jpg", alt: "SPROUT brand color palette and guidelines" },
         { src: "/lovable-uploads/sprout-04.jpg", alt: "SPROUT website design on laptop mockup" },
         { src: "/lovable-uploads/sprout-05.jpg", alt: "SPROUT coronavirus prevention and wellness poster" },
