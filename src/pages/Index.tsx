@@ -16,21 +16,21 @@ const Index = () => {
 
   return (
     <Layout>
-      <section className="relative min-h-[70vh] md:min-h-[80vh] flex items-center py-8 md:py-12 lg:py-0" style={{ backgroundColor: isDarkMode ? '#101A0E' : '#f2efea' }}>
+      <section className="relative min-h-[calc(100vh-3.5rem)] md:min-h-[calc(100vh-4rem)] lg:min-h-[calc(100vh-5rem)] xl:min-h-[calc(100vh-6rem)] flex items-center py-8 md:py-12 lg:py-16" style={{ backgroundColor: isDarkMode ? '#101A0E' : '#f2efea' }}>
         <div className="absolute inset-0 z-0">
           <div className="h-full w-full" style={{ backgroundColor: isDarkMode ? '#101A0E' : '#f2efea' }} />
         </div>
         
         <div className="container relative z-10 px-4 md:px-6 lg:px-8">
           <div className="flex flex-col items-center justify-center text-center space-y-6 md:space-y-8">
-            <div className="w-full max-w-2xl overflow-hidden rounded-lg">
-              <div className="relative pb-[56.25%] h-0">
+            <div className="w-full max-w-4xl overflow-hidden rounded-lg">
+              <div className="relative h-[40vh] md:h-[50vh] lg:h-[55vh]">
                 <iframe 
                   src={isDarkMode 
                     ? "https://player.vimeo.com/video/1097342946?h=00ac02f95e&autoplay=1&muted=1&loop=1&background=1"
                     : "https://player.vimeo.com/video/1097339449?autoplay=1&muted=1&loop=1&background=1"
                   }
-                  className="absolute top-0 left-0 w-full h-full"
+                  className="absolute top-0 left-0 w-full h-full rounded-lg"
                   frameBorder="0"
                   allow="autoplay; fullscreen"
                   title="Hero Video"
