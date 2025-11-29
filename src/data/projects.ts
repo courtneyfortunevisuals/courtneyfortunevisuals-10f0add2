@@ -76,7 +76,12 @@ const allProjects: Project[] = [
         { src: "/lovable-uploads/sprout-03.jpg", alt: "SPROUT brand color palette and guidelines" },
         { src: "/lovable-uploads/sprout-04.jpg", alt: "SPROUT website design on laptop mockup" },
         { src: "/lovable-uploads/sprout-05.jpg", alt: "SPROUT coronavirus prevention and wellness poster" },
-        { src: "/lovable-uploads/sprout-06.jpg", alt: "SPROUT illustration guidelines and data strategy icons" },
+        { 
+          src: "/lovable-uploads/sprout-06.jpg", 
+          alt: "SPROUT illustration guidelines and data strategy icons",
+          caption: "Illustrations Guidelines",
+          link: "https://acrobat.adobe.com/id/urn:aaid:sc:EU:1fa563a4-7fe9-48c1-a58a-eb8a6cf71e73"
+        },
         { src: "/lovable-uploads/sprout-07.jpg", alt: "SPROUT email signature template design" },
         { src: "/lovable-uploads/sprout-08.jpg", alt: "SPROUT stationery and business card designs" },
         { src: "/lovable-uploads/sprout-09.jpg", alt: "SPROUT social media thank you post design" },
