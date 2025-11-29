@@ -37,9 +37,6 @@ const Projects = () => {
             <p className="text-sm md:text-base lg:text-lg text-muted-foreground">
               A showcase of creative works and musical inspirations
             </p>
-            <p className="text-xs md:text-sm text-muted-foreground/70 mt-2">
-              Drag or click arrows to explore
-            </p>
           </div>
           
           <div className="relative">
@@ -113,6 +110,12 @@ const Projects = () => {
                 <ChevronRight className="h-6 w-6" />
               </Button>
             </Carousel>
+          </div>
+
+          <div className="text-center mt-6 md:mt-8">
+            <p className="text-xs md:text-sm text-muted-foreground/70">
+              Drag or click arrows to explore
+            </p>
           </div>
 
           {!showAll && (
