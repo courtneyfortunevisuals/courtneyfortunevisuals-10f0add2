@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { allProjects } from "@/data/projects";
 import ZoomableImage from "@/components/ZoomableImage";
-import { ArrowLeft, Disc, Music, Headphones } from "lucide-react";
+import { ArrowLeft, ArrowRight, Disc, Music, Headphones } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
@@ -67,6 +67,11 @@ const ProjectDetail = () => {
   };
 
   const hasVideos = project.gallery.videos && project.gallery.videos.length > 0;
+
+  // Calculate next project
+  const currentIndex = allProjects.findIndex(p => p.id === projectId);
+  const nextIndex = (currentIndex + 1) % allProjects.length;
+  const nextProject = allProjects[nextIndex];
 
   return (
     <Layout>
@@ -288,6 +293,18 @@ const ProjectDetail = () => {
                 </div>
               </div>
             )}
+
+            {/* Next Project Button */}
+            <div className="text-center mt-8 md:mt-12 lg:mt-16">
+              <Button 
+                variant="outline" 
+                className="bg-black/10 border-black/20 text-foreground hover:bg-black/20 flex items-center gap-2 mx-auto" 
+                onClick={() => navigate(`/projects/${nextProject.id}`)}
+              >
+                Next Project: {nextProject.title}
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+            </div>
           </div>
         </section>
       </article>
