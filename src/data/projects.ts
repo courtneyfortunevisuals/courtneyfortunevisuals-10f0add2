@@ -21,7 +21,7 @@ export interface Project {
 const allProjects: Project[] = [
   {
     id: 1,
-    title: "Character Design",
+    title: "Character design",
     summary: "Development of a complete brand identity and visual system for a consulting firm.",
     description: [
       "This project involved creating a sophisticated brand identity for a management consulting firm looking to establish credibility in a competitive market.",
@@ -49,7 +49,7 @@ const allProjects: Project[] = [
   },
   {
     id: 2,
-    title: "Internal Rebranding",
+    title: "Internal rebranding",
     summary: "A comprehensive redesign of a company's design system, improving consistency and efficiency.",
     description: [
       "Tasked with revitalizing a digital marketing company's internal brand, I transformed a fragmented system into a cohesive visual identity with purpose and clarity. By rebuilding design foundations—color, typography, components, templates, and documentation—I created a brand ecosystem that works seamlessly for the people who use it every day. The result: stronger storytelling, smoother workflows, and a brand that finally reflects the company's momentum.",
@@ -96,7 +96,7 @@ const allProjects: Project[] = [
   },
   {
     id: 3,
-    title: "CPT EVENTS CAMPAIGN",
+    title: "CPT events campaign",
     summary: "A city-wide promotional campaign designed to increase awareness, attendance, and community engagement for Cape Town's local events.\n\nPositioned as the lead digital designer, I developed a cohesive visual identity and a suite of marketing assets that brought energy, clarity, and consistency to the campaign across multiple touchpoints.",
     description: [
       "This project focused on creating a vibrant, accessible, and engaging creative direction for Cape Town's event series. The goal was to boost public participation by delivering clear messaging, memorable visuals, and a unified brand experience across digital and physical platforms.",
@@ -125,7 +125,7 @@ const allProjects: Project[] = [
   },
   {
     id: 4,
-    title: "TRAVELSTART ANIMATED DIGITAL BANNERS",
+    title: "Travelstart animated digital banners",
     summary: "A collection of animated digital marketing banners created for a tech startup, designed to strengthen online visibility and drive higher engagement across web and social advertising platforms.",
     description: [
       "In this project, I developed and animated a full suite of digital banner ads for Travelstart's marketing campaigns. My focus was on transforming key brand elements into motion—delivering creative that was visually consistent, lightweight, and optimized for performance across multiple ad networks.",
@@ -159,7 +159,7 @@ const allProjects: Project[] = [
   },
   {
     id: 5,
-    title: "Tiger Wheel & Tyre",
+    title: "Tiger wheel & tyre",
     summary: "Comprehensive animated digital banner design, interactive display ads, and supporting marketing materials created for one of South Africa's leading tyre retailers.",
     description: [
       "Tiger Wheel & Tyre is one of South Africa's most recognized automotive brands. This project involved creating a full suite of animated digital banners developed for both prospecting and remarketing campaigns, ensuring strong reach at every stage of the customer journey.",
@@ -188,7 +188,7 @@ const allProjects: Project[] = [
   },
   {
     id: 6,
-    title: "FNB Display Banners",
+    title: "FNB display banners",
     summary: "A series of animated digital display banners created for First National Bank (FNB) in partnership with VISA, promoting key financial products, rewards, and campaign offerings through engaging motion and clear visual storytelling.",
     description: [
       "This project involved producing a complete suite of HTML5 animated banners for a joint campaign between First National Bank and VISA.",
@@ -217,7 +217,7 @@ const allProjects: Project[] = [
   },
   {
     id: 7,
-    title: "Social Media Ads",
+    title: "Social media ads",
     summary: "Creative advertising content for various social media platforms and brands.",
     description: [
       "This collection showcases a diverse range of social media advertising campaigns created for multiple brands across different industries.",
@@ -252,7 +252,7 @@ const allProjects: Project[] = [
   },
   {
     id: 10,
-    title: "Pineapple in Pool Filter",
+    title: "Pineapple in pool filter",
     summary: "User interface design for a modern mobile banking application focused on millennials.",
     description: [
       "This project involved designing a user-friendly mobile banking application specifically tailored for millennial users who prioritize convenience and modern design.",
@@ -280,7 +280,7 @@ const allProjects: Project[] = [
   },
   {
     id: 11,
-    title: "3D Swirl Demo",
+    title: "3D swirl demo",
     summary: "Dynamic 3D visualization and motion graphics project featuring organic swirl animations.",
     description: [
       "This project focused on creating dynamic 3D swirl animations and organic motion graphics for various digital applications.",
