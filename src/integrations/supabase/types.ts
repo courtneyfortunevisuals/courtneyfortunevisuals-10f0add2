@@ -14,6 +14,36 @@ export type Database = {
   }
   public: {
     Tables: {
+      password_attempts: {
+        Row: {
+          attempt_time: string
+          created_at: string
+          id: string
+          ip_address: string | null
+          project_id: number
+          session_id: string | null
+          success: boolean
+        }
+        Insert: {
+          attempt_time?: string
+          created_at?: string
+          id?: string
+          ip_address?: string | null
+          project_id: number
+          session_id?: string | null
+          success?: boolean
+        }
+        Update: {
+          attempt_time?: string
+          created_at?: string
+          id?: string
+          ip_address?: string | null
+          project_id?: number
+          session_id?: string | null
+          success?: boolean
+        }
+        Relationships: []
+      }
       project_passwords: {
         Row: {
           created_at: string | null
@@ -67,9 +97,23 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      get_protected_project_content: {
-        Args: { p_password: string; p_project_id: number }
-        Returns: Json
+      check_rate_limit: {
+        Args: { p_project_id: number; p_session_id: string }
+        Returns: boolean
+      }
+      get_protected_project_content:
+        | {
+            Args: {
+              p_password: string
+              p_project_id: number
+              p_session_id?: string
+            }
+            Returns: Json
+          }
+        | { Args: { p_password: string; p_project_id: number }; Returns: Json }
+      log_password_attempt: {
+        Args: { p_project_id: number; p_session_id: string; p_success: boolean }
+        Returns: undefined
       }
       verify_project_password: {
         Args: { p_password: string; p_project_id: number }

@@ -32,12 +32,32 @@ export const PasswordPrompt = ({ projectId, projectTitle, onSuccess }: PasswordP
     setIsVerifying(true);
 
     try {
+      // Generate or retrieve session ID for rate limiting
+      let sessionId = sessionStorage.getItem('password_session_id');
+      if (!sessionId) {
+        sessionId = crypto.randomUUID();
+        sessionStorage.setItem('password_session_id', sessionId);
+      }
+
       const { data, error } = await supabase.rpc('get_protected_project_content', {
         p_project_id: projectId,
-        p_password: password
+        p_password: password,
+        p_session_id: sessionId
       });
 
-      if (error) throw error;
+      if (error) {
+        // Check if rate limited
+        if (error.message?.includes('Too many failed attempts')) {
+          toast({
+            title: "Too many attempts",
+            description: "Please wait 15 minutes before trying again.",
+            variant: "destructive",
+          });
+        } else {
+          throw error;
+        }
+        return;
+      }
 
       if (data) {
         toast({
@@ -54,7 +74,10 @@ export const PasswordPrompt = ({ projectId, projectTitle, onSuccess }: PasswordP
         setPassword("");
       }
     } catch (error) {
-      console.error('Password verification error:', error);
+      // Only log in development
+      if (import.meta.env.DEV) {
+        console.error('Password verification error:', error);
+      }
       toast({
         title: "Error",
         description: "Failed to verify password. Please try again.",
