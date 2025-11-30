@@ -218,7 +218,7 @@ const allProjects: Project[] = [
   {
     id: 7,
     title: "Social Media Ads",
-    summary: "Creative advertising content for various social media platforms and brands.",
+    summary: "A collection of social-media-ready designs created for multiple brands across a range of industries. These posts were crafted to deliver visually engaging content optimized for platform performance and audience interaction.",
     description: [
       "This collection showcases a diverse range of social media advertising campaigns created for multiple brands across different industries.",
       "Each campaign was tailored to the unique characteristics of specific social media platforms, optimizing visual design and messaging for maximum engagement.",
