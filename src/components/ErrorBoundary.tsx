@@ -21,7 +21,7 @@ export class ErrorBoundary extends Component<Props, State> {
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     // Only log detailed errors in development to prevent information disclosure
-    if (import.meta.env.DEV) {
+    if (typeof import.meta !== 'undefined' && import.meta.env?.DEV) {
       console.error('ErrorBoundary caught an error:', error, errorInfo);
     }
     // In production, send to monitoring service instead of console
