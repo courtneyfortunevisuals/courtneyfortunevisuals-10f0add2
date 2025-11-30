@@ -10,14 +10,7 @@ const About = () => {
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2">Courtney Fortune</h1>
               <p className="text-lg md:text-xl text-muted-foreground mb-6">Digital Designer • Front-End Developer • Creative Specialist</p>
               
-              <div className="mb-6 space-y-2">
-                <h3 className="text-lg font-semibold">CONTACT</h3>
-                <div className="text-muted-foreground space-y-1">
-                  <p>Email: courtneyfortunevisuals@gmail.com</p>
-                  <p>Phone: +27 71 220 2068</p>
-                  
-                </div>
-              </div>
+              
               
               <div className="mb-6">
                 <h3 className="text-lg font-semibold mb-3">PROFILE SUMMARY</h3>
