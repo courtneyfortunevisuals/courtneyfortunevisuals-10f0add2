@@ -32,10 +32,7 @@ export default defineConfig(({ mode }) => ({
     } : undefined,
     rollupOptions: {
       output: {
-        // Manual chunk splitting for better caching
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-        },
+        // Let Vite handle chunk splitting automatically for optimal loading order
       },
     },
   },
