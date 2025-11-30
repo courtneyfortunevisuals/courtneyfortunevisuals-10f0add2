@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Layout from "@/components/Layout";
-import { allProjects } from "@/data/projects";
+import { allProjects, Project } from "@/data/projects";
 import ZoomableImage from "@/components/ZoomableImage";
 import { VimeoEmbed } from "@/components/VimeoEmbed";
 import { ArrowLeft, ArrowRight, Disc, Music, Headphones } from "lucide-react";
@@ -10,6 +10,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { PasswordPrompt } from "@/components/PasswordPrompt";
+
 const ProjectDetail = () => {
   const {
     id
@@ -18,42 +19,82 @@ const ProjectDetail = () => {
   }>();
   const navigate = useNavigate();
   const projectId = parseInt(id || "0");
-  const project = allProjects.find(p => p.id === projectId);
+  const clientProject = allProjects.find(p => p.id === projectId);
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasAccess, setHasAccess] = useState(false);
+  const [project, setProject] = useState<Project | null>(clientProject || null);
+  const [isLoadingProtectedContent, setIsLoadingProtectedContent] = useState(false);
+
   useEffect(() => {
-    if (!project) {
+    if (!clientProject) {
       navigate("/projects");
       return;
     }
 
     // Check if project requires password
-    if (!project.isPasswordProtected) {
+    if (!clientProject.isPasswordProtected) {
       setHasAccess(true);
+      setProject(clientProject);
     } else {
       // Check session storage for existing access
       const accessKey = `project_access_${projectId}`;
-      const storedAccess = sessionStorage.getItem(accessKey);
-      if (storedAccess === 'granted') {
-        setHasAccess(true);
+      const storedContent = sessionStorage.getItem(accessKey);
+      if (storedContent) {
+        try {
+          const parsedContent = JSON.parse(storedContent);
+          setProject(parsedContent);
+          setHasAccess(true);
+        } catch (e) {
+          sessionStorage.removeItem(accessKey);
+        }
       }
     }
-  }, [project, navigate, projectId]);
-  if (!project) {
+  }, [clientProject, navigate, projectId]);
+
+  if (!clientProject) {
     return null;
   }
-  const handlePasswordSuccess = () => {
+
+  const handlePasswordSuccess = (projectData: any) => {
+    // Merge the fetched data with the client-side metadata
+    const fullProject: Project = {
+      id: projectId,
+      title: projectData.title || clientProject.title,
+      summary: projectData.summary || clientProject.summary,
+      description: projectData.description || clientProject.description,
+      coverImage: projectData.coverImage || clientProject.coverImage,
+      year: projectData.year || clientProject.year,
+      client: projectData.client || clientProject.client,
+      duration: projectData.duration || clientProject.duration,
+      role: projectData.role || clientProject.role,
+      tags: projectData.tags || clientProject.tags,
+      technologies: projectData.technologies || clientProject.technologies,
+      isPasswordProtected: clientProject.isPasswordProtected,
+      gallery: projectData.gallery || clientProject.gallery
+    };
+
+    setProject(fullProject);
     setHasAccess(true);
-    // Store access in session storage
+    
+    // Store in session storage
     const accessKey = `project_access_${projectId}`;
-    sessionStorage.setItem(accessKey, 'granted');
+    sessionStorage.setItem(accessKey, JSON.stringify(fullProject));
   };
 
   // Show password prompt if project is protected and user doesn't have access
-  if (project.isPasswordProtected && !hasAccess) {
+  if (clientProject.isPasswordProtected && !hasAccess) {
     return <Layout>
-        <PasswordPrompt projectId={projectId} projectTitle={project.title} onSuccess={handlePasswordSuccess} />
+        <PasswordPrompt projectId={projectId} projectTitle={clientProject.title} onSuccess={handlePasswordSuccess} />
       </Layout>;
+  }
+
+  // Don't render until we have the full project data
+  if (!project) {
+    return <Layout>
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+      </div>
+    </Layout>;
   }
   const togglePlay = () => {
     setIsPlaying(!isPlaying);

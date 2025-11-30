@@ -9,7 +9,7 @@ import { supabase } from "@/integrations/supabase/client";
 interface PasswordPromptProps {
   projectId: number;
   projectTitle: string;
-  onSuccess: () => void;
+  onSuccess: (projectData: any) => void;
 }
 
 export const PasswordPrompt = ({ projectId, projectTitle, onSuccess }: PasswordPromptProps) => {
@@ -32,19 +32,19 @@ export const PasswordPrompt = ({ projectId, projectTitle, onSuccess }: PasswordP
     setIsVerifying(true);
 
     try {
-      const { data, error } = await supabase.rpc('verify_project_password', {
+      const { data, error } = await supabase.rpc('get_protected_project_content', {
         p_project_id: projectId,
         p_password: password
       });
 
       if (error) throw error;
 
-      if (data === true) {
+      if (data) {
         toast({
           title: "Access granted",
           description: "Welcome to the project!",
         });
-        onSuccess();
+        onSuccess(data);
       } else {
         toast({
           title: "Incorrect password",
