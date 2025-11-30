@@ -10,6 +10,17 @@
   NODE_ENV = "production"
   GENERATE_SOURCEMAP = "false"
 
+# Cache headers for static assets
+[[headers]]
+  for = "/lovable-uploads/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
 # Security headers
 [[headers]]
   for = "/*"
@@ -33,6 +44,9 @@
     
     # Permissions Policy
     Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()"
+    
+    # Default cache for HTML
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 # Source maps - block in production
 [[headers]]

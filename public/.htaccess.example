@@ -2,7 +2,18 @@
 # Rename to .htaccess if using Apache server
 # This file provides the same security headers as Netlify/Vercel configs
 
+# Cache static assets
 <IfModule mod_headers.c>
+    # Cache images for 1 year
+    <FilesMatch "\.(jpg|jpeg|png|gif|ico|svg|webp)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    
+    # Cache JS and CSS for 1 year
+    <FilesMatch "\.(js|css)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    
     # Content Security Policy
     Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.gpteng.co https://www.snapchat.com https://*.vimeo.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; font-src 'self' data:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://player.vimeo.com https://*.vimeo.com; frame-src 'self' https://player.vimeo.com https://www.snapchat.com; media-src 'self' https://*.vimeo.com blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
     
