@@ -9,7 +9,7 @@ import { supabase } from "@/integrations/supabase/client";
 interface PasswordPromptProps {
   projectId: number;
   projectTitle: string;
-  onSuccess: (projectData: any) => void;
+  onSuccess: () => void;
 }
 
 export const PasswordPrompt = ({ projectId, projectTitle, onSuccess }: PasswordPromptProps) => {
@@ -32,39 +32,19 @@ export const PasswordPrompt = ({ projectId, projectTitle, onSuccess }: PasswordP
     setIsVerifying(true);
 
     try {
-      // Generate or retrieve session ID for rate limiting
-      let sessionId = sessionStorage.getItem('password_session_id');
-      if (!sessionId) {
-        sessionId = crypto.randomUUID();
-        sessionStorage.setItem('password_session_id', sessionId);
-      }
-
-      const { data, error } = await supabase.rpc('get_protected_project_content', {
+      const { data, error } = await supabase.rpc('verify_project_password', {
         p_project_id: projectId,
-        p_password: password,
-        p_session_id: sessionId
+        p_password: password
       });
 
-      if (error) {
-        // Check if rate limited
-        if (error.message?.includes('Too many failed attempts')) {
-          toast({
-            title: "Too many attempts",
-            description: "Please wait 15 minutes before trying again.",
-            variant: "destructive",
-          });
-        } else {
-          throw error;
-        }
-        return;
-      }
+      if (error) throw error;
 
-      if (data) {
+      if (data === true) {
         toast({
           title: "Access granted",
           description: "Welcome to the project!",
         });
-        onSuccess(data);
+        onSuccess();
       } else {
         toast({
           title: "Incorrect password",
@@ -74,10 +54,7 @@ export const PasswordPrompt = ({ projectId, projectTitle, onSuccess }: PasswordP
         setPassword("");
       }
     } catch (error) {
-      // Only log in development
-      if (typeof import.meta !== 'undefined' && import.meta.env?.DEV) {
-        console.error('Password verification error:', error);
-      }
+      console.error('Password verification error:', error);
       toast({
         title: "Error",
         description: "Failed to verify password. Please try again.",

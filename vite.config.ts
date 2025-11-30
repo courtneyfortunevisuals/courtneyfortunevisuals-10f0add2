@@ -23,44 +23,18 @@ export default defineConfig(({ mode }) => ({
     // Source map configuration
     sourcemap: mode === 'development',
     // Minification for production
-    minify: mode === 'production',
-    // Remove console.log in production using esbuild
-    esbuild: mode === 'production' ? {
-      drop: ['debugger'],
-      pure: ['console.log'],
+    minify: mode === 'production' ? 'terser' : false,
+    terserOptions: mode === 'production' ? {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
     } : undefined,
     rollupOptions: {
       output: {
-        // Enhanced chunk splitting for optimal caching
-        manualChunks: (id) => {
-          // Core React libraries
-          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom')) {
-            return 'react-vendor';
-          }
-          // Router
-          if (id.includes('node_modules/react-router-dom')) {
-            return 'router';
-          }
-          // UI components and Radix
-          if (id.includes('node_modules/@radix-ui') || id.includes('components/ui')) {
-            return 'ui-components';
-          }
-          // Heavy libraries
-          if (id.includes('node_modules/recharts')) {
-            return 'charts';
-          }
-          // Locomotive scroll
-          if (id.includes('node_modules/locomotive-scroll')) {
-            return 'locomotive';
-          }
-          // Query and state management
-          if (id.includes('node_modules/@tanstack') || id.includes('node_modules/zustand')) {
-            return 'state';
-          }
-          // Other vendor code
-          if (id.includes('node_modules')) {
-            return 'vendor';
-          }
+        // Manual chunk splitting for better caching
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'],
         },
       },
     },

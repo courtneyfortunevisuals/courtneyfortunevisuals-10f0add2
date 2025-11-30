@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import DOMPurify from "dompurify";
 import Layout from "@/components/Layout";
-import { allProjects, Project } from "@/data/projects";
+import { allProjects } from "@/data/projects";
 import ZoomableImage from "@/components/ZoomableImage";
 import { VimeoEmbed } from "@/components/VimeoEmbed";
 import { ArrowLeft, ArrowRight, Disc, Music, Headphones } from "lucide-react";
@@ -11,7 +10,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { PasswordPrompt } from "@/components/PasswordPrompt";
-
 const ProjectDetail = () => {
   const {
     id
@@ -20,82 +18,42 @@ const ProjectDetail = () => {
   }>();
   const navigate = useNavigate();
   const projectId = parseInt(id || "0");
-  const clientProject = allProjects.find(p => p.id === projectId);
+  const project = allProjects.find(p => p.id === projectId);
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasAccess, setHasAccess] = useState(false);
-  const [project, setProject] = useState<Project | null>(clientProject || null);
-  const [isLoadingProtectedContent, setIsLoadingProtectedContent] = useState(false);
-
   useEffect(() => {
-    if (!clientProject) {
+    if (!project) {
       navigate("/projects");
       return;
     }
 
     // Check if project requires password
-    if (!clientProject.isPasswordProtected) {
+    if (!project.isPasswordProtected) {
       setHasAccess(true);
-      setProject(clientProject);
     } else {
       // Check session storage for existing access
       const accessKey = `project_access_${projectId}`;
-      const storedContent = sessionStorage.getItem(accessKey);
-      if (storedContent) {
-        try {
-          const parsedContent = JSON.parse(storedContent);
-          setProject(parsedContent);
-          setHasAccess(true);
-        } catch (e) {
-          sessionStorage.removeItem(accessKey);
-        }
+      const storedAccess = sessionStorage.getItem(accessKey);
+      if (storedAccess === 'granted') {
+        setHasAccess(true);
       }
     }
-  }, [clientProject, navigate, projectId]);
-
-  if (!clientProject) {
+  }, [project, navigate, projectId]);
+  if (!project) {
     return null;
   }
-
-  const handlePasswordSuccess = (projectData: any) => {
-    // Merge the fetched data with the client-side metadata
-    const fullProject: Project = {
-      id: projectId,
-      title: projectData.title || clientProject.title,
-      summary: projectData.summary || clientProject.summary,
-      description: projectData.description || clientProject.description,
-      coverImage: projectData.coverImage || clientProject.coverImage,
-      year: projectData.year || clientProject.year,
-      client: projectData.client || clientProject.client,
-      duration: projectData.duration || clientProject.duration,
-      role: projectData.role || clientProject.role,
-      tags: projectData.tags || clientProject.tags,
-      technologies: projectData.technologies || clientProject.technologies,
-      isPasswordProtected: clientProject.isPasswordProtected,
-      gallery: projectData.gallery || clientProject.gallery
-    };
-
-    setProject(fullProject);
+  const handlePasswordSuccess = () => {
     setHasAccess(true);
-    
-    // Store in session storage
+    // Store access in session storage
     const accessKey = `project_access_${projectId}`;
-    sessionStorage.setItem(accessKey, JSON.stringify(fullProject));
+    sessionStorage.setItem(accessKey, 'granted');
   };
 
   // Show password prompt if project is protected and user doesn't have access
-  if (clientProject.isPasswordProtected && !hasAccess) {
+  if (project.isPasswordProtected && !hasAccess) {
     return <Layout>
-        <PasswordPrompt projectId={projectId} projectTitle={clientProject.title} onSuccess={handlePasswordSuccess} />
+        <PasswordPrompt projectId={projectId} projectTitle={project.title} onSuccess={handlePasswordSuccess} />
       </Layout>;
-  }
-
-  // Don't render until we have the full project data
-  if (!project) {
-    return <Layout>
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
-      </div>
-    </Layout>;
   }
   const togglePlay = () => {
     setIsPlaying(!isPlaying);
@@ -119,13 +77,7 @@ const ProjectDetail = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
               {/* Album Cover */}
               <div className="relative aspect-square max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto lg:mx-0 overflow-hidden">
-                <img 
-                  src={project.coverImage} 
-                  alt={project.title}
-                  loading="eager"
-                  decoding="async"
-                  className="w-full h-full object-cover" 
-                />
+                <img src={project.coverImage} alt={project.title} className="w-full h-full object-cover" />
                 
                 {/* Play indicator */}
                 <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 hover:opacity-100 transition-opacity cursor-pointer" onClick={togglePlay}>
@@ -183,19 +135,13 @@ const ProjectDetail = () => {
 
                 <div className="prose max-w-none text-muted-foreground">
                   {project.description.map((paragraph, idx) => {
-                  // Skip blockquote embeds and scripts - these are explicitly not allowed
+                  // Skip blockquote embeds and scripts
                   if (paragraph.trim().startsWith('<blockquote') || paragraph.trim().startsWith('<script')) {
                     return null;
                   }
-                  // Render anchor tags with sanitized HTML for XSS protection
+                  // Render anchor tags with dangerouslySetInnerHTML
                   if (paragraph.trim().startsWith('<a ')) {
-                    // Configure DOMPurify to only allow safe anchor tags with specific attributes
-                    const sanitizedHTML = DOMPurify.sanitize(paragraph, {
-                      ALLOWED_TAGS: ['a'],
-                      ALLOWED_ATTR: ['href', 'target', 'rel', 'class'],
-                      ALLOW_DATA_ATTR: false
-                    });
-                    return <div key={idx} className="mb-4" dangerouslySetInnerHTML={{ __html: sanitizedHTML }} />;
+                    return <div key={idx} className="mb-4" dangerouslySetInnerHTML={{ __html: paragraph }} />;
                   }
                   // Regular text paragraphs
                   return <p key={idx} className="mb-4">{paragraph}</p>;

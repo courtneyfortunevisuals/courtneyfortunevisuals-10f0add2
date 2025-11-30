@@ -1,43 +1,58 @@
+
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Download, Linkedin } from "lucide-react";
+
 const About = () => {
-  return <Layout>
+  return (
+    <Layout>
       <section className="py-8 md:py-12 lg:py-20">
         <div className="container px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="order-2 lg:order-1 animate-fade-in">
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">About Me</h1>
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">About Me</h1>
               
-              <div className="space-y-4 mb-6">
-                <p className="text-muted-foreground">
-                  A highly innovative and meticulous Digital Designer with over six years of experience in the 
-                  marketing and advertising industry. Skilled in creating unique solutions for both print and 
-                  digital media, specializing in branding, layout design, and front-end web development. 
-                  Proven success in driving engagement through compelling visual storytelling and smooth 
-                  project execution.
+              <div className="prose prose-lg max-w-none space-y-4 text-muted-foreground">
+                <p>
+                  A highly innovative and meticulous Digital Designer with over six
+                  years of experience in the marketing and advertising industry.
+                  Skilled in creating unique solutions for both print and digital media,
+                  specializing in branding, layout design, and front-end web
+                  development. Proven success in driving engagement through
+                  compelling visual storytelling and smooth project execution.
                 </p>
                 
-                <p className="text-muted-foreground">
-                  Acclaimed for excellent teamwork, time management, and communication skills, 
-                  consistently delivering work that surpasses client expectations. Certified in Graphic 
-                  Design and Web Development, and holder of the esteemed Meta Front-End Developer 
-                  Certificate, demonstrating expertise in advanced web technologies. Dedicated to staying 
-                  ahead of design trends and using skills to enhance brand presence and achieve business 
-                  goals.
+                <p>
+                  Acclaimed for excellent teamwork, time management, and
+                  communication skills, consistently delivering superior work that
+                  surpasses client expectations. Certified in Graphic Design and Web
+                  Development, and holder of the esteemed Meta Front-End
+                  Developer Certificate, demonstrating expertise in advanced web
+                  technologies. Dedicated to staying ahead of design trends and
+                  using skills to enhance brand presence and achieve business goals.
                 </p>
               </div>
               
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <Button asChild className="flex items-center gap-2">
-                  <a href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:a376e1ad-dd2f-4c3b-ab8d-bb5c15b169d0" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                    <Download className="h-4 w-4" />
+                <Button className="flex items-center gap-2">
+                  <Download className="h-4 w-4" />
+                  <a 
+                    href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:a376e1ad-dd2f-4c3b-ab8d-bb5c15b169d0" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center"
+                  >
                     Download Resume as PDF
                   </a>
                 </Button>
                 
                 <Button variant="outline" asChild>
-                  <a href="https://www.linkedin.com/in/courtney-fortune-67094475/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                  <a 
+                    href="https://www.linkedin.com/in/courtney-fortune-67094475/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2"
+                  >
                     <Linkedin className="h-4 w-4" />
                     LinkedIn Profile
                   </a>
@@ -48,7 +63,11 @@ const About = () => {
             <div className="order-1 lg:order-2 animate-fade-in">
               <div className="relative">
                 <div className="aspect-square max-w-md mx-auto overflow-hidden rounded-lg shadow-xl">
-                  <img src="/lovable-uploads/919ec45d-c8ec-4483-8a1e-a3cacb5c7aaa.png" alt="Profile" className="w-full h-full object-cover" />
+                  <img 
+                    src="/lovable-uploads/919ec45d-c8ec-4483-8a1e-a3cacb5c7aaa.png" 
+                    alt="Profile" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="absolute -bottom-6 -right-6 w-64 h-64 bg-primary/10 rounded-full -z-10" />
                 <div className="absolute -top-6 -left-6 w-48 h-48 bg-secondary/20 rounded-full -z-10" />
@@ -112,12 +131,12 @@ const About = () => {
           
           <div className="space-y-12">
             <div>
-              <h3 className="text-xl font-semibold mb-6">EXPERIENCE</h3>
+              <h3 className="text-xl font-semibold mb-6">Experience</h3>
               
-                <div className="space-y-8">
+              <div className="space-y-8">
                 <div className="bg-card rounded-lg p-6 shadow-sm">
                   <h4 className="text-lg font-medium">Designer & Studio Specialist</h4>
-                  <div className="text-muted-foreground mb-4">Sprout Performance Partners, CPT, (2016-2024)</div>
+                  <div className="text-muted-foreground mb-4">Sprout Performance Partners, CPT, 2016-2024</div>
                   <ul className="space-y-2">
                     <li className="flex items-start">
                       <span className="w-2 h-2 mt-1.5 rounded-full bg-primary flex-shrink-0 mr-2"></span>
@@ -125,7 +144,7 @@ const About = () => {
                     </li>
                     <li className="flex items-start">
                       <span className="w-2 h-2 mt-1.5 rounded-full bg-primary flex-shrink-0 mr-2"></span>
-                      <span className="text-muted-foreground">Manage the creation and production of internal brand materials to maintain a cohesive and professional company image.</span>
+                      <span className="text-muted-foreground">Manage the creation and updates of internal brand materials to maintain a cohesive and professional company image.</span>
                     </li>
                     <li className="flex items-start">
                       <span className="w-2 h-2 mt-1.5 rounded-full bg-primary flex-shrink-0 mr-2"></span>
@@ -137,7 +156,7 @@ const About = () => {
                     </li>
                     <li className="flex items-start">
                       <span className="w-2 h-2 mt-1.5 rounded-full bg-primary flex-shrink-0 mr-2"></span>
-                      <span className="text-muted-foreground">Develop campaign creatives for Google Marketing Platform, aligning with strategic goals to deliver targeted digital advertising impact through targeted digital advertising strategies.</span>
+                      <span className="text-muted-foreground">Develop marketing creatives for Google Marketing Platform, aligning with campaign objectives and maximizing impact through targeted digital advertising strategies.</span>
                     </li>
                     <li className="flex items-start">
                       <span className="w-2 h-2 mt-1.5 rounded-full bg-primary flex-shrink-0 mr-2"></span>
@@ -181,77 +200,77 @@ const About = () => {
             <div>
               <h3 className="text-xl font-semibold mb-6">Skills</h3>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="bg-card rounded-lg p-6 shadow-sm">
-                  <ul className="space-y-2">
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 mt-1.5 rounded-full bg-primary flex-shrink-0 mr-2"></span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+                <div className="bg-card rounded-lg p-4 shadow-sm">
+                  <ul className="space-y-1">
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
                       <span className="text-muted-foreground">Management Skills</span>
                     </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 mt-1.5 rounded-full bg-primary flex-shrink-0 mr-2"></span>
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
                       <span className="text-muted-foreground">Creativity</span>
                     </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 mt-1.5 rounded-full bg-primary flex-shrink-0 mr-2"></span>
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
                       <span className="text-muted-foreground">Digital Marketing</span>
                     </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 mt-1.5 rounded-full bg-primary flex-shrink-0 mr-2"></span>
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
                       <span className="text-muted-foreground">Negotiation</span>
                     </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 mt-1.5 rounded-full bg-primary flex-shrink-0 mr-2"></span>
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
                       <span className="text-muted-foreground">Critical Thinking</span>
                     </li>
                   </ul>
                 </div>
                 
-                <div className="bg-card rounded-lg p-6 shadow-sm">
-                  <ul className="space-y-2">
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 mt-1.5 rounded-full bg-primary flex-shrink-0 mr-2"></span>
+                <div className="bg-card rounded-lg p-4 shadow-sm">
+                  <ul className="space-y-1">
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
                       <span className="text-muted-foreground">Leadership</span>
                     </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 mt-1.5 rounded-full bg-primary flex-shrink-0 mr-2"></span>
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
                       <span className="text-muted-foreground">Branding</span>
                     </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 mt-1.5 rounded-full bg-primary flex-shrink-0 mr-2"></span>
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
                       <span className="text-muted-foreground">Desktop Publishing</span>
                     </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 mt-1.5 rounded-full bg-primary flex-shrink-0 mr-2"></span>
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
                       <span className="text-muted-foreground">Layout Design</span>
                     </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 mt-1.5 rounded-full bg-primary flex-shrink-0 mr-2"></span>
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
                       <span className="text-muted-foreground">Animation</span>
                     </li>
                   </ul>
                 </div>
                 
-                <div className="bg-card rounded-lg p-6 shadow-sm">
-                  <ul className="space-y-2">
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 mt-1.5 rounded-full bg-primary flex-shrink-0 mr-2"></span>
+                <div className="bg-card rounded-lg p-4 shadow-sm">
+                  <ul className="space-y-1">
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
                       <span className="text-muted-foreground">Front-End Web Development</span>
                     </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 mt-1.5 rounded-full bg-primary flex-shrink-0 mr-2"></span>
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
                       <span className="text-muted-foreground">Adobe Creative Suite</span>
                     </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 mt-1.5 rounded-full bg-primary flex-shrink-0 mr-2"></span>
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
                       <span className="text-muted-foreground">HTML, CSS & JavaScript</span>
                     </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 mt-1.5 rounded-full bg-primary flex-shrink-0 mr-2"></span>
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
                       <span className="text-muted-foreground">React</span>
                     </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 mt-1.5 rounded-full bg-primary flex-shrink-0 mr-2"></span>
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
                       <span className="text-muted-foreground">Responsive Web Design</span>
                     </li>
                   </ul>
@@ -261,6 +280,8 @@ const About = () => {
           </div>
         </div>
       </section>
-    </Layout>;
+    </Layout>
+  );
 };
+
 export default About;
