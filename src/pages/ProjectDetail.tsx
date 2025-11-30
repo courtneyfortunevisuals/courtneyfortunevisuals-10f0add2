@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import DOMPurify from "dompurify";
 import Layout from "@/components/Layout";
 import { allProjects, Project } from "@/data/projects";
 import ZoomableImage from "@/components/ZoomableImage";
@@ -182,13 +183,19 @@ const ProjectDetail = () => {
 
                 <div className="prose max-w-none text-muted-foreground">
                   {project.description.map((paragraph, idx) => {
-                  // Skip blockquote embeds and scripts
+                  // Skip blockquote embeds and scripts - these are explicitly not allowed
                   if (paragraph.trim().startsWith('<blockquote') || paragraph.trim().startsWith('<script')) {
                     return null;
                   }
-                  // Render anchor tags with dangerouslySetInnerHTML
+                  // Render anchor tags with sanitized HTML for XSS protection
                   if (paragraph.trim().startsWith('<a ')) {
-                    return <div key={idx} className="mb-4" dangerouslySetInnerHTML={{ __html: paragraph }} />;
+                    // Configure DOMPurify to only allow safe anchor tags with specific attributes
+                    const sanitizedHTML = DOMPurify.sanitize(paragraph, {
+                      ALLOWED_TAGS: ['a'],
+                      ALLOWED_ATTR: ['href', 'target', 'rel', 'class'],
+                      ALLOW_DATA_ATTR: false
+                    });
+                    return <div key={idx} className="mb-4" dangerouslySetInnerHTML={{ __html: sanitizedHTML }} />;
                   }
                   // Regular text paragraphs
                   return <p key={idx} className="mb-4">{paragraph}</p>;
