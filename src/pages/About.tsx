@@ -29,9 +29,9 @@ const About = () => {
               </div>
               
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <Button className="flex items-center gap-2">
-                  <Download className="h-4 w-4" />
-                  <a href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:a376e1ad-dd2f-4c3b-ab8d-bb5c15b169d0" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                <Button asChild className="flex items-center gap-2">
+                  <a href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:a376e1ad-dd2f-4c3b-ab8d-bb5c15b169d0" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                    <Download className="h-4 w-4" />
                     Download Resume as PDF
                   </a>
                 </Button>
