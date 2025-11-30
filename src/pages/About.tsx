@@ -15,7 +15,7 @@ const About = () => {
                 <div className="text-muted-foreground space-y-1">
                   <p>Email: courtneyfortunevisuals@gmail.com</p>
                   <p>Phone: +27 71 220 2068</p>
-                  <p>Portfolio: cfvisuals.digital</p>
+                  
                 </div>
               </div>
               
