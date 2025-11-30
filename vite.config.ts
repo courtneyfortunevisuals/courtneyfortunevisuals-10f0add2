@@ -32,9 +32,36 @@ export default defineConfig(({ mode }) => ({
     } : undefined,
     rollupOptions: {
       output: {
-        // Manual chunk splitting for better caching
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
+        // Enhanced chunk splitting for optimal caching
+        manualChunks: (id) => {
+          // Core React libraries
+          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom')) {
+            return 'react-vendor';
+          }
+          // Router
+          if (id.includes('node_modules/react-router-dom')) {
+            return 'router';
+          }
+          // UI components and Radix
+          if (id.includes('node_modules/@radix-ui') || id.includes('components/ui')) {
+            return 'ui-components';
+          }
+          // Heavy libraries
+          if (id.includes('node_modules/recharts')) {
+            return 'charts';
+          }
+          // Locomotive scroll
+          if (id.includes('node_modules/locomotive-scroll')) {
+            return 'locomotive';
+          }
+          // Query and state management
+          if (id.includes('node_modules/@tanstack') || id.includes('node_modules/zustand')) {
+            return 'state';
+          }
+          // Other vendor code
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
         },
       },
     },
