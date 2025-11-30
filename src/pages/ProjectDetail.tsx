@@ -10,22 +10,23 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { PasswordPrompt } from "@/components/PasswordPrompt";
-
 const ProjectDetail = () => {
-  const { id } = useParams<{ id: string }>();
+  const {
+    id
+  } = useParams<{
+    id: string;
+  }>();
   const navigate = useNavigate();
   const projectId = parseInt(id || "0");
   const project = allProjects.find(p => p.id === projectId);
-  
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasAccess, setHasAccess] = useState(false);
-
   useEffect(() => {
     if (!project) {
       navigate("/projects");
       return;
     }
-    
+
     // Check if project requires password
     if (!project.isPasswordProtected) {
       setHasAccess(true);
@@ -38,11 +39,9 @@ const ProjectDetail = () => {
       }
     }
   }, [project, navigate, projectId]);
-
   if (!project) {
     return null;
   }
-
   const handlePasswordSuccess = () => {
     setHasAccess(true);
     // Store access in session storage
@@ -52,39 +51,25 @@ const ProjectDetail = () => {
 
   // Show password prompt if project is protected and user doesn't have access
   if (project.isPasswordProtected && !hasAccess) {
-    return (
-      <Layout>
-        <PasswordPrompt 
-          projectId={projectId}
-          projectTitle={project.title}
-          onSuccess={handlePasswordSuccess}
-        />
-      </Layout>
-    );
+    return <Layout>
+        <PasswordPrompt projectId={projectId} projectTitle={project.title} onSuccess={handlePasswordSuccess} />
+      </Layout>;
   }
-
   const togglePlay = () => {
     setIsPlaying(!isPlaying);
   };
-
   const hasVideos = project.gallery.videos && project.gallery.videos.length > 0;
 
   // Calculate next project
   const currentIndex = allProjects.findIndex(p => p.id === projectId);
   const nextIndex = (currentIndex + 1) % allProjects.length;
   const nextProject = allProjects[nextIndex];
-
-  return (
-    <Layout>
+  return <Layout>
       <article>
         {/* Album Hero Section */}
         <section className="relative py-8 md:py-12 lg:py-20 bg-cream dark:bg-green-900/20 overflow-hidden">
           <div className="container px-4">
-            <Button 
-              variant="outline" 
-              className="bg-black/10 border-black/20 text-foreground hover:bg-black/20 mb-6 md:mb-8 lg:mb-12 flex items-center gap-2" 
-              onClick={() => navigate("/projects")}
-            >
+            <Button variant="outline" className="bg-black/10 border-black/20 text-foreground hover:bg-black/20 mb-6 md:mb-8 lg:mb-12 flex items-center gap-2" onClick={() => navigate("/projects")}>
               <ArrowLeft className="h-4 w-4" />
               Back to Collection
             </Button>
@@ -92,17 +77,10 @@ const ProjectDetail = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
               {/* Album Cover */}
               <div className="relative aspect-square max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto lg:mx-0 overflow-hidden">
-                <img 
-                  src={project.coverImage} 
-                  alt={project.title}
-                  className="w-full h-full object-cover"
-                />
+                <img src={project.coverImage} alt={project.title} className="w-full h-full object-cover" />
                 
                 {/* Play indicator */}
-                <div 
-                  className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 hover:opacity-100 transition-opacity cursor-pointer"
-                  onClick={togglePlay}
-                >
+                <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 hover:opacity-100 transition-opacity cursor-pointer" onClick={togglePlay}>
                   <Disc className={`h-8 md:h-10 lg:h-12 w-8 md:w-10 lg:w-12 text-white ${isPlaying ? 'animate-spin' : ''}`} />
                 </div>
               </div>
@@ -123,14 +101,9 @@ const ProjectDetail = () => {
                 </p>
                 
                 <div className="flex flex-wrap gap-2 pt-2">
-                  {project.tags.map((tag, idx) => (
-                    <span 
-                      key={idx} 
-                      className="px-3 py-1 rounded-full text-sm bg-black/10 text-foreground"
-                    >
+                  {project.tags.map((tag, idx) => <span key={idx} className="px-3 py-1 rounded-full text-sm bg-black/10 text-foreground">
                       {tag}
-                    </span>
-                  ))}
+                    </span>)}
                 </div>
 
                 <div className="pt-4 text-sm">
@@ -162,18 +135,12 @@ const ProjectDetail = () => {
 
                 <div className="prose max-w-none text-muted-foreground">
                   {project.description.map((paragraph, idx) => {
-                    // Check if paragraph contains HTML (starts with < tag)
-                    if (paragraph.trim().startsWith('<')) {
-                      return (
-                        <div 
-                          key={idx} 
-                          className="mb-4" 
-                          dangerouslySetInnerHTML={{ __html: paragraph }}
-                        />
-                      );
-                    }
-                    return <p key={idx} className="mb-4">{paragraph}</p>;
-                  })}
+                  // Check if paragraph contains HTML (starts with < tag)
+                  if (paragraph.trim().startsWith('<')) {
+                    return;
+                  }
+                  return <p key={idx} className="mb-4">{paragraph}</p>;
+                })}
                 </div>
               </div>
               
@@ -187,14 +154,9 @@ const ProjectDetail = () => {
                     
                     <div className="space-y-4">
                       <div className="flex flex-wrap gap-2">
-                        {project.technologies.map((tech, idx) => (
-                          <span 
-                            key={idx} 
-                            className="px-3 py-1 rounded-md text-sm bg-black/5"
-                          >
+                        {project.technologies.map((tech, idx) => <span key={idx} className="px-3 py-1 rounded-md text-sm bg-black/5">
                             {tech}
-                          </span>
-                        ))}
+                          </span>)}
                       </div>
                     </div>
                   </CardContent>
@@ -212,8 +174,7 @@ const ProjectDetail = () => {
               <div className="flex-1 border-b border-black/10"></div>
             </div>
             
-            {hasVideos ? (
-                <Tabs defaultValue="images" className="w-full">
+            {hasVideos ? <Tabs defaultValue="images" className="w-full">
                 <div className="flex justify-center mb-6 md:mb-8">
                   <TabsList className="bg-black/5">
                     <TabsTrigger value="images" className="text-sm px-4 py-2">Images</TabsTrigger>
@@ -223,94 +184,44 @@ const ProjectDetail = () => {
                 
                 <TabsContent value="images" className="animate-fade-in">
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 max-w-6xl mx-auto">
-                    {project.gallery.images.map((image, idx) => (
-                      <div key={idx} className="space-y-2">
+                    {project.gallery.images.map((image, idx) => <div key={idx} className="space-y-2">
                         <div className="aspect-square bg-cream border border-black/10 p-1 transition-transform hover:scale-[1.01]">
-                          <ZoomableImage 
-                            src={image.src} 
-                            alt={image.alt}
-                            className="h-full w-full object-cover"
-                          />
+                          <ZoomableImage src={image.src} alt={image.alt} className="h-full w-full object-cover" />
                         </div>
-                        {image.caption && (
-                          <div className="text-center text-sm">
-                            {image.link ? (
-                              <a 
-                                href={image.link} 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="text-foreground hover:text-primary transition-colors underline"
-                              >
+                        {image.caption && <div className="text-center text-sm">
+                            {image.link ? <a href={image.link} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors underline">
                                 {image.caption}
-                              </a>
-                            ) : (
-                              <span className="text-muted-foreground">{image.caption}</span>
-                            )}
-                          </div>
-                        )}
-                      </div>
-                    ))}
+                              </a> : <span className="text-muted-foreground">{image.caption}</span>}
+                          </div>}
+                      </div>)}
                   </div>
                 </TabsContent>
                 
                 <TabsContent value="videos" className="animate-fade-in">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
-                    {project.gallery.videos.map((video, idx) => (
-                      <div key={idx} className="aspect-video bg-cream border border-black/10 p-1 overflow-hidden">
-                        <VimeoEmbed
-                          videoId={video.embedUrl}
-                          title={video.title}
-                          hash={video.hash}
-                          autoplay={true}
-                          muted={true}
-                          className="w-full h-full"
-                        />
-                      </div>
-                    ))}
+                    {project.gallery.videos.map((video, idx) => <div key={idx} className="aspect-video bg-cream border border-black/10 p-1 overflow-hidden">
+                        <VimeoEmbed videoId={video.embedUrl} title={video.title} hash={video.hash} autoplay={true} muted={true} className="w-full h-full" />
+                      </div>)}
                   </div>
                 </TabsContent>
-              </Tabs>
-            ) : (
-              <div className="animate-fade-in">
+              </Tabs> : <div className="animate-fade-in">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 max-w-6xl mx-auto">
-                  {project.gallery.images.map((image, idx) => (
-                    <div key={idx} className="space-y-2">
+                  {project.gallery.images.map((image, idx) => <div key={idx} className="space-y-2">
                       <div className="aspect-square bg-cream border border-black/10 p-1 transition-transform hover:scale-[1.01]">
-                        <ZoomableImage 
-                          src={image.src} 
-                          alt={image.alt}
-                          className="h-full w-full object-cover"
-                        />
+                        <ZoomableImage src={image.src} alt={image.alt} className="h-full w-full object-cover" />
                       </div>
-                      {image.caption && (
-                        <div className="text-center text-sm">
-                          {image.link ? (
-                            <a 
-                              href={image.link} 
-                              target="_blank" 
-                              rel="noopener noreferrer"
-                              className="text-foreground hover:text-primary transition-colors underline"
-                            >
+                      {image.caption && <div className="text-center text-sm">
+                          {image.link ? <a href={image.link} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors underline">
                               {image.caption}
-                            </a>
-                          ) : (
-                            <span className="text-muted-foreground">{image.caption}</span>
-                          )}
-                        </div>
-                      )}
-                    </div>
-                  ))}
+                            </a> : <span className="text-muted-foreground">{image.caption}</span>}
+                        </div>}
+                    </div>)}
                 </div>
-              </div>
-            )}
+              </div>}
 
             {/* Next Project Button */}
             <div className="text-center mt-8 md:mt-12 lg:mt-16">
-              <Button 
-                variant="outline" 
-                className="bg-black/10 border-black/20 text-foreground hover:bg-black/20 flex items-center gap-2 mx-auto" 
-                onClick={() => navigate(`/projects/${nextProject.id}`)}
-              >
+              <Button variant="outline" className="bg-black/10 border-black/20 text-foreground hover:bg-black/20 flex items-center gap-2 mx-auto" onClick={() => navigate(`/projects/${nextProject.id}`)}>
                 Next Project: {nextProject.title}
                 <ArrowRight className="h-4 w-4" />
               </Button>
@@ -318,8 +229,6 @@ const ProjectDetail = () => {
           </div>
         </section>
       </article>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default ProjectDetail;
