@@ -159,7 +159,15 @@ const About = () => {
                   <ul className="space-y-2">
                     <li className="flex items-start">
                       <span className="w-2 h-2 mt-1.5 rounded-full bg-primary flex-shrink-0 mr-2"></span>
-                      <span className="text-muted-foreground">Collaborated on annual reports for major clients including City of Cape Town.</span>
+                      <span className="text-muted-foreground">Collaborated on annual reports for major clients including City of Cape Town and WWF.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="w-2 h-2 mt-1.5 rounded-full bg-primary flex-shrink-0 mr-2"></span>
+                      <span className="text-muted-foreground">Designed tender documents and brand-aligned multi-page reports.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="w-2 h-2 mt-1.5 rounded-full bg-primary flex-shrink-0 mr-2"></span>
+                      <span className="text-muted-foreground">Supported web projects while learning Joomla CMS.</span>
                     </li>
                   </ul>
                 </div>
