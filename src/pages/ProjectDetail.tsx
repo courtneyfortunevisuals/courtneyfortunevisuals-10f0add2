@@ -160,9 +160,19 @@ const ProjectDetail = () => {
                 </div>
 
                 <div className="prose max-w-none text-muted-foreground">
-                  {project.description.map((paragraph, idx) => (
-                    <p key={idx} className="mb-4">{paragraph}</p>
-                  ))}
+                  {project.description.map((paragraph, idx) => {
+                    // Check if paragraph contains HTML (starts with < tag)
+                    if (paragraph.trim().startsWith('<')) {
+                      return (
+                        <div 
+                          key={idx} 
+                          className="mb-4" 
+                          dangerouslySetInnerHTML={{ __html: paragraph }}
+                        />
+                      );
+                    }
+                    return <p key={idx} className="mb-4">{paragraph}</p>;
+                  })}
                 </div>
               </div>
               
