@@ -23,13 +23,11 @@ export default defineConfig(({ mode }) => ({
     // Source map configuration
     sourcemap: mode === 'development',
     // Minification for production
-    minify: mode === 'production' ? 'terser' : false,
-    terserOptions: mode === 'production' ? {
-      compress: {
-        drop_console: false,
-        drop_debugger: true,
-        pure_funcs: ['console.log'],
-      },
+    minify: mode === 'production',
+    // Remove console.log in production using esbuild
+    esbuild: mode === 'production' ? {
+      drop: ['debugger'],
+      pure: ['console.log'],
     } : undefined,
     rollupOptions: {
       output: {
