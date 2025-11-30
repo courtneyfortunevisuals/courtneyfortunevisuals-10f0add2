@@ -1,11 +1,8 @@
-
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Download, Linkedin } from "lucide-react";
-
 const About = () => {
-  return (
-    <Layout>
+  return <Layout>
       <section className="py-8 md:py-12 lg:py-20">
         <div className="container px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
@@ -18,7 +15,7 @@ const About = () => {
                 <div className="text-muted-foreground space-y-1">
                   <p>Email: courtneyfortunevisuals@gmail.com</p>
                   <p>Phone: +27 71 220 2068</p>
-                  <p>Portfolio: courtneyfortunevisuals.com (password: portfolio)</p>
+                  <p>Portfolio: courtneyfortunevisuals.com </p>
                 </div>
               </div>
               
@@ -34,23 +31,13 @@ const About = () => {
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <Button className="flex items-center gap-2">
                   <Download className="h-4 w-4" />
-                  <a 
-                    href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:a376e1ad-dd2f-4c3b-ab8d-bb5c15b169d0" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center"
-                  >
+                  <a href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:a376e1ad-dd2f-4c3b-ab8d-bb5c15b169d0" target="_blank" rel="noopener noreferrer" className="flex items-center">
                     Download Resume as PDF
                   </a>
                 </Button>
                 
                 <Button variant="outline" asChild>
-                  <a 
-                    href="https://www.linkedin.com/in/courtney-fortune-67094475/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2"
-                  >
+                  <a href="https://www.linkedin.com/in/courtney-fortune-67094475/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                     <Linkedin className="h-4 w-4" />
                     LinkedIn Profile
                   </a>
@@ -61,11 +48,7 @@ const About = () => {
             <div className="order-1 lg:order-2 animate-fade-in">
               <div className="relative">
                 <div className="aspect-square max-w-md mx-auto overflow-hidden rounded-lg shadow-xl">
-                  <img 
-                    src="/lovable-uploads/919ec45d-c8ec-4483-8a1e-a3cacb5c7aaa.png" 
-                    alt="Profile" 
-                    className="w-full h-full object-cover"
-                  />
+                  <img src="/lovable-uploads/919ec45d-c8ec-4483-8a1e-a3cacb5c7aaa.png" alt="Profile" className="w-full h-full object-cover" />
                 </div>
                 <div className="absolute -bottom-6 -right-6 w-64 h-64 bg-primary/10 rounded-full -z-10" />
                 <div className="absolute -top-6 -left-6 w-48 h-48 bg-secondary/20 rounded-full -z-10" />
@@ -197,8 +180,6 @@ const About = () => {
           </div>
         </div>
       </section>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default About;
