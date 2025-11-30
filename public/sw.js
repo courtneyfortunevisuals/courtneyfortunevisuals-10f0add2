@@ -1,6 +1,9 @@
-// Service Worker for aggressive caching of static assets
-const CACHE_NAME = 'courtney-fortune-cache-v1';
-const RUNTIME_CACHE = 'courtney-fortune-runtime-v1';
+// Service Worker with automatic cache versioning
+// Update this version number or timestamp when deploying new changes
+const APP_VERSION = '2.0.0';
+const CACHE_VERSION = `v${APP_VERSION}-${Date.now()}`;
+const CACHE_NAME = `courtney-fortune-cache-${CACHE_VERSION}`;
+const RUNTIME_CACHE = `courtney-fortune-runtime-${CACHE_VERSION}`;
 
 // Assets to cache immediately on install
 const PRECACHE_ASSETS = [
@@ -17,16 +20,33 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// Activate event - clean up old caches
+// Activate event - aggressively clear ALL old caches and notify clients
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
+      // Delete all caches that don't match current version
       return Promise.all(
         cacheNames
           .filter((name) => name !== CACHE_NAME && name !== RUNTIME_CACHE)
-          .map((name) => caches.delete(name))
+          .map((name) => {
+            console.log('Deleting old cache:', name);
+            return caches.delete(name);
+          })
       );
-    }).then(() => self.clients.claim())
+    })
+    .then(() => self.clients.claim())
+    .then(() => {
+      // Notify all clients that cache has been cleared
+      return self.clients.matchAll().then((clients) => {
+        clients.forEach((client) => {
+          client.postMessage({
+            type: 'CACHE_UPDATED',
+            version: APP_VERSION,
+            message: 'New version available. The page will reload to apply updates.'
+          });
+        });
+      });
+    })
   );
 });
 
