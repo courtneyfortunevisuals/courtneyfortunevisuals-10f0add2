@@ -265,7 +265,7 @@ const allProjects: Project[] = [
     duration: "6 months",
     role: "Mobile UI Designer",
     tags: [],
-    technologies: ["Photoshop"],
+    technologies: ["Lens Studio", "Illustrator", "2D/3D Asset Creation", "Photoshop"],
     isPasswordProtected: false,
     gallery: {
       images: [
