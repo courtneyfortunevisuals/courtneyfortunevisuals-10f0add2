@@ -75,7 +75,7 @@ export const PasswordPrompt = ({ projectId, projectTitle, onSuccess }: PasswordP
       }
     } catch (error) {
       // Only log in development
-      if (import.meta.env.DEV) {
+      if (typeof import.meta !== 'undefined' && import.meta.env?.DEV) {
         console.error('Password verification error:', error);
       }
       toast({
