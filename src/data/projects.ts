@@ -252,7 +252,7 @@ const allProjects: Project[] = [
   {
     id: 10,
     title: "Pineapple In Pool Filter",
-    summary: "User interface design for a modern mobile banking application focused on millennials.",
+    summary: "Creation of a playful, interactive Snapchat Lens built in Lens Studio, designed to bring motion, personality, and immersive visual fun to user-generated content.",
     description: [
       "This project involved designing a user-friendly mobile banking application specifically tailored for millennial users who prioritize convenience and modern design.",
       "I created an intuitive interface that simplified complex banking operations while maintaining security standards and regulatory compliance requirements.",
