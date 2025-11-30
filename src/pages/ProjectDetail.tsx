@@ -135,10 +135,15 @@ const ProjectDetail = () => {
 
                 <div className="prose max-w-none text-muted-foreground">
                   {project.description.map((paragraph, idx) => {
-                  // Check if paragraph contains HTML (starts with < tag)
-                  if (paragraph.trim().startsWith('<')) {
-                    return;
+                  // Skip blockquote embeds and scripts
+                  if (paragraph.trim().startsWith('<blockquote') || paragraph.trim().startsWith('<script')) {
+                    return null;
                   }
+                  // Render anchor tags with dangerouslySetInnerHTML
+                  if (paragraph.trim().startsWith('<a ')) {
+                    return <div key={idx} className="mb-4" dangerouslySetInnerHTML={{ __html: paragraph }} />;
+                  }
+                  // Regular text paragraphs
                   return <p key={idx} className="mb-4">{paragraph}</p>;
                 })}
                 </div>
