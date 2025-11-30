@@ -46,7 +46,7 @@ const OptimizedImage = ({
   // If modern formats are provided, use picture element
   if (avifSrc || webpSrc) {
     return (
-      <div className={`relative ${className}`} style={aspectRatio ? { aspectRatio } : undefined}>
+      <div className="relative" style={aspectRatio ? { aspectRatio } : undefined}>
         {isLoading && (
           <Skeleton className="absolute inset-0 w-full h-full" />
         )}
@@ -75,7 +75,7 @@ const OptimizedImage = ({
 
   // Standard img element with lazy loading
   return (
-    <div className={`relative`} style={aspectRatio ? { aspectRatio } : undefined}>
+    <div className="relative" style={aspectRatio ? { aspectRatio } : undefined}>
       {isLoading && (
         <Skeleton className="absolute inset-0 w-full h-full" />
       )}
