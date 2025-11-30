@@ -26,8 +26,9 @@ export default defineConfig(({ mode }) => ({
     minify: mode === 'production' ? 'terser' : false,
     terserOptions: mode === 'production' ? {
       compress: {
-        drop_console: ['log'],
+        drop_console: false,
         drop_debugger: true,
+        pure_funcs: ['console.log'],
       },
     } : undefined,
     rollupOptions: {
