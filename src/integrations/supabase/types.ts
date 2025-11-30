@@ -38,11 +38,39 @@ export type Database = {
         }
         Relationships: []
       }
+      protected_projects: {
+        Row: {
+          content: Json
+          created_at: string
+          id: string
+          project_id: number
+          updated_at: string
+        }
+        Insert: {
+          content: Json
+          created_at?: string
+          id?: string
+          project_id: number
+          updated_at?: string
+        }
+        Update: {
+          content?: Json
+          created_at?: string
+          id?: string
+          project_id?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
+      get_protected_project_content: {
+        Args: { p_password: string; p_project_id: number }
+        Returns: Json
+      }
       verify_project_password: {
         Args: { p_password: string; p_project_id: number }
         Returns: boolean
