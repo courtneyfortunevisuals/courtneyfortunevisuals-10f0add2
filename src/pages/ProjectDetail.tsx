@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { allProjects } from "@/data/projects";
 import ZoomableImage from "@/components/ZoomableImage";
+import { VimeoEmbed } from "@/components/VimeoEmbed";
 import { ArrowLeft, ArrowRight, Disc, Music, Headphones } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -256,15 +257,14 @@ const ProjectDetail = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
                     {project.gallery.videos.map((video, idx) => (
                       <div key={idx} className="aspect-video bg-cream border border-black/10 p-1 overflow-hidden">
-                        <iframe
-                          src={video.embedUrl}
+                        <VimeoEmbed
+                          videoId={video.embedUrl}
                           title={video.title}
-                          width="100%"
-                          height="100%"
-                          frameBorder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                        ></iframe>
+                          hash={video.hash}
+                          autoplay={true}
+                          muted={true}
+                          className="w-full h-full"
+                        />
                       </div>
                     ))}
                   </div>
