@@ -220,10 +220,9 @@ const allProjects: Project[] = [
     title: "Social Media Ads",
     summary: "A collection of social-media-ready designs created for multiple brands across a range of industries. These posts were crafted to deliver visually engaging content optimized for platform performance and audience interaction.",
     description: [
-      "This collection showcases a diverse range of social media advertising campaigns created for multiple brands across different industries.",
-      "Each campaign was tailored to the unique characteristics of specific social media platforms, optimizing visual design and messaging for maximum engagement.",
-      "The work demonstrates versatility in adapting brand voices and creative concepts for the fast-paced digital social media environment.",
-      "Special focus was placed on creating scroll-stopping visuals that drive user interaction while maintaining brand consistency and marketing objectives."
+      "This collection showcases a series of professionally designed social media posts created for various clients, each tailored for the fast-paced digital landscape. The designs include promotional content, campaign visuals, product highlights, and brand storytelling assets—each built to be immediately platform-ready for Instagram, Facebook, and other major social channels.",
+      "Every design was adapted to the specific requirements of its platform, ensuring optimal readability, visual hierarchy, and scroll-stopping impact. The work reflects versatility in adapting brand voices, visual identities, and creative strategies while maintaining cohesive, high-quality output.",
+      "Special focus was placed on crafting posts that maximize engagement, whether through strong visual messaging, clean layout structures, or strategic use of branding elements—all while aligning with each client's marketing goals."
     ],
     coverImage: "/lovable-uploads/project-cover.png",
     client: "Various Clients",
