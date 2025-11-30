@@ -52,28 +52,6 @@ export const VimeoEmbed = ({
     return `https://player.vimeo.com/video/${videoId}?${params.toString()}`;
   };
 
-  useEffect(() => {
-    // Detect if third-party cookies are blocked
-    const checkCookieSupport = () => {
-      try {
-        // Test third-party cookie support
-        const testFrame = document.createElement('iframe');
-        testFrame.style.display = 'none';
-        testFrame.src = 'about:blank';
-        document.body.appendChild(testFrame);
-        
-        setTimeout(() => {
-          document.body.removeChild(testFrame);
-        }, 100);
-      } catch (error) {
-        console.warn('Third-party cookie check failed:', error);
-        setEmbedError(true);
-      }
-    };
-
-    checkCookieSupport();
-  }, []);
-
   const handleIframeLoad = () => {
     setIsLoaded(true);
     setEmbedError(false);

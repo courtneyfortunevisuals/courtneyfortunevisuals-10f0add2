@@ -5,6 +5,7 @@ import { ArrowRight, Music } from "lucide-react";
 import { projects } from "@/data/projects";
 import { useTheme } from "@/components/theme-provider";
 import { VimeoEmbed } from "@/components/VimeoEmbed";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 
 const Index = () => {
   // Get first three projects for featured section
@@ -26,16 +27,18 @@ const Index = () => {
           <div className="flex flex-col items-center justify-center text-center space-y-6 md:space-y-8">
             <div className="w-full overflow-hidden rounded-lg bg-gradient-to-br from-primary/20 to-primary/5">
               <div className="relative h-[40vh] md:h-[50vh] lg:h-[55vh]">
-                <VimeoEmbed
-                  videoId={isDarkMode ? "1097342946" : "1097339449"}
-                  hash={isDarkMode ? "00ac02f95e" : undefined}
-                  title="Hero Video"
-                  autoplay={true}
-                  muted={true}
-                  loop={true}
-                  background={true}
-                  className="absolute top-0 left-0 w-full h-full rounded-lg"
-                />
+                <ErrorBoundary>
+                  <VimeoEmbed
+                    videoId={isDarkMode ? "1097342946" : "1097339449"}
+                    hash={isDarkMode ? "00ac02f95e" : undefined}
+                    title="Hero Video"
+                    autoplay={true}
+                    muted={true}
+                    loop={true}
+                    background={true}
+                    className="absolute top-0 left-0 w-full h-full rounded-lg"
+                  />
+                </ErrorBoundary>
               </div>
             </div>
             
