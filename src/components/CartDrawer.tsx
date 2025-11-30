@@ -41,7 +41,7 @@ export const CartDrawer = () => {
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
-        <Button variant="ghost" size="icon" className="relative rounded-full">
+        <Button variant="ghost" size="icon" className="relative rounded-full" aria-label="Shopping cart">
           <ShoppingCart className="h-5 w-5" />
           {totalItems > 0 && (
             <Badge className="absolute -top-2 -right-2 h-5 w-5 rounded-full p-0 flex items-center justify-center text-xs">
@@ -99,6 +99,7 @@ export const CartDrawer = () => {
                           size="icon"
                           className="h-6 w-6"
                           onClick={() => removeItem(item.variantId)}
+                          aria-label="Remove item from cart"
                         >
                           <Trash2 className="h-3 w-3" />
                         </Button>
@@ -109,6 +110,7 @@ export const CartDrawer = () => {
                             size="icon"
                             className="h-6 w-6"
                             onClick={() => updateQuantity(item.variantId, item.quantity - 1)}
+                            aria-label="Decrease quantity"
                           >
                             <Minus className="h-3 w-3" />
                           </Button>
@@ -118,6 +120,7 @@ export const CartDrawer = () => {
                             size="icon"
                             className="h-6 w-6"
                             onClick={() => updateQuantity(item.variantId, item.quantity + 1)}
+                            aria-label="Increase quantity"
                           >
                             <Plus className="h-3 w-3" />
                           </Button>
