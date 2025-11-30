@@ -14,7 +14,7 @@ export interface Project {
   password?: string;
   gallery: {
     images: { src: string; alt: string; caption?: string; link?: string }[];
-    videos: { title: string; embedUrl: string }[];
+    videos: { title: string; embedUrl: string; hash?: string }[];
   };
 }
 
@@ -43,7 +43,7 @@ const allProjects: Project[] = [
         { src: "/lovable-uploads/3825c04d-42a2-4867-96d0-fb081a1fc459.png", alt: "Brand application mockups" },
       ],
       videos: [
-        { title: "Brand Reveal", embedUrl: "https://player.vimeo.com/video/1097345492?h=abda5417c4&autoplay=1&muted=1" },
+        { title: "Brand Reveal", embedUrl: "1097345492", hash: "abda5417c4" },
       ]
     }
   },
@@ -119,7 +119,7 @@ const allProjects: Project[] = [
         { src: "/lovable-uploads/myciti-03.png", alt: "MyCiTi CPT Events campaign website layout in browser view" },
       ],
       videos: [
-        { title: "Campaign Overview", embedUrl: "https://player.vimeo.com/video/1121966796?autoplay=1&muted=1" },
+        { title: "Campaign Overview", embedUrl: "1121966796" },
       ]
     }
   },
@@ -153,7 +153,7 @@ const allProjects: Project[] = [
         { src: "/lovable-uploads/travelstart-03.png", alt: "TravelStart digital banner designs and website layout" },
       ],
       videos: [
-        { title: "Brand Animation", embedUrl: "https://player.vimeo.com/video/1097345492?h=abda5417c4&autoplay=1&muted=1" },
+        { title: "Brand Animation", embedUrl: "1097345492", hash: "abda5417c4" },
       ]
     }
   },
@@ -182,7 +182,7 @@ const allProjects: Project[] = [
         { src: "/lovable-uploads/tiger-wheel-06.png", alt: "Tiger Wheel & Tyre web page with integrated display ads" },
       ],
       videos: [
-        { title: "Campaign Demo", embedUrl: "https://player.vimeo.com/video/1121966686?autoplay=1&muted=1" },
+        { title: "Campaign Demo", embedUrl: "1121966686" },
       ]
     }
   },
@@ -210,8 +210,8 @@ const allProjects: Project[] = [
         { src: "/lovable-uploads/fnb-05.png", alt: "FNB DISKI FLAVA LIVES HERE campaign banners in browser layout" },
       ],
       videos: [
-        { title: "FNB Display Banner Animation", embedUrl: "https://player.vimeo.com/video/1121937982?autoplay=1&muted=1" },
-        { title: "FNB Campaign Showcase", embedUrl: "https://player.vimeo.com/video/1121943590?autoplay=1&muted=1" },
+        { title: "FNB Display Banner Animation", embedUrl: "1121937982" },
+        { title: "FNB Campaign Showcase", embedUrl: "1121943590" },
       ]
     }
   },
@@ -274,7 +274,7 @@ const allProjects: Project[] = [
         { src: "/lovable-uploads/4b820151-e83a-4abc-a1ba-38d4bd12e1bb.png", alt: "Cool pineapple with sunglasses filter effect in pool" },
       ],
       videos: [
-        { title: "App Walkthrough", embedUrl: "https://player.vimeo.com/video/1117821971?autoplay=1&muted=1" },
+        { title: "App Walkthrough", embedUrl: "1117821971" },
       ]
     }
   },
@@ -302,7 +302,7 @@ const allProjects: Project[] = [
         { src: "/lovable-uploads/bottle_800x800-03.jpg", alt: "3D black bottle render showcasing durability features" },
       ],
       videos: [
-        { title: "3D Swirl Animation Demo", embedUrl: "https://player.vimeo.com/video/1123694957?autoplay=1&muted=1" },
+        { title: "3D Swirl Animation Demo", embedUrl: "1123694957" },
       ]
     }
   }
