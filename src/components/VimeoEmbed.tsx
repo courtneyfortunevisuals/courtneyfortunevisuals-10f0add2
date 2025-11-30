@@ -86,46 +86,45 @@ export const VimeoEmbed = ({
 
   return (
     <div className={`relative ${className}`}>
-      {embedError && (
-        <Alert className="mb-4 bg-muted/50 border-muted-foreground/20">
-          <AlertCircle className="h-4 w-4" />
-          <AlertDescription>
-            Video embed may be blocked by your browser's privacy settings. 
-            <a 
-              href={`https://vimeo.com/${videoId}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ml-1 underline hover:text-primary"
-            >
-              Watch on Vimeo
-            </a>
-          </AlertDescription>
-        </Alert>
-      )}
-      
       <div className="relative w-full h-full">
+        {/* Fallback gradient background for when video fails */}
+        {embedError && (
+          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/10 via-muted/50 to-primary/5 rounded-lg">
+            <div className="text-center space-y-3 p-6">
+              <AlertCircle className="h-8 w-8 mx-auto text-muted-foreground" />
+              <p className="text-sm text-muted-foreground">
+                Video unavailable
+              </p>
+            </div>
+          </div>
+        )}
+        
+        {/* Loading state */}
         {!isLoaded && !embedError && (
-          <div className="absolute inset-0 flex items-center justify-center bg-muted/20 animate-pulse">
+          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/5 to-muted/30 animate-pulse rounded-lg">
             <div className="text-sm text-muted-foreground">Loading video...</div>
           </div>
         )}
         
-        <iframe
-          src={buildVimeoUrl()}
-          title={title}
-          width="100%"
-          height="100%"
-          frameBorder="0"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowFullScreen
-          loading="lazy"
-          onLoad={handleIframeLoad}
-          onError={handleIframeError}
-          sandbox="allow-scripts allow-same-origin allow-presentation"
-          referrerPolicy="strict-origin-when-cross-origin"
-          className={isLoaded ? 'opacity-100' : 'opacity-0'}
-          style={{ transition: 'opacity 0.3s ease-in-out' }}
-        />
+        {/* Video iframe */}
+        {!embedError && (
+          <iframe
+            src={buildVimeoUrl()}
+            title={title}
+            width="100%"
+            height="100%"
+            frameBorder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+            loading="lazy"
+            onLoad={handleIframeLoad}
+            onError={handleIframeError}
+            sandbox="allow-scripts allow-same-origin allow-presentation"
+            referrerPolicy="strict-origin-when-cross-origin"
+            className={isLoaded ? 'opacity-100' : 'opacity-0'}
+            style={{ transition: 'opacity 0.3s ease-in-out' }}
+          />
+        )}
       </div>
     </div>
   );
