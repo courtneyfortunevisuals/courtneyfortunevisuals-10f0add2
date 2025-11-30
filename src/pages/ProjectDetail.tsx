@@ -135,17 +135,31 @@ const ProjectDetail = () => {
 
                 <div className="prose max-w-none text-muted-foreground">
                   {project.description.map((paragraph, idx) => {
-                  // Skip blockquote embeds and scripts
-                  if (paragraph.trim().startsWith('<blockquote') || paragraph.trim().startsWith('<script')) {
-                    return null;
-                  }
-                  // Render anchor tags with dangerouslySetInnerHTML
-                  if (paragraph.trim().startsWith('<a ')) {
-                    return <div key={idx} className="mb-4" dangerouslySetInnerHTML={{ __html: paragraph }} />;
-                  }
-                  // Regular text paragraphs
-                  return <p key={idx} className="mb-4">{paragraph}</p>;
-                })}
+                    // Skip blockquote embeds and scripts
+                    if (paragraph.trim().startsWith('<blockquote') || paragraph.trim().startsWith('<script')) {
+                      return null;
+                    }
+                    
+                    // Handle Snapchat link marker
+                    if (paragraph === "[SNAPCHAT_LINK]") {
+                      return (
+                        <div key={idx} className="mb-4">
+                          <a 
+                            href="https://www.snapchat.com/lens/20fb6fa0d5ed42e597a7bc1a1fddbea2?sender_web_id=04efc47d-faf1-4ea3-ae07-095a6b4b9517&device_type=desktop&is_copy_url=true"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors duration-200 group"
+                          >
+                            Try the Lens
+                            <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+                          </a>
+                        </div>
+                      );
+                    }
+                    
+                    // Regular text paragraphs
+                    return <p key={idx} className="mb-4">{paragraph}</p>;
+                  })}
                 </div>
               </div>
               
