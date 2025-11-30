@@ -77,7 +77,13 @@ const ProjectDetail = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
               {/* Album Cover */}
               <div className="relative aspect-square max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto lg:mx-0 overflow-hidden">
-                <img src={project.coverImage} alt={project.title} className="w-full h-full object-cover" />
+                <img 
+                  src={project.coverImage} 
+                  alt={project.title}
+                  loading="eager"
+                  decoding="async"
+                  className="w-full h-full object-cover" 
+                />
                 
                 {/* Play indicator */}
                 <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 hover:opacity-100 transition-opacity cursor-pointer" onClick={togglePlay}>
