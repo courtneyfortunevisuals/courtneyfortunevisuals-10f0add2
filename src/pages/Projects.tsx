@@ -175,7 +175,6 @@ const Projects = () => {
                       <p className="text-muted-foreground mb-3">{project.summary}</p>
                       <div className="flex flex-wrap gap-2 items-center">
                         <span className="text-sm font-medium">{project.client || "Self-released"}</span>
-                        {project.year && <span className="text-sm text-muted-foreground">• {project.year}</span>}
                       </div>
                     </div>
                   </Card>
