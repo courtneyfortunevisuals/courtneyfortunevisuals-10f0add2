@@ -284,9 +284,9 @@ const allProjects: Project[] = [
     title: "3D Swirl Demo",
     summary: "Dynamic 3D visualization and motion graphics project featuring organic swirl animations.",
     description: [
-      "This project focused on creating dynamic 3D swirl animations and organic motion graphics for various digital applications.",
-      "I developed fluid particle systems and complex swirl patterns using advanced 3D modeling and animation techniques to create visually striking content.",
-      "The project resulted in a library of reusable 3D assets and animation sequences that enhanced visual storytelling across multiple campaigns."
+      "This project demonstrates 3D Swirl, an immersive display format that features an interactive 3D model inside a mobile banner. The format boosts brand awareness and purchase intent through a highly engaging 3D experience.",
+      "Users can rotate, explore, and interact with the 3D object directly in the ad, allowing brands to tell richer stories. Creatives can begin with a message that fades as the user scrolls, revealing the full interactive model.",
+      "Available Sizes: • 300 × 250 • 300 × 600 • 336 × 280 (paired with 300 × 250)"
     ],
     coverImage: "/lovable-uploads/1-01.png",
     year: 2023,
