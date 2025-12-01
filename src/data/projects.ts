@@ -49,7 +49,7 @@ const allProjects: Project[] = [
   },
   {
     id: 2,
-    title: "Internal Rebranding",
+    title: "Inhouse Rebranding",
     summary: "A comprehensive redesign of a company's design system, improving consistency and efficiency.",
     description: [
       "Tasked with revitalizing a digital marketing company's internal brand, I transformed a fragmented system into a cohesive visual identity with purpose and clarity. By rebuilding design foundations—color, typography, components, templates, and documentation—I created a brand ecosystem that works seamlessly for the people who use it every day. The result: stronger storytelling, smoother workflows, and a brand that finally reflects the company's momentum.",
