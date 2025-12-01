@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, LayoutGrid, List, Layers } from "lucide-react";
 import { projects, allProjects } from "@/data/projects";
 import {
   Carousel,
@@ -10,9 +10,12 @@ import {
   CarouselItem,
   CarouselApi,
 } from "@/components/ui/carousel";
+import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
 const Projects = () => {
   const [showAll, setShowAll] = useState(true);
+  const [viewMode, setViewMode] = useState<'carousel' | 'grid' | 'list'>('carousel');
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   
@@ -34,89 +37,152 @@ const Projects = () => {
         <div className="container px-4 md:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-6 md:mb-8 lg:mb-12 xl:mb-16">
             <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-2 md:mb-3 lg:mb-4">My Collection</h1>
-            <p className="text-sm md:text-base lg:text-lg text-muted-foreground">
+            <p className="text-sm md:text-base lg:text-lg text-muted-foreground mb-4">
               A showcase of creative works and musical inspirations
             </p>
+            <ToggleGroup type="single" value={viewMode} onValueChange={(value) => value && setViewMode(value as 'carousel' | 'grid' | 'list')} className="justify-center">
+              <ToggleGroupItem value="carousel" aria-label="Carousel view">
+                <Layers className="h-4 w-4" />
+              </ToggleGroupItem>
+              <ToggleGroupItem value="grid" aria-label="Grid view">
+                <LayoutGrid className="h-4 w-4" />
+              </ToggleGroupItem>
+              <ToggleGroupItem value="list" aria-label="List view">
+                <List className="h-4 w-4" />
+              </ToggleGroupItem>
+            </ToggleGroup>
           </div>
           
-          <div className="relative">
-            <Carousel
-              setApi={setApi}
-              opts={{
-                align: "center",
-                loop: true,
-              }}
-              className="w-full"
-            >
-              <CarouselContent className="-ml-4 md:-ml-6">
-                {displayedProjects.map((project, index) => {
-                  const isActive = index === current;
-                  
-                  return (
-                    <CarouselItem 
-                      key={project.id} 
-                      className="pl-4 md:pl-6 basis-[90%] md:basis-[70%] lg:basis-[60%]"
-                    >
-                      <Link 
-                        to={`/projects/${project.id}`}
-                        className="block group max-w-[75%] mx-auto"
-                      >
-                        <div 
-                          className={`
-                            aspect-square overflow-hidden rounded-lg relative shadow-2xl
-                            transition-all duration-500 ease-out
-                            ${isActive ? 'scale-105 opacity-100' : 'scale-95 opacity-60'}
-                            hover:scale-105 hover:opacity-100
-                          `}
+          {viewMode === 'carousel' && (
+            <>
+              <div className="relative">
+                <Carousel
+                  setApi={setApi}
+                  opts={{
+                    align: "center",
+                    loop: true,
+                  }}
+                  className="w-full"
+                >
+                  <CarouselContent className="-ml-4 md:-ml-6">
+                    {displayedProjects.map((project, index) => {
+                      const isActive = index === current;
+                      
+                      return (
+                        <CarouselItem 
+                          key={project.id} 
+                          className="pl-4 md:pl-6 basis-[90%] md:basis-[70%] lg:basis-[60%]"
                         >
-                          <img
-                            src={project.coverImage}
-                            alt={project.title}
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 md:p-8">
-                            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary-foreground mb-2">
-                              {project.title}
-                            </h2>
-                            <p className="text-primary-foreground/90 text-base md:text-lg mb-2">
-                              {project.summary}
-                            </p>
-                            <span className="text-primary-foreground/70 text-sm">
-                              {project.client || "Self-released"}
-                            </span>
-                          </div>
-                        </div>
-                      </Link>
-                    </CarouselItem>
-                  );
-                })}
-              </CarouselContent>
+                          <Link 
+                            to={`/projects/${project.id}`}
+                            className="block group max-w-[75%] mx-auto"
+                          >
+                            <div 
+                              className={`
+                                aspect-square overflow-hidden rounded-lg relative shadow-2xl
+                                transition-all duration-500 ease-out
+                                ${isActive ? 'scale-105 opacity-100' : 'scale-95 opacity-60'}
+                                hover:scale-105 hover:opacity-100
+                              `}
+                            >
+                              <img
+                                src={project.coverImage}
+                                alt={project.title}
+                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 md:p-8">
+                                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary-foreground mb-2">
+                                  {project.title}
+                                </h2>
+                                <p className="text-primary-foreground/90 text-base md:text-lg mb-2">
+                                  {project.summary}
+                                </p>
+                                <span className="text-primary-foreground/70 text-sm">
+                                  {project.client || "Self-released"}
+                                </span>
+                              </div>
+                            </div>
+                          </Link>
+                        </CarouselItem>
+                      );
+                    })}
+                  </CarouselContent>
 
-              <Button
-                variant="outline"
-                size="icon"
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-20 rounded-full bg-background/80 backdrop-blur-sm hover:bg-background shadow-lg"
-                onClick={() => api?.scrollPrev()}
-              >
-                <ChevronLeft className="h-6 w-6" />
-              </Button>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 z-20 rounded-full bg-background/80 backdrop-blur-sm hover:bg-background shadow-lg"
+                    onClick={() => api?.scrollPrev()}
+                  >
+                    <ChevronLeft className="h-6 w-6" />
+                  </Button>
 
-              <Button
-                variant="outline"
-                size="icon"
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-20 rounded-full bg-background/80 backdrop-blur-sm hover:bg-background shadow-lg"
-                onClick={() => api?.scrollNext()}
-              >
-                <ChevronRight className="h-6 w-6" />
-              </Button>
-            </Carousel>
-          </div>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 z-20 rounded-full bg-background/80 backdrop-blur-sm hover:bg-background shadow-lg"
+                    onClick={() => api?.scrollNext()}
+                  >
+                    <ChevronRight className="h-6 w-6" />
+                  </Button>
+                </Carousel>
+              </div>
 
-          <div className="text-center mt-6 md:mt-8">
-            <p className="text-xs md:text-sm text-muted-foreground/70">
-              Drag or click arrows to explore
-            </p>
-          </div>
+              <div className="text-center mt-6 md:mt-8">
+                <p className="text-xs md:text-sm text-muted-foreground/70">
+                  Drag or click arrows to explore
+                </p>
+              </div>
+            </>
+          )}
+
+          {viewMode === 'grid' && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {displayedProjects.map((project) => (
+                <Link to={`/projects/${project.id}`} key={project.id}>
+                  <Card className="group overflow-hidden hover:shadow-xl transition-all border-border">
+                    <div className="aspect-square overflow-hidden">
+                      <img 
+                        src={project.coverImage} 
+                        alt={project.title} 
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                      />
+                    </div>
+                    <CardHeader>
+                      <CardTitle className="text-lg">{project.title}</CardTitle>
+                      <CardDescription>{project.client || "Self-released"}</CardDescription>
+                    </CardHeader>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          )}
+
+          {viewMode === 'list' && (
+            <div className="space-y-6 max-w-5xl mx-auto">
+              {displayedProjects.map((project) => (
+                <Link to={`/projects/${project.id}`} key={project.id}>
+                  <Card className="group flex flex-col md:flex-row overflow-hidden hover:shadow-xl transition-all border-border">
+                    <div className="w-full md:w-48 lg:w-64 aspect-square md:aspect-auto flex-shrink-0 overflow-hidden">
+                      <img 
+                        src={project.coverImage} 
+                        alt={project.title} 
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                      />
+                    </div>
+                    <div className="flex-1 p-6">
+                      <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                      <p className="text-muted-foreground mb-3">{project.summary}</p>
+                      <div className="flex flex-wrap gap-2 items-center">
+                        <span className="text-sm font-medium">{project.client || "Self-released"}</span>
+                        {project.year && <span className="text-sm text-muted-foreground">• {project.year}</span>}
+                      </div>
+                    </div>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          )}
 
           {!showAll && (
             <div className="text-center mt-8 md:mt-12">
