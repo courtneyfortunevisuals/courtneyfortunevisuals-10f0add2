@@ -22,22 +22,6 @@ export default defineConfig(({ mode }) => ({
   build: {
     // Source map configuration
     sourcemap: mode === 'development',
-    // Minification for production
-    minify: mode === 'production' ? 'terser' : false,
-    terserOptions: mode === 'production' ? {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
-    } : undefined,
-    rollupOptions: {
-      output: {
-        // Let Vite handle chunk splitting automatically for optimal loading order
-      },
-    },
-  },
-  // Security: prevent .env files from being included in build
-  define: {
-    'process.env': {},
+    // Use default esbuild minification (no need to specify terser)
   },
 }));
