@@ -15,21 +15,15 @@ const Gallery = () => {
         setLoading(true);
         const fetchedProducts = await getProducts(9);
         
-        // Sort products by title (poster 01 to 09)
+        // Sort products by number in title
         const sortedProducts = [...fetchedProducts].sort((a, b) => {
-          const titleA = a.node.title.toLowerCase();
-          const titleB = b.node.title.toLowerCase();
-          
-          // Extract number from title if it contains "poster" followed by a number
           const extractNumber = (title: string) => {
-            const match = title.match(/poster\s*(\d+)/i);
-            return match ? parseInt(match[1]) : Infinity;
+            // Match any number in the title (e.g., "Poster 01", "01", "1")
+            const match = title.match(/(\d+)/);
+            return match ? parseInt(match[1], 10) : Infinity;
           };
           
-          const numA = extractNumber(titleA);
-          const numB = extractNumber(titleB);
-          
-          return numA - numB;
+          return extractNumber(a.node.title) - extractNumber(b.node.title);
         });
         
         setProducts(sortedProducts);
