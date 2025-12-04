@@ -1,16 +1,13 @@
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
 import Layout from "@/components/Layout";
-import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { ShoppingCart } from "lucide-react";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
-import { useCartStore } from "@/stores/cartStore";
+import ProductCard from "@/components/ProductCard";
 
 const Gallery = () => {
   const [products, setProducts] = useState<ShopifyProduct[]>([]);
   const [loading, setLoading] = useState(true);
-  const addItem = useCartStore(state => state.addItem);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -47,30 +44,6 @@ const Gallery = () => {
     fetchProducts();
   }, []);
 
-  const handleAddToCart = (product: ShopifyProduct) => {
-    const variant = product.node.variants.edges[0]?.node;
-    
-    if (!variant) {
-      toast.error('Product variant not available');
-      return;
-    }
-
-    const cartItem = {
-      product,
-      variantId: variant.id,
-      variantTitle: variant.title,
-      price: variant.price,
-      quantity: 1,
-      selectedOptions: variant.selectedOptions || []
-    };
-    
-    addItem(cartItem);
-    toast.success('Added to cart', {
-      description: product.node.title,
-      position: 'top-center',
-    });
-  };
-
   if (loading) {
     return (
       <Layout>
@@ -102,66 +75,9 @@ const Gallery = () => {
           </div>
         ) : (
           <div className="masonry-container">
-            {products.map((product) => {
-              const image = product.node.images?.edges?.[0]?.node;
-              const price = product.node.priceRange.minVariantPrice;
-
-              return (
-                <div key={product.node.id} className="masonry-item group">
-                  <div className="relative">
-                    {image ? (
-                      <img 
-                        src={image.url} 
-                        alt={image.altText || product.node.title}
-                        className="w-full h-auto object-cover rounded-lg"
-                        loading="lazy"
-                      />
-                    ) : (
-                      <div className="w-full aspect-square bg-secondary/20 flex items-center justify-center rounded-lg">
-                        <p className="text-muted-foreground">No image</p>
-                      </div>
-                    )}
-
-                    {/* Price badge */}
-                    {price && (
-                      <div className="absolute top-3 left-3 bg-primary text-primary-foreground px-3 py-1.5 rounded-full text-sm font-bold shadow-lg">
-                        {price.currencyCode} {parseFloat(price.amount).toFixed(2)}
-                      </div>
-                    )}
-
-                    {/* Quick action button */}
-                    <div className="masonry-actions">
-                      <Button 
-                        size="icon" 
-                        variant="secondary"
-                        className="rounded-full bg-background/90 backdrop-blur-sm shadow-lg"
-                        onClick={() => handleAddToCart(product)}
-                      >
-                        <ShoppingCart className="h-4 w-4" />
-                      </Button>
-                    </div>
-
-                    {/* Hover overlay */}
-                    <div className="masonry-overlay">
-                      <h3 className="font-bold text-lg mb-2 text-white">
-                        {product.node.title}
-                      </h3>
-                      {product.node.description && (
-                        <p className="text-sm text-white/80 mb-3 line-clamp-3">
-                          {product.node.description}
-                        </p>
-                      )}
-                      <Button
-                        onClick={() => handleAddToCart(product)}
-                        className="w-full bg-white text-primary hover:bg-white/90"
-                      >
-                        Add to Cart
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+            {products.map((product) => (
+              <ProductCard key={product.node.id} product={product} />
+            ))}
           </div>
         )}
       </div>
