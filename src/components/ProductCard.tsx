@@ -8,7 +8,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { ShoppingCart } from "lucide-react";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { ShoppingCart, ZoomIn } from "lucide-react";
 import { ShopifyProduct } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 
@@ -19,6 +20,7 @@ interface ProductCardProps {
 const ProductCard = ({ product }: ProductCardProps) => {
   const variants = product.node.variants.edges;
   const [selectedVariantIndex, setSelectedVariantIndex] = useState(0);
+  const [isZoomOpen, setIsZoomOpen] = useState(false);
   const selectedVariant = variants[selectedVariantIndex]?.node;
   const addItem = useCartStore(state => state.addItem);
 
@@ -69,21 +71,34 @@ const ProductCard = ({ product }: ProductCardProps) => {
     return selectedVariant?.selectedOptions.find(o => o.name === optionName)?.value || '';
   };
 
+  const handleImageClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsZoomOpen(true);
+  };
+
   return (
     <div className="masonry-item group">
       <div className="relative">
-        {image ? (
-          <img
-            src={image.url}
-            alt={image.altText || product.node.title}
-            className="w-full h-auto object-cover rounded-lg transition-opacity duration-300"
-            loading="lazy"
-          />
-        ) : (
-          <div className="w-full aspect-square bg-secondary/20 flex items-center justify-center rounded-lg">
-            <p className="text-muted-foreground">No image</p>
+        <div 
+          className="cursor-zoom-in relative group/zoom"
+          onClick={handleImageClick}
+        >
+          {image ? (
+            <img
+              src={image.url}
+              alt={image.altText || product.node.title}
+              className="w-full h-auto object-cover rounded-lg transition-opacity duration-300"
+              loading="lazy"
+            />
+          ) : (
+            <div className="w-full aspect-square bg-secondary/20 flex items-center justify-center rounded-lg">
+              <p className="text-muted-foreground">No image</p>
+            </div>
+          )}
+          <div className="absolute top-3 right-3 opacity-0 group-hover/zoom:opacity-100 transition-opacity bg-black/50 p-1.5 rounded-full">
+            <ZoomIn className="h-4 w-4 text-white" />
           </div>
-        )}
+        </div>
 
         {/* Price badge */}
         {price && (
@@ -147,6 +162,18 @@ const ProductCard = ({ product }: ProductCardProps) => {
           </Button>
         </div>
       </div>
+
+      <Dialog open={isZoomOpen} onOpenChange={setIsZoomOpen}>
+        <DialogContent className="max-w-[95vw] max-h-[95vh] p-2 bg-black/95 border-none">
+          {image && (
+            <img 
+              src={image.url}
+              alt={image.altText || product.node.title}
+              className="w-full h-full max-h-[90vh] object-contain rounded-lg"
+            />
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
