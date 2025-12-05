@@ -47,7 +47,7 @@ const Projects = () => {
               <ToggleGroupItem value="grid" aria-label="Grid view">
                 <LayoutGrid className="h-4 w-4" />
               </ToggleGroupItem>
-              <ToggleGroupItem value="list" aria-label="List view">
+              <ToggleGroupItem value="list" aria-label="List view" className="hidden md:flex">
                 <List className="h-4 w-4" />
               </ToggleGroupItem>
             </ToggleGroup>
