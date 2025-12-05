@@ -306,6 +306,84 @@ const allProjects: Project[] = [
         { title: "3D Swirl Animation Demo", embedUrl: "1123694957" },
       ]
     }
+  },
+  {
+    id: 12,
+    title: "User Case Study",
+    summary: "In-depth UX research and design case study exploring user behavior, pain points, and solutions for improved digital experiences.",
+    description: [
+      "This case study documents a comprehensive user research project that involved understanding real user needs through interviews, surveys, and usability testing.",
+      "The project followed a structured design thinking approach—starting with empathy mapping and user personas, moving through ideation and prototyping, and concluding with validated solutions backed by user feedback.",
+      "Key deliverables included user journey maps, wireframes, interactive prototypes, and a detailed report outlining actionable recommendations for stakeholders."
+    ],
+    coverImage: "/lovable-uploads/project-cover.png",
+    year: 2024,
+    client: "courtneyfortune visuals",
+    duration: "2 months",
+    role: "UX Designer & Researcher",
+    tags: [],
+    technologies: ["Figma", "Miro", "UserTesting", "Adobe XD"],
+    isPasswordProtected: false,
+    gallery: {
+      images: [
+        { src: "/lovable-uploads/project-cover.png", alt: "User case study overview presentation" },
+        { src: "/lovable-uploads/project-cover.png", alt: "User journey mapping and research findings" },
+        { src: "/lovable-uploads/project-cover.png", alt: "Wireframes and prototype designs" },
+      ],
+      videos: []
+    }
+  },
+  {
+    id: 13,
+    title: "Video",
+    summary: "Professional video production and editing showcasing storytelling through motion, color grading, and cinematic techniques.",
+    description: [
+      "This project highlights video production capabilities including conceptualization, filming direction, and post-production editing.",
+      "Work included creating promotional videos, brand stories, and social media content optimized for various platforms and aspect ratios.",
+      "Post-production involved color grading, sound design, motion graphics integration, and final delivery in multiple formats for web and broadcast use."
+    ],
+    coverImage: "/lovable-uploads/project-cover.png",
+    year: 2024,
+    client: "Various Clients",
+    duration: "Ongoing",
+    role: "Video Editor & Producer",
+    tags: [],
+    technologies: ["Premiere Pro", "After Effects", "DaVinci Resolve", "Audition"],
+    isPasswordProtected: false,
+    gallery: {
+      images: [
+        { src: "/lovable-uploads/project-cover.png", alt: "Video production setup and editing timeline" },
+        { src: "/lovable-uploads/project-cover.png", alt: "Color grading before and after comparison" },
+        { src: "/lovable-uploads/project-cover.png", alt: "Final video deliverables showcase" },
+      ],
+      videos: []
+    }
+  },
+  {
+    id: 14,
+    title: "Motion Graphics",
+    summary: "Dynamic motion graphics and animation work featuring kinetic typography, logo animations, and visual effects for digital media.",
+    description: [
+      "A collection of motion graphics projects demonstrating expertise in animation principles, timing, and visual storytelling through movement.",
+      "Projects range from animated logo reveals and lower thirds to full explainer videos and social media animations designed to capture attention and communicate messages effectively.",
+      "Each piece was crafted with attention to brand consistency, smooth transitions, and optimized export settings for various digital platforms."
+    ],
+    coverImage: "/lovable-uploads/project-cover.png",
+    year: 2024,
+    client: "Various Clients",
+    duration: "Ongoing",
+    role: "Motion Designer",
+    tags: [],
+    technologies: ["After Effects", "Cinema 4D", "Illustrator", "Lottie"],
+    isPasswordProtected: false,
+    gallery: {
+      images: [
+        { src: "/lovable-uploads/project-cover.png", alt: "Motion graphics storyboard and keyframes" },
+        { src: "/lovable-uploads/project-cover.png", alt: "Animated logo reveal sequence" },
+        { src: "/lovable-uploads/project-cover.png", alt: "Kinetic typography animation frames" },
+      ],
+      videos: []
+    }
   }
 ];
 
