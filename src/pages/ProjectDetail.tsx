@@ -2,13 +2,12 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { allProjects } from "@/data/projects";
-import ZoomableImage from "@/components/ZoomableImage";
+import GalleryLightbox from "@/components/GalleryLightbox";
 import { VimeoEmbed } from "@/components/VimeoEmbed";
 import { ArrowLeft, ArrowRight, Disc, Music, Headphones } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { PasswordPrompt } from "@/components/PasswordPrompt";
 const ProjectDetail = () => {
   const {
@@ -21,6 +20,13 @@ const ProjectDetail = () => {
   const project = allProjects.find(p => p.id === projectId);
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasAccess, setHasAccess] = useState(false);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const handleImageClick = (index: number) => {
+    setCurrentImageIndex(index);
+    setLightboxOpen(true);
+  };
   useEffect(() => {
     if (!project) {
       navigate("/projects");
@@ -204,8 +210,11 @@ const ProjectDetail = () => {
                 <TabsContent value="images" className="animate-fade-in">
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 max-w-6xl mx-auto">
                     {project.gallery.images.map((image, idx) => <div key={idx} className="space-y-2">
-                        <div className="aspect-square bg-cream border border-black/10 p-1 transition-transform hover:scale-[1.01]">
-                          <ZoomableImage src={image.src} alt={image.alt} className="h-full w-full object-cover" />
+                        <div 
+                          className="aspect-square bg-cream border border-black/10 p-1 transition-transform hover:scale-[1.01] cursor-zoom-in"
+                          onClick={() => handleImageClick(idx)}
+                        >
+                          <img src={image.src} alt={image.alt} className="h-full w-full object-cover" />
                         </div>
                         {image.caption && <div className="text-center text-sm">
                             {image.link ? <a href={image.link} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors underline">
@@ -226,8 +235,11 @@ const ProjectDetail = () => {
               </Tabs> : <div className="animate-fade-in">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 max-w-6xl mx-auto">
                   {project.gallery.images.map((image, idx) => <div key={idx} className="space-y-2">
-                      <div className="aspect-square bg-cream border border-black/10 p-1 transition-transform hover:scale-[1.01]">
-                        <ZoomableImage src={image.src} alt={image.alt} className="h-full w-full object-cover" />
+                      <div 
+                        className="aspect-square bg-cream border border-black/10 p-1 transition-transform hover:scale-[1.01] cursor-zoom-in"
+                        onClick={() => handleImageClick(idx)}
+                      >
+                        <img src={image.src} alt={image.alt} className="h-full w-full object-cover" />
                       </div>
                       {image.caption && <div className="text-center text-sm">
                           {image.link ? <a href={image.link} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors underline">
@@ -237,6 +249,15 @@ const ProjectDetail = () => {
                     </div>)}
                 </div>
               </div>}
+
+            {/* Gallery Lightbox */}
+            <GalleryLightbox
+              images={project.gallery.images}
+              currentIndex={currentImageIndex}
+              isOpen={lightboxOpen}
+              onClose={() => setLightboxOpen(false)}
+              onNavigate={setCurrentImageIndex}
+            />
 
             {/* Next Project Button */}
             <div className="text-center mt-8 md:mt-12 lg:mt-16">
