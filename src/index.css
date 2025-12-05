@@ -130,13 +130,6 @@
     }
   }
 
-  @media (min-width: 1536px) {
-    .masonry-container {
-      column-count: 4;
-      column-gap: 2rem;
-    }
-  }
-
   .masonry-item {
     display: inline-block;
     width: 100%;
